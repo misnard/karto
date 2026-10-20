@@ -22,13 +22,14 @@ import {
   startPush,
   transitionBasket,
 } from '../db/baskets.ts';
-import { getLatestBasketJob, insertJobStatement, toJob } from '../db/jobs.ts';
+import { getLatestBasketJob, insertJobStatement, requestCancel, toJob } from '../db/jobs.ts';
 import { getPreferences } from '../db/users.ts';
 import { AppError, readBody } from '../errors.ts';
 import * as amend from '../llm/prompts/amend.ts';
 import { buildUser, jsonSchema, system } from '../llm/prompts/parse.ts';
 import { PROVIDER, searchJob, toCartLines } from '../pipeline/advance-basket.ts';
 import { editItem } from '../pipeline/amend.ts';
+import { endJob } from '../pipeline/expire-jobs.ts';
 
 const LimitSchema = z.coerce.number().int().min(1).max(50).default(20);
 /** Failed steps that can be retried, and the basket status while they run again. */
@@ -194,4 +195,17 @@ export const baskets = new Hono<AppEnv>()
     ]);
     if (!started) throw changedConcurrently();
     return c.json(await requireBasket(c.var.userId, basket.id), 202);
+  })
+  .post('/:id/cancel', async (c) => {
+    const basket = await requireBasket(c.var.userId, c.req.param('id'));
+    const job = await getLatestBasketJob(c.var.userId, basket.id);
+    const active = job?.status === 'pending' || job?.status === 'running' || job?.status === 'paused';
+    if (!job || !active || job.kind === 'llm') throw new AppError('conflict', 409, 'No search or push to cancel');
+    // A running job stops at its next progress report. A pending or paused one gets no report: end it now (if it
+    // is claimed or resumed meanwhile, the flag still stops it).
+    await requestCancel(c.var.userId, job.id);
+    if (job.status !== 'running') {
+      await endJob(job, { status: 'failed', error: { code: 'cancelled', message: 'Annulé', retryable: false } });
+    }
+    return c.json(await requireBasket(c.var.userId, basket.id));
   });

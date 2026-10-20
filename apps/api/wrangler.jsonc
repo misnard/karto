@@ -4,6 +4,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-08-22",
   "observability": { "enabled": true },
+  // Expires job leases and pauses (src/pipeline/expire-jobs.ts).
+  "triggers": { "crons": ["* * * * *"] },
   // LLM_RUNTIME: only "cli" exists (llm jobs wait for the relay). RELAY_TOKEN is a secret (wrangler secret put).
   "vars": { "LLM_RUNTIME": "cli", "LLM_MODEL": "claude-haiku-5-5" },
   "d1_databases": [

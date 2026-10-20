@@ -11,6 +11,7 @@ import {
   setToken,
 } from '../state.ts';
 import { BasketView } from './basket-view.tsx';
+import { ContractCheck } from './contract-check.tsx';
 import { PreferencesView } from './preferences-view.tsx';
 import { Shell } from './shell.tsx';
 import {
@@ -68,7 +69,12 @@ export function App() {
 
   if (!session) return null;
   if (!session.token) return <PairView onPaired={(token) => setSession({ token, basketId: null })} />;
-  const banner = <ExecutorBanner state={executor} />;
+  const banner = (
+    <>
+      <ExecutorBanner state={executor} />
+      {import.meta.env.MODE === 'development' && <ContractCheck />}
+    </>
+  );
 
   if (editing && preferences) {
     return (
@@ -316,7 +322,7 @@ function ExecutorBanner({ state }: { state: ExecutorState | null }) {
     <div role="status" className="banner">
       <p>
         <strong>{banner.title}</strong>
-        {banner.text}
+        {state.detail ?? banner.text}
       </p>
       <button type="button" className="btn" onClick={() => notifyExecutor({ type: 'focusCarrefour' })}>
         Ouvrir l’onglet du magasin

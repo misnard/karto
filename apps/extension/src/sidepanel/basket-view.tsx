@@ -11,7 +11,7 @@ import {
   type ProductOffer,
 } from '@karto/contracts';
 import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
-import { ApiError, amendBasket, getBasket, patchItem, pushBasket, retryBasket } from '../api.ts';
+import { ApiError, amendBasket, cancelBasket, getBasket, patchItem, pushBasket, retryBasket } from '../api.ts';
 import { Shell } from './shell.tsx';
 import {
   BASKET_STATUS,
@@ -124,6 +124,7 @@ export function BasketView({ token, basketId, initial, budgetCents, banner, onUn
   const push = () => act(() => pushBasket(token, basketId));
   const retry = () => act(() => retryBasket(token, basketId));
   const amend = (text: string) => act(() => amendBasket(token, basketId, text));
+  const cancel = () => act(() => cancelBasket(token, basketId));
 
   /** Per-line edit: the API answers with the updated basket, no job involved. */
   async function edit(itemId: string, request: PatchItemRequest) {
@@ -173,6 +174,11 @@ export function BasketView({ token, basketId, initial, budgetCents, banner, onUn
           <span className={`chip chip-${status.tone}`} role="status">
             {job?.status === 'pending' ? 'En attente de l’extension' : status.label}
           </span>
+        )}
+        {job && job.kind !== 'llm' && ['pending', 'running', 'paused'].includes(job.status) && (
+          <button type="button" className="btn-link" onClick={cancel} disabled={pushing}>
+            Annuler
+          </button>
         )}
       </div>
       {(error || jobError || basket?.error) && (

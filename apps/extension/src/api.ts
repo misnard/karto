@@ -11,16 +11,20 @@ import {
   type JobError,
   type JobProgress,
   JobSchema,
+  type JobSummary,
+  JobSummarySchema,
   type MeResponse,
   MeResponseSchema,
   type PairResponse,
   PairResponseSchema,
   type PatchItemRequest,
+  type PauseRequest,
   type Preferences,
   PreferencesSchema,
   type ProgressResponse,
   ProgressResponseSchema,
   PushResponseSchema,
+  ResumeResponseSchema,
 } from '@karto/contracts';
 import { z } from 'zod';
 
@@ -108,6 +112,11 @@ export async function patchItem(
   return json(BasketSchema, await send(path, token, 'PATCH', request));
 }
 
+/** Stops the basket's search or push: at its next line if it runs, right away otherwise. */
+export async function cancelBasket(token: string, id: string): Promise<Basket> {
+  return json(BasketSchema, await send(`/v1/baskets/${encodeURIComponent(id)}/cancel`, token, 'POST'));
+}
+
 export async function pushBasket(token: string, id: string): Promise<string> {
   const res = await send(`/v1/baskets/${encodeURIComponent(id)}/push`, token, 'POST');
   return (await json(PushResponseSchema, res)).jobId;
@@ -134,4 +143,16 @@ export async function completeJob(token: string, jobId: string, result: unknown)
 
 export async function failJob(token: string, jobId: string, error: JobError): Promise<void> {
   await send(`/v1/jobs/${encodeURIComponent(jobId)}/fail`, token, 'POST', { error });
+}
+
+export async function getJob(token: string, jobId: string): Promise<JobSummary> {
+  return json(JobSummarySchema, await send(`/v1/jobs/${encodeURIComponent(jobId)}`, token));
+}
+
+export async function pauseJob(token: string, jobId: string, reason: PauseRequest['reason']): Promise<void> {
+  await send(`/v1/jobs/${encodeURIComponent(jobId)}/pause`, token, 'POST', { reason } satisfies PauseRequest);
+}
+
+export async function resumeJob(token: string, jobId: string): Promise<void> {
+  await json(ResumeResponseSchema, await send(`/v1/jobs/${encodeURIComponent(jobId)}/resume`, token, 'POST', {}));
 }

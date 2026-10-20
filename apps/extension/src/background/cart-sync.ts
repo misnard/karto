@@ -1,11 +1,5 @@
-import {
-  type CartLine,
-  type CartSyncPayload,
-  type CartSyncResult,
-  type JobProgress,
-  ProviderError,
-} from '@karto/contracts';
-import { lineError, needsUser, type RunContext } from './runner.ts';
+import type { CartLine, CartSyncPayload, CartSyncResult, JobProgress } from '@karto/contracts';
+import { isLineError, lineError, type RunContext } from './runner.ts';
 
 export interface CartOp {
   ref: string;
@@ -54,7 +48,7 @@ export async function runCartSync(payload: CartSyncPayload, { client, progress }
       await client.setQuantity(op.ref, op.target);
       lines[index] = { key: op.ref, status: 'ok' };
     } catch (err) {
-      if (!(err instanceof ProviderError) || needsUser(err)) throw err;
+      if (!isLineError(err)) throw err;
       console.warn('[karto] cart write failed for one line', { ref: op.ref, code: err.code });
       errors.set(op.ref, lineError(err));
       lines[index] = { key: op.ref, status: 'failed', label: lineError(err) };
