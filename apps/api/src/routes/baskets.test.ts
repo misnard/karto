@@ -460,6 +460,22 @@ describe('POST /v1/baskets/:id/retry', () => {
     expect(found.items.slice(0, 2)).toEqual([lait, oeuf]);
   });
 
+  it('keeps a usable basket ready when the retry search fails', async () => {
+    const { token } = await seedUser();
+    const ready = await readyBasket(token);
+    const [lait, oeuf] = ready.items;
+    await readJson(await retry(token, ready.id), BasketSchema, 202);
+    const search = await claim(token);
+    await expectNoContent(await call('POST', `/v1/jobs/${search.id}/fail`, { token, body: { error: fatal } }));
+
+    const after = await getBasket(token, ready.id);
+    expect(after).toMatchObject({ status: 'ready', error: 'boom' });
+    expect(after.items.slice(0, 2)).toEqual([lait, oeuf]);
+    expect(after.items[2]).toMatchObject({ status: 'unmatched', productRef: null });
+    // Still retryable.
+    expect((await readJson(await retry(token, ready.id), BasketSchema, 202)).status).toBe('searching');
+  });
+
   it("refuses baskets that are not failed, and other users' baskets", async () => {
     const { token } = await seedUser();
     const parsing = await createBasket(token);

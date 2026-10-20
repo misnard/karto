@@ -76,7 +76,7 @@ La version de l'extension se change uniquement dans `apps/extension/package.json
 5. **Le backend n'envoie à l'exécutant que des intentions typées** (`provider.search`, `provider.cart_sync`), jamais une URL ou une requête HTTP à exécuter.
 6. **Aucun appel réel à Carrefour ni à Anthropic dans les tests automatisés.** On utilise des fixtures et des clients factices. Les fixtures sont nettoyées des données personnelles : nom, email, adresse, carte de fidélité.
 7. **Toute donnée utilisateur est filtrée par `userId`.** Les fonctions de `src/db/` le prennent en premier paramètre, et le `userId` vient toujours du token, jamais de la requête.
-8. **Les appels LLM passent uniquement par les jobs `llm`.** Leur usage est enregistré, et on ne fait jamais un appel LLM par ligne : au plus 2 appels par panier (parse et pick).
+8. **Les appels LLM passent uniquement par les jobs `llm`.** Leur usage est enregistré, et on ne fait jamais un appel LLM par ligne : au plus 2 appels pour créer un panier (parse et pick). Une action de l'utilisateur sur un panier existant (modification en texte libre, « Relancer ») peut en ajouter, avec au plus un pick.
 9. **Modifier `packages/contracts` est un changement cassant.** Une seule tâche à la fois, qui met à jour tous les consommateurs dans le même changement.
 10. **Les migrations D1 sont append-only**, avec les numéros réservés dans PLAN.md. On ne modifie jamais une migration déjà appliquée.
 11. **Jamais de paiement ni de réservation de créneau**, même « pour tester ».

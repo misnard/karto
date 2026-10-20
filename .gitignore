@@ -17,3 +17,6 @@ apps/extension/karto-*.zip
 # raw Carrefour spike dumps (may contain personal data)
 Carrefour Spike*.json
 carrefour-spike*.json
+
+# Claude Code (agent worktrees, local settings)
+.claude/

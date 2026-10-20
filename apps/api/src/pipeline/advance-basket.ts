@@ -392,11 +392,22 @@ export async function advanceBasket(
       if (outcome.status === 'done') {
         return advanceSearch(userId, basketId, job, SearchResultSchema.parse(outcome.result), needs, patch, guard);
       }
-      // A failed manual search leaves the basket reviewable, like a failed push; a failed pipeline search fails it.
+      // Only the first search of a basket (nothing proposed yet) fails it. A failed manual search, or a retry/amend
+      // search on a usable basket, leaves it reviewable like a failed push: its pending items become unmatched,
+      // so « Relancer » can search them again.
       const { items, refs } = SearchPayloadSchema.parse(JSON.parse(job.payload));
       const manual = refs.length === 0 && items.every(({ itemId }) => needs.get(itemId)?.status !== 'pending');
-      const status = manual ? 'ready' : 'failed';
-      return { patch, statements: [basketStatusStatement(userId, basketId, status, outcome.error, guard)] };
+      const usable = [...needs.values()].some((need) => need.status === 'proposed');
+      if (!manual && !usable) {
+        return { patch, statements: [basketStatusStatement(userId, basketId, 'failed', outcome.error, guard)] };
+      }
+      const unmatched = items
+        .filter(({ itemId }) => needs.get(itemId)?.status === 'pending')
+        .map(({ itemId }) => itemUpdateStatement(userId, basketId, itemId, { status: 'unmatched' }, guard));
+      return {
+        patch,
+        statements: [...unmatched, basketStatusStatement(userId, basketId, 'ready', outcome.error, guard)],
+      };
     }
     case 'provider.cart_sync': {
       // A failed push leaves the basket reviewable, so the user can push again.
