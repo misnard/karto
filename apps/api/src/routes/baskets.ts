@@ -2,11 +2,13 @@ import { env } from 'cloudflare:workers';
 import {
   AmendBasketRequestSchema,
   type Basket,
+  type BasketInput,
   CartSyncPayloadSchema,
   CreateBasketRequestSchema,
   LlmPayloadSchema,
   PatchItemRequestSchema,
   type PushResponse,
+  SearchItemRequestSchema,
 } from '@karto/contracts';
 import { Hono } from 'hono';
 import { z } from 'zod';
@@ -22,17 +24,68 @@ import {
   startPush,
   transitionBasket,
 } from '../db/baskets.ts';
+import { saveChoiceStatements } from '../db/choices.ts';
 import { getLatestBasketJob, insertJobStatement, toJob } from '../db/jobs.ts';
 import { getPreferences } from '../db/users.ts';
 import { AppError, readBody } from '../errors.ts';
 import * as amend from '../llm/prompts/amend.ts';
-import { buildUser, jsonSchema, system } from '../llm/prompts/parse.ts';
+import { buildUser, jsonSchema, type ParseInput, system } from '../llm/prompts/parse.ts';
+import { wakeLlmRunner } from '../llm/runner.ts';
 import { PROVIDER, searchJob, toCartLines } from '../pipeline/advance-basket.ts';
 import { editItem } from '../pipeline/amend.ts';
+import { pushedChoices } from '../pipeline/memory.ts';
+import { fetchRecipe, RecipeError, type RecipeErrorCode } from '../recipes/fetch-recipe.ts';
 
 const LimitSchema = z.coerce.number().int().min(1).max(50).default(20);
 /** Failed steps that can be retried, and the basket status while they run again. */
 const RETRY_STATUS = { llm: 'parsing', 'provider.search': 'searching' } as const;
+
+const RECIPE_FAILURES: Record<RecipeErrorCode, string> = {
+  invalid_url: "ce lien n'est pas accepté",
+  unreachable: 'le site ne répond pas',
+  blocked: 'le site refuse les visites automatiques',
+  not_html: 'le lien ne mène pas à une page web',
+  too_large: 'la page est trop lourde',
+  no_recipe: 'aucune recette lisible sur la page',
+};
+
+/** A recipe URL that cannot be read: 422 recipe_unavailable, asking for the recipe text instead. */
+function recipeUnavailable(url: string, err: unknown): unknown {
+  if (!(err instanceof RecipeError)) return err;
+  const host = new URL(url).hostname || url;
+  console.warn('recipe fetch failed', { host, code: err.code, error: err.message });
+  return new AppError(
+    'recipe_unavailable',
+    422,
+    `Impossible de lire la recette sur ${host} : ${RECIPE_FAILURES[err.code]}. ` +
+      'Copie le texte de la recette (ingrédients et nombre de personnes) et colle-le à la place du lien.',
+  );
+}
+
+/**
+ * Fetches the recipe URLs (in parallel) for the parse prompt. Their quantities go to the LLM as published;
+ * `scales[i]` then brings input i from the recipe's yield to the people to cook for (1 when either is unknown).
+ */
+async function readRecipes(
+  inputs: BasketInput[],
+  servings?: number,
+): Promise<{ parseInputs: ParseInput[]; scales: number[] }> {
+  const read = await Promise.all(
+    inputs.map(async (input): Promise<{ parseInput: ParseInput; scale: number }> => {
+      if (input.kind !== 'recipe_url') return { parseInput: input, scale: 1 };
+      const recipe = await fetchRecipe(input.url).catch((err: unknown) => {
+        throw recipeUnavailable(input.url, err);
+      });
+      const people = input.servings ?? servings;
+      const lines = [recipe.title ?? '', ...recipe.ingredients.map((ingredient) => `- ${ingredient}`)];
+      return {
+        parseInput: { kind: 'fetched_recipe', text: lines.join('\n') },
+        scale: people && recipe.servings ? people / recipe.servings : 1,
+      };
+    }),
+  );
+  return { parseInputs: read.map((r) => r.parseInput), scales: read.map((r) => r.scale) };
+}
 
 async function requireBasket(userId: string, basketId: string) {
   const basket = await getBasket(userId, basketId);
@@ -54,19 +107,13 @@ const changedConcurrently = () => new AppError('conflict', 409, 'Basket changed 
 export const baskets = new Hono<AppEnv>()
   .post('/', async (c) => {
     const { inputs, servings } = await readBody(c, CreateBasketRequestSchema);
-    const texts = inputs.map((input) => {
-      // Step 4 brings recipe URLs.
-      if (input.kind === 'recipe_url') {
-        throw new AppError('invalid_request', 400, 'Les liens de recettes ne sont pas encore pris en charge');
-      }
-      return input;
-    });
+    const { parseInputs, scales } = await readRecipes(inputs, servings);
     const basketId = crypto.randomUUID();
     const payload = LlmPayloadSchema.parse({
       purpose: 'parse',
       model: env.LLM_MODEL,
       system,
-      user: buildUser(texts, servings, await getPreferences(c.var.userId)),
+      user: buildUser(parseInputs, servings, await getPreferences(c.var.userId)),
       jsonSchema,
     });
     await createBasket(c.var.userId, {
@@ -74,9 +121,10 @@ export const baskets = new Hono<AppEnv>()
       provider: PROVIDER,
       inputs,
       servings,
+      scales: scales.some((scale) => scale !== 1) ? scales : undefined,
       job: { id: crypto.randomUUID(), basketId, kind: 'llm', payload },
     });
-    // LLM_RUNTIME 'cli' (the only one so far): the job waits for the relay. The 'api' runtime will run it here.
+    wakeLlmRunner();
     return c.json(await requireBasket(c.var.userId, basketId), 202);
   })
   .get('/', async (c) => {
@@ -94,12 +142,12 @@ export const baskets = new Hono<AppEnv>()
     if (lines.length === 0) throw new AppError('conflict', 409, 'No proposed product to push');
     const payload = CartSyncPayloadSchema.parse({ provider: basket.provider, lines });
     const jobId = crypto.randomUUID();
-    const started = await startPush(c.var.userId, {
-      id: jobId,
-      basketId: basket.id,
-      kind: 'provider.cart_sync',
-      payload,
-    });
+    // The memory is written with the push: the next baskets choose these products directly.
+    const started = await startPush(
+      c.var.userId,
+      { id: jobId, basketId: basket.id, kind: 'provider.cart_sync', payload },
+      saveChoiceStatements(c.var.userId, basket.provider, pushedChoices(basket.items)),
+    );
     if (!started) throw new AppError('conflict', 409, 'Push already running');
     return c.json({ jobId } satisfies PushResponse);
   })
@@ -146,6 +194,7 @@ export const baskets = new Hono<AppEnv>()
       status,
     );
     if (!retried) throw new AppError('conflict', 409, 'Basket is no longer failed');
+    if (kind === 'llm') wakeLlmRunner();
     return c.json(await requireBasket(c.var.userId, basket.id), 202);
   })
   .patch('/:id/items/:itemId', async (c) => {
@@ -161,6 +210,23 @@ export const baskets = new Hono<AppEnv>()
     ]);
     if (!edited) throw changedConcurrently();
     return c.json(await requireBasket(c.var.userId, basket.id));
+  })
+  .post('/:id/items/:itemId/search', async (c) => {
+    const { query } = await readBody(c, SearchItemRequestSchema);
+    const basket = await requireBasket(c.var.userId, c.req.param('id'));
+    requireEditable(basket);
+    const item = basket.items.find((i) => i.id === c.req.param('itemId'));
+    if (!item) throw new AppError('not_found', 404, 'Item not found');
+    // The item keeps its status while searching: that is how the completion tells a manual search (rules only).
+    if (item.status !== 'proposed' && item.status !== 'unmatched') {
+      throw new AppError('conflict', 409, `Item is ${item.status}, it cannot be searched`);
+    }
+    const search = searchJob(basket.id, [{ id: item.id, searchQuery: query }]);
+    const started = await transitionBasket(c.var.userId, basket.id, [...EDITABLE], 'searching', (guard) => [
+      insertJobStatement(c.var.userId, search, Date.now(), guard),
+    ]);
+    if (!started) throw changedConcurrently();
+    return c.json(await requireBasket(c.var.userId, basket.id), 202);
   })
   .post('/:id/amend', async (c) => {
     const { text } = await readBody(c, AmendBasketRequestSchema);
@@ -188,10 +254,11 @@ export const baskets = new Hono<AppEnv>()
       jsonSchema: amend.jsonSchema,
     });
     const job = { id: crypto.randomUUID(), basketId: basket.id, kind: 'llm' as const, payload };
-    // 'parsing' while the relay runs it; the items stay visible.
+    // 'parsing' while the LLM runs it; the items stay visible.
     const started = await transitionBasket(c.var.userId, basket.id, [...EDITABLE], 'parsing', (guard) => [
       insertJobStatement(c.var.userId, job, Date.now(), guard),
     ]);
     if (!started) throw changedConcurrently();
+    wakeLlmRunner();
     return c.json(await requireBasket(c.var.userId, basket.id), 202);
   });

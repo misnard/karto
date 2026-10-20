@@ -1,5 +1,6 @@
 import { env } from 'cloudflare:workers';
 import {
+  ApiErrorBodySchema,
   type Basket,
   BasketSchema,
   BasketSummarySchema,
@@ -12,9 +13,11 @@ import {
   PushResponseSchema,
   type SearchResult,
 } from '@karto/contracts';
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod';
 import { jsonSchema, system } from '../llm/prompts/parse.ts';
+import herveLasagnes from '../recipes/fixtures/hervecuisine-lasagnes.html?raw';
+import jdfCrepes from '../recipes/fixtures/journaldesfemmes-crepes.html?raw';
 import {
   agent,
   call,
@@ -53,24 +56,16 @@ const lines = [
   parseLine('pâtes', { unit: 'g', quantity: 500 }),
 ];
 
-/** Parsed and searched: lait → 112 (cheapest once coco is excluded), oeuf → 222 (first unavailable), pâtes → none. */
+/**
+ * Parsed, searched and picked by the rules (the pick fails): lait → 112 (cheapest once coco is excluded),
+ * oeuf → 222 (first unavailable), pâtes → none.
+ */
 async function readyBasket(token: string): Promise<Basket> {
   const basket = await parsedBasket(token, lines);
-  const search = await claim(token);
-  const [lait, oeuf] = basket.items;
-  if (!lait || !oeuf) throw new Error('missing items');
-  await complete(token, search.id, {
-    context,
-    byItem: [
-      {
-        itemId: lait.id,
-        offers: [{ ...offer('110', 150), name: 'Lait de COCO' }, offer('111', 120), offer('112', 99)],
-      },
-      { itemId: oeuf.id, offers: [offer('221', 300, false), offer('222', 250)] },
-    ],
-    byRef: [],
+  return completeSearch(token, basket.id, {
+    lait: [{ ...offer('110', 150), name: 'Lait de COCO' }, offer('111', 120), offer('112', 99)],
+    oeuf: [offer('221', 300, false), offer('222', 250)],
   });
-  return getBasket(token, basket.id);
 }
 
 describe('POST /v1/baskets', () => {
@@ -98,15 +93,129 @@ describe('POST /v1/baskets', () => {
     });
   });
 
-  it('accepts recipe text and rejects recipe urls and empty input', async () => {
+  it('accepts recipe text and rejects empty input', async () => {
     const { token } = await seedUser();
     const recipe = { inputs: [{ kind: 'recipe_text', text: '200 g de farine' }] };
     await readJson(await call('POST', '/v1/baskets', { token, body: recipe }), BasketSchema, 202);
-    const url = { inputs: [{ kind: 'recipe_url', url: 'https://example.com/recette' }] };
-    await expectError(await call('POST', '/v1/baskets', { token, body: url }), 400, 'invalid_request');
     await expectError(await call('POST', '/v1/baskets', { token, body: { inputs: [] } }), 400, 'invalid_request');
     const tooMany = { inputs: [{ kind: 'text', text: 'lait' }], servings: 21 };
     await expectError(await call('POST', '/v1/baskets', { token, body: tooMany }), 400, 'invalid_request');
+  });
+});
+
+describe('POST /v1/baskets with recipe URLs', () => {
+  const CREPES = 'https://cuisine.example.com/crepes';
+  const LASAGNES = 'https://blog.example.com/lasagnes';
+  const HTML = { 'content-type': 'text/html; charset=utf-8' };
+  const pages: Record<string, () => Response> = {
+    [CREPES]: () => new Response(jdfCrepes, { headers: HTML }), // 4 servings
+    [LASAGNES]: () => new Response(herveLasagnes, { headers: HTML }), // 6 servings
+    'https://blocked.example.com/recette': () => new Response('Forbidden', { status: 403 }),
+    'https://news.example.com/article': () => new Response('<title>Actu</title>', { headers: HTML }),
+  };
+
+  /** The fixture pages instead of the network: any other URL fails the request. */
+  function servePages() {
+    return vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = input instanceof Request ? input.url : String(input);
+      const page = pages[url];
+      if (!page) throw new Error(`unexpected fetch ${url}`);
+      return page();
+    });
+  }
+
+  async function storedInputs(basketId: string): Promise<unknown> {
+    const inputs = await env.DB.prepare('SELECT inputs FROM baskets WHERE id = ?')
+      .bind(basketId)
+      .first<string>('inputs');
+    return JSON.parse(inputs ?? 'null');
+  }
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('parses two recipes (for 4 and 6) as published, then scales them to the servings and aggregates', async () => {
+    const { token } = await seedUser();
+    const fetchSpy = servePages();
+    const inputs = [
+      { kind: 'recipe_url', url: CREPES },
+      { kind: 'recipe_url', url: LASAGNES },
+    ];
+    const created = await call('POST', '/v1/baskets', { token, body: { inputs, servings: 4 } });
+    const basket = await readJson(created, BasketSchema, 202);
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
+    expect(await storedInputs(basket.id)).toEqual({ inputs, servings: 4, scales: [1, 4 / 6] });
+
+    const job = await relayClaim(basket.job?.id ?? '');
+    const { user } = LlmPayloadSchema.parse(job.payload);
+    expect(user).toMatch(/^Nombre de personnes : 4\n\n\[0\] Recette à quantités exactes :\n/);
+    expect(user).toContain('\nCrêpes : la meilleure recette rapide\n- 250 g farine\n- 4 oeuf\n- ½ litre lait\n');
+    expect(user).toContain(
+      '\n\n[1] Recette à quantités exactes :\nLasagnes à la Bolognaise maison faciles et moelleuses\n' +
+        '- Pâtes pour lasagnes (500g)\n- 1 oignon\n',
+    );
+
+    const parsed = [
+      parseLine('farine', { unit: 'g', quantity: 250 }),
+      parseLine('oeuf', { quantity: 4 }),
+      parseLine('lait', { unit: 'ml', quantity: 500 }),
+      parseLine('beurre', { unit: 'g', quantity: 50 }),
+      parseLine('viande hachée', { unit: 'g', quantity: 400, sourceIndex: 1 }),
+      parseLine('beurre', { unit: 'g', quantity: 30, sourceIndex: 1 }),
+      parseLine('lait', { unit: 'ml', quantity: 500, sourceIndex: 1 }),
+    ];
+    await expectNoContent(await relayComplete(job.id, llmResult({ lines: parsed })));
+    const searching = await getBasket(token, basket.id);
+    expect(searching.status).toBe('searching');
+    expect(searching.items.map((item) => [item.label, item.quantity, item.unit])).toEqual([
+      ['farine', 250, 'g'],
+      ['oeuf', 4, 'piece'],
+      ['lait', 833, 'ml'],
+      ['beurre', 70, 'g'],
+      ['viande hachée', 267, 'g'],
+    ]);
+  });
+
+  it("scales to the recipe's own servings first, and keeps the quantities when the people are unknown", async () => {
+    const { token } = await seedUser();
+    servePages();
+    const own = { inputs: [{ kind: 'recipe_url', url: CREPES, servings: 8 }], servings: 2 };
+    const sized = await readJson(await call('POST', '/v1/baskets', { token, body: own }), BasketSchema, 202);
+    expect(await storedInputs(sized.id)).toMatchObject({ scales: [2] });
+    const unknown = {
+      inputs: [
+        { kind: 'text', text: 'pain' },
+        { kind: 'recipe_url', url: LASAGNES },
+      ],
+    };
+    const unsized = await readJson(await call('POST', '/v1/baskets', { token, body: unknown }), BasketSchema, 202);
+    expect(await storedInputs(unsized.id)).toEqual(unknown);
+  });
+
+  it('refuses a recipe the Worker cannot read with a French message asking for the recipe text', async () => {
+    const { token } = await seedUser();
+    servePages();
+    for (const [url, reason] of [
+      ['https://blocked.example.com/recette', 'le site refuse les visites automatiques'],
+      ['https://news.example.com/article', 'aucune recette lisible sur la page'],
+    ]) {
+      const body = {
+        inputs: [
+          { kind: 'text', text: 'lait' },
+          { kind: 'recipe_url', url },
+        ],
+      };
+      const res = await call('POST', '/v1/baskets', { token, body });
+      const { error } = await readJson(res, ApiErrorBodySchema, 422);
+      expect(error).toEqual({
+        code: 'recipe_unavailable',
+        message:
+          `Impossible de lire la recette sur ${new URL(url ?? '').hostname} : ${reason}. ` +
+          'Copie le texte de la recette (ingrédients et nombre de personnes) et colle-le à la place du lien.',
+      });
+    }
+    expect(await readJson(await call('GET', '/v1/baskets', { token }), z.array(BasketSummarySchema))).toEqual([]);
   });
 });
 
@@ -187,7 +296,9 @@ describe('basket flow with fake relay and executor', () => {
   it('refuses to finish a job twice and does not reapply the pipeline', async () => {
     const { token } = await seedUser();
     const ready = await readyBasket(token);
-    const jobId = ready.job?.id;
+    const jobId = await env.DB.prepare("SELECT id FROM jobs WHERE basket_id = ? AND kind = 'provider.search'")
+      .bind(ready.id)
+      .first('id');
 
     const result = { context: { provider: 'carrefour', storeRef: 'store-2' }, byItem: [], byRef: [] };
     await expectError(await call('POST', `/v1/jobs/${jobId}/complete`, { token, body: { result } }), 409, 'conflict');

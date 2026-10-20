@@ -17,6 +17,7 @@
     "eval:amend": "node eval/run-amend-eval.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "0.133.0",
     "@karto/contracts": "workspace:*",
     "hono": "4.13.13",
     "zod": "4.6.7"

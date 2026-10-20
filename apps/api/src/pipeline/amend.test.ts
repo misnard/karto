@@ -115,8 +115,8 @@ describe('planAmend', () => {
     ]);
   });
 
-  it("keeps the user's own choice and only recomputes its packs", () => {
-    const chosen = item('fromage', { reasonSource: 'user', reason: 'Ton choix' });
+  it.each(['user', 'llm'] as const)('keeps a %s choice and only recomputes its packs', (reasonSource) => {
+    const chosen = item('fromage', { reasonSource, reason: 'Ton choix' });
     const plan = planAmend([chosen], output({ update: [{ itemId: 'fromage', quantity: 600, unit: 'g' }] }), prefs);
     expect(plan.patches).toEqual([{ itemId: 'fromage', patch: { quantity: 600, unit: 'g', packs: 3 } }]);
   });

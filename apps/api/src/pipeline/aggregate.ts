@@ -17,8 +17,9 @@ export interface AggregatedLine {
  * Merges lines with the same key (case-insensitive). Same unit: quantities are summed. Pieces with a known
  * weight are converted to grams when the key also has grams. Other unit mixes stay separate lines.
  * First-seen order, label and query are kept. Pieces are rounded up, grams and millilitres to the unit.
+ * `scales[sourceIndex]` multiplies the lines of that input first (recipe servings → people to cook for).
  */
-export function aggregate(lines: ParseLine[]): AggregatedLine[] {
+export function aggregate(lines: ParseLine[], scales: number[] = []): AggregatedLine[] {
   const groups = new Map<string, ParseLine[]>();
   for (const line of lines) {
     const key = line.key.trim().toLowerCase();
@@ -30,7 +31,7 @@ export function aggregate(lines: ParseLine[]): AggregatedLine[] {
     for (const line of group) {
       const weight = hasGrams && line.unit === 'piece' ? line.pieceWeightG : null;
       const unit = weight ? 'g' : line.unit;
-      const quantity = weight ? line.quantity * weight : line.quantity;
+      const quantity = (weight ? line.quantity * weight : line.quantity) * (scales[line.sourceIndex] ?? 1);
       const merged = byUnit.get(unit);
       if (merged) {
         merged.quantity += quantity;

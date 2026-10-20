@@ -65,6 +65,17 @@ describe('parse prompt', () => {
     expect(buildUser([inputs[0]])).toBe('Nombre de personnes : non précisé\n\n[0] Liste :\nlait, oeufs');
   });
 
+  it('marks fetched recipes as exact and gives the servings of a pasted recipe', () => {
+    const inputs = [
+      { kind: 'fetched_recipe', text: 'Crêpes\n- 250 g farine' },
+      { kind: 'recipe_text', text: 'Pour 4 : 1 kg de pommes de terre', servings: 2 },
+    ] as const;
+    expect(buildUser([...inputs], 6)).toBe(
+      'Nombre de personnes : 6\n\n[0] Recette à quantités exactes :\nCrêpes\n- 250 g farine\n\n' +
+        '[1] Recette, à préparer pour 2 personnes :\nPour 4 : 1 kg de pommes de terre',
+    );
+  });
+
   it('adds diet, allergies and notes when the user has some', () => {
     const preferences = PreferencesSchema.parse({
       diet: ['vegan', 'gluten_free', 'halal'],
