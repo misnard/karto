@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["./worker-configuration.d.ts", "@cloudflare/vitest-pool-workers/types"]
+    "types": ["./worker-configuration.d.ts", "@cloudflare/vitest-pool-workers/types"],
+    // node/server.ts runs src/ with Node type stripping: no enums, namespaces or parameter properties.
+    "erasableSyntaxOnly": true
   },
   "include": ["src"]
 }

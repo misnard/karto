@@ -1,0 +1,11 @@
+# Example /etc/caddy/Caddyfile: HTTPS for the Karto API. Caddy gets and renews the certificate by itself.
+# Needs a DNS record for the domain pointing at the VPS, and ports 80 and 443 open. The API itself only listens
+# on 127.0.0.1:8787. The address to type in the extension is then https://karto.example.fr.
+
+karto.example.fr {
+	# The API refuses bodies over 5 MiB too.
+	request_body {
+		max_size 5MB
+	}
+	reverse_proxy 127.0.0.1:8787
+}

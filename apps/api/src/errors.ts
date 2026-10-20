@@ -5,13 +5,14 @@ import { z } from 'zod';
 
 export class AppError extends Error {
   override readonly name = 'AppError';
+  // Plain fields, not parameter properties: the Node runtime runs this file with type stripping only.
+  readonly code: ApiErrorCode;
+  readonly status: ContentfulStatusCode;
 
-  constructor(
-    readonly code: ApiErrorCode,
-    readonly status: ContentfulStatusCode,
-    message: string = code,
-  ) {
+  constructor(code: ApiErrorCode, status: ContentfulStatusCode, message: string = code) {
     super(message);
+    this.code = code;
+    this.status = status;
   }
 }
 

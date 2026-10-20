@@ -9,6 +9,7 @@
   "scripts": {
     "dev:api": "pnpm --filter @karto/api dev",
     "dev:ext": "pnpm --filter @karto/extension dev",
+    "serve": "pnpm --filter @karto/api start:node",
     "test": "pnpm -r --if-present test",
     "test:watch": "pnpm -r --parallel --if-present test:watch",
     "lint": "biome check .",

@@ -5,12 +5,11 @@ export type RecipeErrorCode = 'invalid_url' | 'unreachable' | 'blocked' | 'not_h
 /** Failure to turn a URL into a recipe. Messages are short English for logs; the caller shows French text. */
 export class RecipeError extends Error {
   override readonly name = 'RecipeError';
+  readonly code: RecipeErrorCode;
 
-  constructor(
-    readonly code: RecipeErrorCode,
-    message: string = code,
-  ) {
+  constructor(code: RecipeErrorCode, message: string = code) {
     super(message);
+    this.code = code;
   }
 }
 

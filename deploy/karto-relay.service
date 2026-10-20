@@ -1,0 +1,31 @@
+# Karto LLM relay (services/llm-relay): claims the server's `llm` jobs and runs them with `claude -p`.
+# Only needed with LLM_RUNTIME=cli. It talks to the local server (KARTO_API_URL) with RELAY_TOKEN, from the same
+# /etc/karto/karto.env as karto-api.service.
+# Log claude in once as the service user: `sudo -u karto -H claude` then /login (credentials in /var/lib/karto).
+# Install: copy to /etc/systemd/system/, then `systemctl daemon-reload && systemctl enable --now karto-relay`.
+
+[Unit]
+Description=Karto LLM relay (claude -p)
+After=karto-api.service
+Wants=karto-api.service
+
+[Service]
+Type=simple
+User=karto
+Group=karto
+WorkingDirectory=/opt/karto/services/llm-relay
+EnvironmentFile=/etc/karto/karto.env
+ExecStart=/usr/bin/node src/index.ts
+# Exit code 1 includes a refused RELAY_TOKEN: the delay keeps a bad token from spinning.
+Restart=on-failure
+RestartSec=10
+
+# claude writes its session and cache under its home (/var/lib/karto).
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/karto
+
+[Install]
+WantedBy=multi-user.target
