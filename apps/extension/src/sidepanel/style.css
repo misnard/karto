@@ -680,6 +680,84 @@ textarea:focus-visible {
   gap: 8px;
 }
 
+/* --- Review: who chose, packs, alternatives, manual search --- */
+
+.source-llm,
+.source-user {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.source-memory {
+  color: var(--warn-fg);
+  background: var(--warn-bg);
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stepper button {
+  width: 28px;
+  height: 28px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.stepper button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.stepper output {
+  min-width: 22px;
+  text-align: center;
+}
+
+.choices {
+  grid-column: 1 / -1;
+}
+
+.choices summary {
+  font-size: 0.86rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.choices[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alternatives {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alternatives li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.alternative-name {
+  min-width: 0;
+}
+
 /* --- Recent baskets --- */
 
 .recents {

@@ -1,3 +1,4 @@
+import { env } from 'cloudflare:workers';
 import {
   type BasketItem,
   type CartSyncPayload,
@@ -8,6 +9,7 @@ import {
   type ProductOffer,
   type ProviderId,
   SearchPayloadSchema,
+  type SearchResult,
   SearchResultSchema,
 } from '@karto/contracts';
 import { z } from 'zod';
@@ -16,6 +18,7 @@ import {
   getBasket,
   getBasketInputs,
   getItemNeeds,
+  type ItemNeed,
   type ItemOutcome,
   insertItemStatements,
   itemUpdateStatement,
@@ -33,9 +36,11 @@ import {
 import { getPreferences } from '../db/users.ts';
 import { AmendOutputSchema } from '../llm/prompts/amend.ts';
 import { ParseOutputSchema } from '../llm/prompts/parse.ts';
+import * as pick from '../llm/prompts/pick.ts';
 import { type AggregatedLine, aggregate } from './aggregate.ts';
 import { planAmend } from './amend.ts';
-import { type Need, rank } from './rank.ts';
+import { applyPick, orderCandidates, type PickableItem, pickLines } from './pick.ts';
+import { hardFilters, type Need, rank } from './rank.ts';
 
 export const PROVIDER: ProviderId = 'carrefour';
 const MAX_CANDIDATES = 8;
@@ -53,15 +58,20 @@ export interface Advance {
   statements: D1PreparedStatement[];
 }
 
-/** Keeps the first candidates and chooses among them with the ranking rules. */
+/**
+ * Keeps the first candidates and chooses among them with the ranking rules. Candidates are stored chosen first,
+ * then the others that pass the hard filters: the first ones after the choice are its alternatives.
+ */
 export function chooseOffer(
   itemId: string,
   offers: ProductOffer[],
   need: Need & { excludeTerms: string[] },
   preferences: Preferences,
 ): ItemOutcome {
-  const candidates = offers.slice(0, MAX_CANDIDATES);
-  const ranked = rank(candidates, need, need.excludeTerms, preferences);
+  const first = offers.slice(0, MAX_CANDIDATES);
+  const ranked = rank(first, need, need.excludeTerms, preferences);
+  const passing = hardFilters(first, need.excludeTerms, preferences).pool.map((offer) => offer.ref);
+  const candidates = orderCandidates(first, ranked.ref === null ? passing : [ranked.ref, ...passing]);
   const base = { id: itemId, candidates, reason: ranked.reason, reasonSource: 'rules' as const };
   return ranked.ref === null
     ? { ...base, status: 'unmatched', productRef: null, packs: null }
@@ -231,6 +241,87 @@ async function advanceAmend(
   return { patch: { status: 'done', result: JSON.stringify(result), usage }, statements };
 }
 
+/** The pick job: one LLM call for every line of a search that still needs a choice. */
+function pickJob(basketId: string, lines: pick.PickLine[], preferences: Preferences): NewJob {
+  const payload = LlmPayloadSchema.parse({
+    purpose: 'pick',
+    model: env.LLM_MODEL,
+    system: pick.system,
+    user: pick.buildUser(lines, preferences),
+    jsonSchema: pick.jsonSchema,
+  });
+  return { id: crypto.randomUUID(), basketId, kind: 'llm', payload };
+}
+
+/**
+ * Search done: the rules choose for every searched item. Pipeline items (parse, amend, retry: still pending) with
+ * several candidates left go to one pick job (→ matching); otherwise → ready. A manual search (its item is
+ * proposed or unmatched) takes the user's query as is: no exclude terms, no LLM.
+ */
+async function advanceSearch(
+  userId: string,
+  basketId: string,
+  job: JobRow,
+  result: SearchResult,
+  needs: Map<string, ItemNeed>,
+  patch: JobPatch,
+  guard: SqlGuard,
+): Promise<Advance> {
+  const offersByItem = new Map(result.byItem.map((entry) => [entry.itemId, entry.offers]));
+  const preferences = await getPreferences(userId);
+  const outcomes: ItemOutcome[] = [];
+  const pickable: PickableItem[] = [];
+  for (const { itemId } of SearchPayloadSchema.parse(JSON.parse(job.payload)).items) {
+    const need = needs.get(itemId);
+    if (!need) continue;
+    const manual = need.status !== 'pending';
+    const offers = offersByItem.get(itemId) ?? [];
+    const outcome = chooseOffer(itemId, offers, manual ? { ...need, excludeTerms: [] } : need, preferences);
+    outcomes.push(outcome);
+    if (!manual) pickable.push({ ...need, id: itemId, candidates: outcome.candidates });
+  }
+  const lines = pickLines(pickable, preferences);
+  const storeRef = result.context.storeRef;
+  if (lines.length === 0) {
+    return { patch, statements: searchOutcomeStatements(userId, basketId, storeRef, outcomes, 'ready', guard) };
+  }
+  return {
+    patch,
+    statements: [
+      ...searchOutcomeStatements(userId, basketId, storeRef, outcomes, 'matching', guard),
+      insertJobStatement(userId, pickJob(basketId, lines, preferences), Date.now(), guard),
+    ],
+  };
+}
+
+/**
+ * Pick done: the LLM's choices replace the rules' ones (written when the search completed), basket → ready.
+ * Unusable output (e.g. a ref it was not given) or failure: retry once, then ready with the rules' choices.
+ */
+async function advancePick(
+  userId: string,
+  basketId: string,
+  job: JobRow,
+  outcome: JobOutcome,
+  guard: SqlGuard,
+): Promise<Advance> {
+  const result = outcome.status === 'done' ? LlmResultSchema.parse(outcome.result) : null;
+  const usage = addUsage(job.usage, result?.usage);
+  const output = result ? readOutput(pick.PickOutputSchema, result.text) : 'No output';
+  const items = typeof output === 'string' ? [] : ((await getBasket(userId, basketId))?.items ?? []);
+  const given = pick.givenLines(LlmPayloadSchema.parse(JSON.parse(job.payload)).user);
+  const patches = typeof output === 'string' ? output : applyPick(given, output, items);
+  const ready = basketStatusStatement(userId, basketId, 'ready', null, guard);
+  if (typeof patches === 'string') {
+    return retryOrFail(job, outcome, patches, usage, (error) => {
+      console.warn('pick unusable, the rules choices stay', { jobId: job.id, basketId, error: error.message });
+      return [ready];
+    });
+  }
+  const updates = patches.map(({ itemId, patch }) => itemUpdateStatement(userId, basketId, itemId, patch, guard));
+  return { patch: { status: 'done', result: JSON.stringify(result), usage }, statements: [...updates, ready] };
+}
+
 /**
  * Finishes a job (done or failed) and moves its basket to the next state. The statements are committed in the
  * same transaction as the patch and must only apply while `guard` holds.
@@ -250,28 +341,21 @@ export async function advanceBasket(
 
   switch (job.kind) {
     case 'llm': {
-      // Step 6 adds 'pick'.
       const { purpose } = LlmPayloadSchema.parse(JSON.parse(job.payload));
       if (purpose === 'amend') return advanceAmend(userId, basketId, job, outcome, guard);
+      if (purpose === 'pick') return advancePick(userId, basketId, job, outcome, guard);
       return advanceParse(userId, basketId, job, outcome, guard);
     }
     case 'provider.search': {
-      if (outcome.status === 'failed') {
-        return { patch, statements: [basketStatusStatement(userId, basketId, 'failed', outcome.error, guard)] };
+      const needs = await getItemNeeds(userId, basketId);
+      if (outcome.status === 'done') {
+        return advanceSearch(userId, basketId, job, SearchResultSchema.parse(outcome.result), needs, patch, guard);
       }
-      const result = SearchResultSchema.parse(outcome.result);
-      const offersByItem = new Map(result.byItem.map((entry) => [entry.itemId, entry.offers]));
-      const [needs, preferences] = await Promise.all([getItemNeeds(userId, basketId), getPreferences(userId)]);
+      // A failed manual search leaves the basket reviewable, like a failed push; a failed pipeline search fails it.
       const { items } = SearchPayloadSchema.parse(JSON.parse(job.payload));
-      const outcomes = items.map(({ itemId }) =>
-        chooseOffer(
-          itemId,
-          offersByItem.get(itemId) ?? [],
-          needs.get(itemId) ?? { quantity: 1, unit: 'piece', excludeTerms: [] },
-          preferences,
-        ),
-      );
-      return { patch, statements: searchOutcomeStatements(userId, basketId, result.context.storeRef, outcomes, guard) };
+      const manual = items.every(({ itemId }) => needs.get(itemId)?.status !== 'pending');
+      const status = manual ? 'ready' : 'failed';
+      return { patch, statements: [basketStatusStatement(userId, basketId, status, outcome.error, guard)] };
     }
     case 'provider.cart_sync': {
       // A failed push leaves the basket reviewable, so the user can push again.

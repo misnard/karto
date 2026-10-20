@@ -56,24 +56,16 @@ const lines = [
   parseLine('pâtes', { unit: 'g', quantity: 500 }),
 ];
 
-/** Parsed and searched: lait → 112 (cheapest once coco is excluded), oeuf → 222 (first unavailable), pâtes → none. */
+/**
+ * Parsed, searched and picked by the rules (the pick fails): lait → 112 (cheapest once coco is excluded),
+ * oeuf → 222 (first unavailable), pâtes → none.
+ */
 async function readyBasket(token: string): Promise<Basket> {
   const basket = await parsedBasket(token, lines);
-  const search = await claim(token);
-  const [lait, oeuf] = basket.items;
-  if (!lait || !oeuf) throw new Error('missing items');
-  await complete(token, search.id, {
-    context,
-    byItem: [
-      {
-        itemId: lait.id,
-        offers: [{ ...offer('110', 150), name: 'Lait de COCO' }, offer('111', 120), offer('112', 99)],
-      },
-      { itemId: oeuf.id, offers: [offer('221', 300, false), offer('222', 250)] },
-    ],
-    byRef: [],
+  return completeSearch(token, basket.id, {
+    lait: [{ ...offer('110', 150), name: 'Lait de COCO' }, offer('111', 120), offer('112', 99)],
+    oeuf: [offer('221', 300, false), offer('222', 250)],
   });
-  return getBasket(token, basket.id);
 }
 
 describe('POST /v1/baskets', () => {
@@ -304,7 +296,9 @@ describe('basket flow with fake relay and executor', () => {
   it('refuses to finish a job twice and does not reapply the pipeline', async () => {
     const { token } = await seedUser();
     const ready = await readyBasket(token);
-    const jobId = ready.job?.id;
+    const jobId = await env.DB.prepare("SELECT id FROM jobs WHERE basket_id = ? AND kind = 'provider.search'")
+      .bind(ready.id)
+      .first('id');
 
     const result = { context: { provider: 'carrefour', storeRef: 'store-2' }, byItem: [], byRef: [] };
     await expectError(await call('POST', `/v1/jobs/${jobId}/complete`, { token, body: { result } }), 409, 'conflict');

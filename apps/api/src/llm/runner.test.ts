@@ -1,7 +1,17 @@
 import { env } from 'cloudflare:workers';
 import { type Basket, BasketSchema } from '@karto/contracts';
 import { describe, expect, it, vi } from 'vitest';
-import { call, createBasket, llmResult, parseLine, readJson, seedUser } from '../test/helpers.ts';
+import {
+  call,
+  claimProviderJob,
+  createBasket,
+  expectNoContent,
+  llmResult,
+  offer,
+  parseLine,
+  readJson,
+  seedUser,
+} from '../test/helpers.ts';
 import type { LlmClient } from './client.ts';
 import { runPendingLlmJobs } from './runner.ts';
 
@@ -95,6 +105,31 @@ describe('runPendingLlmJobs', () => {
       status: 'failed',
       attempts: 2,
       error: JSON.stringify({ code: 'internal', message: 'LLM call failed: 529 overloaded', retryable: true }),
+    });
+  });
+
+  it('runs the pick queued by a completed search, like the parse', async () => {
+    const { token } = await seedUser();
+    const basket = await createBasket(token, 'lait');
+    const client = fakeClient();
+    client.complete.mockResolvedValueOnce(llmResult({ lines: [lines[0]] }));
+    await runPendingLlmJobs(client);
+
+    const search = await claimProviderJob(token);
+    const itemId = (await getBasket(token, basket.id)).items[0]?.id ?? '';
+    const byItem = [{ itemId, offers: [offer('A', 100), offer('B', 120)] }];
+    const result = { context: { provider: 'carrefour', storeRef: 'store-1' }, byItem, byRef: [] };
+    await expectNoContent(await call('POST', `/v1/jobs/${search.id}/complete`, { token, body: { result } }));
+    expect(await getBasket(token, basket.id)).toMatchObject({ status: 'matching' });
+
+    const picks = [{ itemId, ref: 'B', alternatives: ['A'], reason: 'Le lait demandé' }];
+    client.complete.mockResolvedValueOnce(llmResult({ picks }));
+    await runPendingLlmJobs(client);
+
+    expect(client.complete.mock.calls[1]?.[0]).toMatchObject({ purpose: 'pick', model: 'test-model' });
+    expect(await getBasket(token, basket.id)).toMatchObject({
+      status: 'ready',
+      items: [{ productRef: 'B', reason: 'Le lait demandé', reasonSource: 'llm' }],
     });
   });
 

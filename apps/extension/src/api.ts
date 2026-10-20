@@ -21,6 +21,7 @@ import {
   type ProgressResponse,
   ProgressResponseSchema,
   PushResponseSchema,
+  type SearchItemRequest,
 } from '@karto/contracts';
 import { z } from 'zod';
 
@@ -106,6 +107,13 @@ export async function patchItem(
 ): Promise<Basket> {
   const path = `/v1/baskets/${encodeURIComponent(basketId)}/items/${encodeURIComponent(itemId)}`;
   return json(BasketSchema, await send(path, token, 'PATCH', request));
+}
+
+/** Manual search for one item: queues a search job, the basket is searching until the executor completes it. */
+export async function searchItem(token: string, basketId: string, itemId: string, query: string): Promise<Basket> {
+  const path = `/v1/baskets/${encodeURIComponent(basketId)}/items/${encodeURIComponent(itemId)}/search`;
+  const body: SearchItemRequest = { query };
+  return json(BasketSchema, await send(path, token, 'POST', body));
 }
 
 export async function pushBasket(token: string, id: string): Promise<string> {

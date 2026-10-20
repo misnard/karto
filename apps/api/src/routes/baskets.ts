@@ -8,6 +8,7 @@ import {
   LlmPayloadSchema,
   PatchItemRequestSchema,
   type PushResponse,
+  SearchItemRequestSchema,
 } from '@karto/contracts';
 import { Hono } from 'hono';
 import { z } from 'zod';
@@ -207,6 +208,23 @@ export const baskets = new Hono<AppEnv>()
     ]);
     if (!edited) throw changedConcurrently();
     return c.json(await requireBasket(c.var.userId, basket.id));
+  })
+  .post('/:id/items/:itemId/search', async (c) => {
+    const { query } = await readBody(c, SearchItemRequestSchema);
+    const basket = await requireBasket(c.var.userId, c.req.param('id'));
+    requireEditable(basket);
+    const item = basket.items.find((i) => i.id === c.req.param('itemId'));
+    if (!item) throw new AppError('not_found', 404, 'Item not found');
+    // The item keeps its status while searching: that is how the completion tells a manual search (rules only).
+    if (item.status !== 'proposed' && item.status !== 'unmatched') {
+      throw new AppError('conflict', 409, `Item is ${item.status}, it cannot be searched`);
+    }
+    const search = searchJob(basket.id, [{ id: item.id, searchQuery: query }]);
+    const started = await transitionBasket(c.var.userId, basket.id, [...EDITABLE], 'searching', (guard) => [
+      insertJobStatement(c.var.userId, search, Date.now(), guard),
+    ]);
+    if (!started) throw changedConcurrently();
+    return c.json(await requireBasket(c.var.userId, basket.id), 202);
   })
   .post('/:id/amend', async (c) => {
     const { text } = await readBody(c, AmendBasketRequestSchema);

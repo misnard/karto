@@ -69,7 +69,7 @@ ${LINE_FIELDS}
 
 ${DATA_NOTE}`;
 
-const DIET_LABELS: Record<Preferences['diet'][number], string> = {
+export const DIET_LABELS: Record<Preferences['diet'][number], string> = {
   vegetarian: 'végétarien',
   vegan: 'végétalien',
   gluten_free: 'sans gluten',
@@ -78,7 +78,7 @@ const DIET_LABELS: Record<Preferences['diet'][number], string> = {
   halal: 'halal',
 };
 
-const GOAL_LABELS: Record<Preferences['goals'][number], string> = {
+export const GOAL_LABELS: Record<Preferences['goals'][number], string> = {
   high_protein: 'riche en protéines',
   low_calorie: 'peu calorique',
   low_sugar: 'peu sucré',

@@ -154,21 +154,31 @@ export function insertItemStatements(
   );
 }
 
-/** What each item of a basket of this user needs, by item id: quantity, unit, search query and exclude terms. */
-export async function getItemNeeds(
-  userId: string,
-  basketId: string,
-): Promise<Map<string, { quantity: number; unit: Unit; searchQuery: string; excludeTerms: string[] }>> {
+export interface ItemNeed {
+  label: string;
+  status: ItemStatus;
+  quantity: number;
+  unit: Unit;
+  searchQuery: string;
+  excludeTerms: string[];
+}
+
+/** What each item of a basket of this user needs, by item id: quantity, unit, search query, exclude terms... */
+export async function getItemNeeds(userId: string, basketId: string): Promise<Map<string, ItemNeed>> {
   const { results } = await env.DB.prepare(
-    `SELECT i.id, i.quantity, i.unit, i.search_query, i.exclude_terms FROM basket_items i
+    `SELECT i.id, i.label, i.status, i.quantity, i.unit, i.search_query, i.exclude_terms FROM basket_items i
      JOIN baskets b ON b.id = i.basket_id WHERE i.basket_id = ? AND b.user_id = ?`,
   )
     .bind(basketId, userId)
-    .all<{ id: string; quantity: number; unit: Unit; search_query: string; exclude_terms: string }>();
+    .all<
+      Pick<ItemRow, 'id' | 'label' | 'status' | 'quantity' | 'unit'> & { search_query: string; exclude_terms: string }
+    >();
   return new Map(
     results.map((row) => [
       row.id,
       {
+        label: row.label,
+        status: row.status,
         quantity: row.quantity,
         unit: row.unit,
         searchQuery: row.search_query,
@@ -219,12 +229,13 @@ export async function listBaskets(userId: string, limit: number): Promise<Basket
   }));
 }
 
-/** Stores the search outcome of every item and marks the basket ready, while `guard` holds. */
+/** Stores the search outcome of every item and moves the basket to `status`, while `guard` holds. */
 export function searchOutcomeStatements(
   userId: string,
   basketId: string,
   storeRef: string,
   outcomes: ItemOutcome[],
+  status: 'matching' | 'ready',
   guard: SqlGuard,
 ): D1PreparedStatement[] {
   return [
@@ -246,9 +257,9 @@ export function searchOutcomeStatements(
       ),
     ),
     env.DB.prepare(
-      `UPDATE baskets SET status = 'ready', store_ref = ?, error = NULL, updated_at = ?
+      `UPDATE baskets SET status = ?, store_ref = ?, error = NULL, updated_at = ?
        WHERE id = ? AND user_id = ? AND ${guard.sql}`,
-    ).bind(storeRef, Date.now(), basketId, userId, ...guard.params),
+    ).bind(status, storeRef, Date.now(), basketId, userId, ...guard.params),
   ];
 }
 
