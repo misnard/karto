@@ -2,7 +2,7 @@ import { type CartLine, ProviderError } from '@karto/contracts';
 import { describe, expect, it } from 'vitest';
 import { type CartOp, diffCart, runCartSync } from './cart-sync.ts';
 import { CONTEXT, fakeProvider } from './fake-provider.test-util.ts';
-import { toJobError } from './runner.ts';
+import { BACKOFF_MS, toJobError, withRetry } from './runner.ts';
 
 const line = (ref: string, quantity: number) => ({ ref, quantity, label: ref });
 const cartLine = (ref: string, quantity: number): CartLine => ({ ref, quantity });
@@ -117,13 +117,13 @@ describe('runCartSync', () => {
     expect(error).toMatchObject({ code: 'auth_required' });
   });
 
-  it('marks a line failed when its write fails and goes on with the others', async () => {
-    const fake = fakeProvider({ failures: { BAD: new ProviderError('http', 'HTTP 500', true, 500) } });
+  it('marks a line failed when its write is refused and goes on with the others', async () => {
+    const fake = fakeProvider({ failures: { BAD: new ProviderError('http', 'HTTP 400', false, 400) } });
 
     const result = await runCartSync({ provider: 'carrefour', lines: [line('BAD', 1), line('OK', 1)] }, fake.ctx);
 
     expect(result.lines).toEqual([
-      { ref: 'BAD', outcome: 'failed', before: 0, after: 0, error: 'http (500)' },
+      { ref: 'BAD', outcome: 'failed', before: 0, after: 0, error: 'http (400)' },
       { ref: 'OK', outcome: 'set', before: 0, after: 1 },
     ]);
   });
@@ -137,5 +137,43 @@ describe('runCartSync', () => {
 
     expect(error).toMatchObject({ code: 'challenge' });
     expect(fake.writes).toEqual([['A', 1]]);
+  });
+});
+
+describe('runCartSync with retries (429, 5xx, network)', () => {
+  /** setQuantity answers each status in turn, then 200. */
+  function flaky(statuses: number[]) {
+    const fake = fakeProvider();
+    const setQuantity = fake.client.setQuantity;
+    fake.client.setQuantity = async (ref, quantity) => {
+      const status = statuses.shift();
+      if (status === 429) throw new ProviderError('rate_limited', 'HTTP 429', true, 429);
+      if (status !== undefined) throw new ProviderError('http', `HTTP ${status}`, true, status);
+      await setQuantity(ref, quantity);
+    };
+    const waits: number[] = [];
+    const ctx = { ...fake.ctx, client: withRetry(fake.client, async (ms) => waits.push(ms)) };
+    return { fake, ctx, waits };
+  }
+
+  it('sets the line after a 429 then a 200', async () => {
+    const { ctx, waits } = flaky([429]);
+
+    const result = await runCartSync({ provider: 'carrefour', lines: [line('A', 2)] }, ctx);
+
+    expect(result.lines).toEqual([{ ref: 'A', outcome: 'set', before: 0, after: 2 }]);
+    expect(waits).toEqual([BACKOFF_MS[0]]);
+  });
+
+  it('fails the job, retryable, when the 500s outlast the backoff', async () => {
+    const { fake, ctx, waits } = flaky([500, 500, 500, 500]);
+
+    const error = await runCartSync({ provider: 'carrefour', lines: [line('A', 1), line('B', 1)] }, ctx).catch(
+      toJobError,
+    );
+
+    expect(error).toMatchObject({ code: 'http', retryable: true });
+    expect(waits).toEqual([2_000, 5_000, 15_000]);
+    expect(fake.writes).toEqual([]);
   });
 });

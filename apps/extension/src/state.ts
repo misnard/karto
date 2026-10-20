@@ -16,8 +16,13 @@ export const MessageSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('wake') }),
   z.object({ type: z.literal('paired') }),
   z.object({ type: z.literal('focusCarrefour') }),
+  /** Dev builds only. The service worker answers with ContractCheckResponse. */
+  z.object({ type: z.literal('checkContract') }),
 ]);
 export type Message = z.infer<typeof MessageSchema>;
+
+export const ContractCheckResponseSchema = z.array(z.object({ name: z.string(), ok: z.boolean(), detail: z.string() }));
+export type ContractCheckResponse = z.infer<typeof ContractCheckResponseSchema>;
 
 export async function getToken(): Promise<string | null> {
   const value = (await chrome.storage.local.get(TOKEN_KEY))[TOKEN_KEY];
@@ -30,6 +35,13 @@ export async function setToken(token: string): Promise<void> {
 
 export async function clearToken(): Promise<void> {
   await chrome.storage.local.remove(TOKEN_KEY);
+}
+
+/** chrome.storage.local: the store seen by the executor's last job (its context), shown by the panel. */
+export const STORE_REF_KEY = 'storeRef';
+
+export async function setStoreRef(storeRef: string): Promise<void> {
+  await chrome.storage.local.set({ [STORE_REF_KEY]: storeRef });
 }
 
 export function parseExecutorState(value: unknown): ExecutorState | null {

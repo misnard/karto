@@ -7,20 +7,31 @@ import {
   BasketSummarySchema,
   type ClaimRequest,
   type CreateBasketRequest,
+  type CreateUserRequest,
+  type CreateUserResponse,
+  CreateUserResponseSchema,
+  type Device,
+  DeviceListResponseSchema,
   type Job,
   type JobError,
   type JobProgress,
   JobSchema,
+  type JobSummary,
+  JobSummarySchema,
   type MeResponse,
   MeResponseSchema,
+  type PairingCodeResponse,
+  PairingCodeResponseSchema,
   type PairResponse,
   PairResponseSchema,
   type PatchItemRequest,
+  type PauseRequest,
   type Preferences,
   PreferencesSchema,
   type ProgressResponse,
   ProgressResponseSchema,
   PushResponseSchema,
+  ResumeResponseSchema,
   type SearchItemRequest,
 } from '@karto/contracts';
 import { z } from 'zod';
@@ -116,9 +127,33 @@ export async function searchItem(token: string, basketId: string, itemId: string
   return json(BasketSchema, await send(path, token, 'POST', body));
 }
 
+/** Stops the basket's search or push: at its next line if it runs, right away otherwise. */
+export async function cancelBasket(token: string, id: string): Promise<Basket> {
+  return json(BasketSchema, await send(`/v1/baskets/${encodeURIComponent(id)}/cancel`, token, 'POST'));
+}
+
 export async function pushBasket(token: string, id: string): Promise<string> {
   const res = await send(`/v1/baskets/${encodeURIComponent(id)}/push`, token, 'POST');
   return (await json(PushResponseSchema, res)).jobId;
+}
+
+// --- Devices and admin ---
+
+export async function createPairingCode(token: string): Promise<PairingCodeResponse> {
+  return json(PairingCodeResponseSchema, await send('/v1/me/pairing-codes', token, 'POST'));
+}
+
+export async function listDevices(token: string): Promise<Device[]> {
+  return (await json(DeviceListResponseSchema, await send('/v1/me/devices', token))).devices;
+}
+
+export async function revokeDevice(token: string, id: string): Promise<void> {
+  await send(`/v1/me/devices/${encodeURIComponent(id)}`, token, 'DELETE');
+}
+
+export async function createUser(token: string, name: string): Promise<CreateUserResponse> {
+  const body: CreateUserRequest = { name };
+  return json(CreateUserResponseSchema, await send('/v1/admin/users', token, 'POST', body));
 }
 
 // --- Executor (job protocol) ---
@@ -142,4 +177,16 @@ export async function completeJob(token: string, jobId: string, result: unknown)
 
 export async function failJob(token: string, jobId: string, error: JobError): Promise<void> {
   await send(`/v1/jobs/${encodeURIComponent(jobId)}/fail`, token, 'POST', { error });
+}
+
+export async function getJob(token: string, jobId: string): Promise<JobSummary> {
+  return json(JobSummarySchema, await send(`/v1/jobs/${encodeURIComponent(jobId)}`, token));
+}
+
+export async function pauseJob(token: string, jobId: string, reason: PauseRequest['reason']): Promise<void> {
+  await send(`/v1/jobs/${encodeURIComponent(jobId)}/pause`, token, 'POST', { reason } satisfies PauseRequest);
+}
+
+export async function resumeJob(token: string, jobId: string): Promise<void> {
+  await json(ResumeResponseSchema, await send(`/v1/jobs/${encodeURIComponent(jobId)}/resume`, token, 'POST', {}));
 }

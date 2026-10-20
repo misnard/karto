@@ -788,6 +788,29 @@ textarea:focus-visible {
   border-top: 1px solid var(--border);
 }
 
+/* --- Devices and pairing codes --- */
+
+.topbar-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.device {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.code-box {
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.code-box output {
+  user-select: all;
+}
+
 /* --- Motion (feedback only), disabled for reduced motion --- */
 
 @media (prefers-reduced-motion: no-preference) {

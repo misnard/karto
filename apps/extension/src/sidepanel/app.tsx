@@ -8,9 +8,12 @@ import {
   getExecutorState,
   getToken,
   parseExecutorState,
+  STORE_REF_KEY,
   setToken,
 } from '../state.ts';
+import { AccountView } from './account-view.tsx';
 import { BasketView } from './basket-view.tsx';
+import { ContractCheck } from './contract-check.tsx';
 import { PreferencesView } from './preferences-view.tsx';
 import { Shell } from './shell.tsx';
 import {
@@ -34,6 +37,8 @@ export function App() {
   const [created, setCreated] = useState<Basket | null>(null);
   const [preferences, setPreferences] = useState<Preferences | null>(null);
   const [editing, setEditing] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [account, setAccount] = useState(false);
   const executor = useExecutorState();
 
   useEffect(() => {
@@ -57,7 +62,10 @@ export function App() {
   useEffect(() => {
     if (!token) return;
     getMe(token)
-      .then((me) => setPreferences(me.preferences))
+      .then((me) => {
+        setPreferences(me.preferences);
+        setIsAdmin(me.user.isAdmin);
+      })
       .catch((err: unknown) => console.warn('[karto] could not load preferences', err));
   }, [token]);
 
@@ -68,7 +76,24 @@ export function App() {
 
   if (!session) return null;
   if (!session.token) return <PairView onPaired={(token) => setSession({ token, basketId: null })} />;
-  const banner = <ExecutorBanner state={executor} />;
+  const banner = (
+    <>
+      <ExecutorBanner state={executor} />
+      <CurrentStore />
+      {import.meta.env.MODE === 'development' && <ContractCheck />}
+    </>
+  );
+
+  if (account) {
+    return (
+      <AccountView
+        token={session.token}
+        isAdmin={isAdmin}
+        onBack={() => setAccount(false)}
+        onUnauthorized={onUnauthorized}
+      />
+    );
+  }
 
   if (editing && preferences) {
     return (
@@ -101,9 +126,14 @@ export function App() {
       token={session.token}
       banner={banner}
       action={
-        <button type="button" className="btn btn-ghost" onClick={() => setEditing(true)} disabled={!preferences}>
-          Préférences
-        </button>
+        <div className="topbar-actions">
+          <button type="button" className="btn btn-ghost" onClick={() => setAccount(true)}>
+            Appareils
+          </button>
+          <button type="button" className="btn btn-ghost" onClick={() => setEditing(true)} disabled={!preferences}>
+            Préférences
+          </button>
+        </div>
       }
       onUnauthorized={onUnauthorized}
       onOpen={openBasket}
@@ -316,13 +346,31 @@ function ExecutorBanner({ state }: { state: ExecutorState | null }) {
     <div role="status" className="banner">
       <p>
         <strong>{banner.title}</strong>
-        {banner.text}
+        {state.detail ?? banner.text}
       </p>
       <button type="button" className="btn" onClick={() => notifyExecutor({ type: 'focusCarrefour' })}>
         Ouvrir l’onglet du magasin
       </button>
     </div>
   );
+}
+
+/** The store seen by the executor's last job (chrome.storage.local), once there is one. */
+function CurrentStore() {
+  const [storeRef, setStoreRef] = useState<string | null>(null);
+  useEffect(() => {
+    const show = (value: unknown) => setStoreRef(typeof value === 'string' ? value : null);
+    chrome.storage.local
+      .get(STORE_REF_KEY)
+      .then((stored) => show(stored[STORE_REF_KEY]))
+      .catch((err: unknown) => console.error('[karto] could not read the store', err));
+    const onChanged = (changes: Record<string, chrome.storage.StorageChange>, area: string) => {
+      if (area === 'local' && changes[STORE_REF_KEY]) show(changes[STORE_REF_KEY].newValue);
+    };
+    chrome.storage.onChanged.addListener(onChanged);
+    return () => chrome.storage.onChanged.removeListener(onChanged);
+  }, []);
+  return storeRef && <p className="small muted">Magasin Drive : {storeRef}</p>;
 }
 
 /** Number of people, remembered between baskets. */

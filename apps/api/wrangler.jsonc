@@ -4,6 +4,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-08-22",
   "observability": { "enabled": true },
+  // Expires job leases and pauses (src/pipeline/expire-jobs.ts) and, in "api" mode, runs pending llm jobs.
+  "triggers": { "crons": ["* * * * *"] },
   // LLM_RUNTIME: "api" (the Worker calls the Anthropic API, secret ANTHROPIC_API_KEY) or "cli" (llm jobs wait for
   // the relay, secret RELAY_TOKEN). Secrets: wrangler secret put <NAME>.
   "vars": { "LLM_RUNTIME": "cli", "LLM_MODEL": "claude-haiku-5-5" },

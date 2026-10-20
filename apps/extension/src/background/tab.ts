@@ -101,3 +101,9 @@ export async function focusProviderTab(session: ProviderSession): Promise<void> 
   if (tab.id !== undefined) await chrome.tabs.update(tab.id, { active: true });
   await chrome.windows.update(tab.windowId, { focused: true });
 }
+
+/** Makes this tab active and focuses its window, e.g. for the user to log in. */
+export async function focusTab(tabId: number): Promise<void> {
+  const tab = await chrome.tabs.update(tabId, { active: true });
+  if (tab) await chrome.windows.update(tab.windowId, { focused: true });
+}
