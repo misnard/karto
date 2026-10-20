@@ -263,7 +263,7 @@ C'est ce contrat que l'exécutant implémente. Le plan B (Tauri avec rs-carrefou
 | `POST /v1/pair` (publique) | `{code, label}` → `{token, user}` |
 | `GET /v1/me` · `PUT /v1/me/preferences` | → `{user, preferences}` · `Preferences` → `Preferences` |
 | `POST /v1/me/pairing-codes` | → `{code, expiresAt}` (appairer un autre appareil) |
-| `POST /v1/admin/users` (admin) | `{name}` → `{user, code}` |
+| `POST /v1/admin/users` (admin) | `{name}` → `{user, code, expiresAt}` |
 | `POST /v1/baskets` | `{inputs: BasketInput[]}` → `202 Basket` |
 | `GET /v1/baskets` · `GET /v1/baskets/:id` | historique · panier, lignes et job en cours avec sa progression |
 | `PATCH /v1/baskets/:id/items/:itemId` | `{op:'choose', ref}` \| `{op:'packs', packs}` \| `{op:'remove'}` \| `{op:'restore'}` → ligne |

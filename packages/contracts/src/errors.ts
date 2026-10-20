@@ -7,6 +7,8 @@ export const ApiErrorCodeSchema = z.enum([
   'not_found',
   'conflict',
   'invalid_pairing_code',
+  /** A recipe URL could not be read (site blocks us, no recipe found...): the user should paste the recipe text. */
+  'recipe_unavailable',
   'internal',
 ]);
 export type ApiErrorCode = z.infer<typeof ApiErrorCodeSchema>;
