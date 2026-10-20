@@ -9,6 +9,7 @@
   "scripts": {
     "dev:api": "pnpm --filter @karto/api dev",
     "dev:ext": "pnpm --filter @karto/extension dev",
+    "serve": "pnpm --filter @karto/api start:node",
     "test": "pnpm -r --if-present test",
     "test:watch": "pnpm -r --parallel --if-present test:watch",
     "lint": "biome check .",
@@ -17,6 +18,7 @@
     "check:boundaries": "sh scripts/check-boundaries.sh",
     "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm check:boundaries",
     "build": "pnpm -r --if-present build",
+    "zip:ext": "pnpm --filter @karto/extension zip",
     "db:migrate:local": "pnpm --filter @karto/api db:migrate:local",
     "db:migrate:remote": "pnpm --filter @karto/api db:migrate:remote",
     "user:create": "pnpm --filter @karto/api user:create",

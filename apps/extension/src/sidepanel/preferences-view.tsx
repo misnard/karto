@@ -1,6 +1,6 @@
 import type { Preferences } from '@karto/contracts';
-import { type FormEvent, useState } from 'react';
-import { savePreferences } from '../api.ts';
+import { type FormEvent, useEffect, useState } from 'react';
+import { getApiUrl, savePreferences } from '../api.ts';
 import { Shell } from './shell.tsx';
 import { errorText, isUnauthorized } from './ui.ts';
 
@@ -58,9 +58,11 @@ interface Props {
   onSaved: (preferences: Preferences) => void;
   onBack: () => void;
   onUnauthorized: () => void;
+  /** Unpairs this browser, back to the pairing screen. */
+  onChangeServer: () => void;
 }
 
-export function PreferencesView({ token, initial, onSaved, onBack, onUnauthorized }: Props) {
+export function PreferencesView({ token, initial, onSaved, onBack, onUnauthorized, onChangeServer }: Props) {
   const [prefs, setPrefs] = useState(initial);
   const [budget, setBudget] = useState(initial.budgetCents ? String(initial.budgetCents / 100) : '');
   const [allergies, setAllergies] = useState(fromList(initial.allergies));
@@ -223,7 +225,35 @@ export function PreferencesView({ token, initial, onSaved, onBack, onUnauthorize
           {busy ? 'Enregistrement…' : 'Enregistrer'}
         </button>
       </form>
+      <ServerSection onChangeServer={onChangeServer} />
     </Shell>
+  );
+}
+
+function ServerSection({ onChangeServer }: { onChangeServer: () => void }) {
+  const [server, setServer] = useState<string | null>(null);
+  useEffect(() => {
+    getApiUrl()
+      .then(setServer)
+      .catch((err: unknown) => console.error('[karto] could not read the server address', err));
+  }, []);
+
+  function change() {
+    if (confirm('Changer de serveur délie ce navigateur : il faudra un nouveau code d’appairage. Continuer ?')) {
+      onChangeServer();
+    }
+  }
+
+  return (
+    <section className="stack" aria-labelledby="server-title">
+      <h2 className="section-title" id="server-title">
+        Serveur Karto
+      </h2>
+      <p className="small muted">{server ?? 'Aucun'}</p>
+      <button type="button" className="btn btn-secondary" onClick={change}>
+        Changer de serveur
+      </button>
+    </section>
   );
 }
 

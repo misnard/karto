@@ -68,7 +68,7 @@ export async function getLatestBasketJob(userId: string, basketId: string): Prom
 }
 
 /** Attempts after which an expired job is no longer reclaimed. */
-const MAX_ATTEMPTS = 3;
+export const MAX_ATTEMPTS = 3;
 
 /**
  * Atomically claims the oldest claimable job of `kinds` for this user (`null`: any user, for the LLM relay):
@@ -135,13 +135,63 @@ export async function updateClaimedJob(
   patch: JobPatch,
   guarded: D1PreparedStatement[] = [],
 ): Promise<JobRow | null> {
+  return updateJobWhere(CLAIMED, [jobId, userId, claimedBy, JSON.stringify(from)], patch, guarded);
+}
+
+/** The job has not changed since it was read: same status, no update (claim, progress, pause...) since. */
+const UNCHANGED = 'id = ? AND user_id = ? AND status = ? AND updated_at = ?';
+
+export function whileUnchanged(userId: string, job: JobRow): SqlGuard {
+  return {
+    sql: `EXISTS (SELECT 1 FROM jobs WHERE ${UNCHANGED})`,
+    params: [job.id, userId, job.status, job.updated_at],
+  };
+}
+
+/**
+ * Like updateClaimedJob, for a job no executor is reporting on (cron, cancel): applies `patch` while the job is
+ * unchanged since read. `guarded` statements must carry whileUnchanged() with the same arguments.
+ */
+export async function updateUnchangedJob(
+  userId: string,
+  job: JobRow,
+  patch: JobPatch,
+  guarded: D1PreparedStatement[] = [],
+): Promise<JobRow | null> {
+  return updateJobWhere(UNCHANGED, [job.id, userId, job.status, job.updated_at], patch, guarded);
+}
+
+async function updateJobWhere(
+  where: string,
+  params: unknown[],
+  patch: JobPatch,
+  guarded: D1PreparedStatement[],
+): Promise<JobRow | null> {
   const entries = Object.entries(patch);
   const update = env.DB.prepare(
     `UPDATE jobs SET ${entries.map(([column]) => `${column} = ?`).join(', ')}, updated_at = ?
-     WHERE ${CLAIMED} RETURNING *`,
-  ).bind(...entries.map(([, value]) => value), Date.now(), jobId, userId, claimedBy, JSON.stringify(from));
+     WHERE ${where} RETURNING *`,
+  ).bind(...entries.map(([, value]) => value), Date.now(), ...params);
   const results = await env.DB.batch<JobRow>([...guarded, update]);
   return results.at(-1)?.results[0] ?? null;
+}
+
+/**
+ * Jobs of every user that the cron must requeue or end: running with an expired lease (executor gone), or paused
+ * since before `pausedBefore` (pause updates updated_at, and nothing updates a paused job until it resumes).
+ */
+export async function listStaleJobs(now: number, pausedBefore: number): Promise<JobRow[]> {
+  const { results } = await env.DB.prepare(
+    `SELECT * FROM jobs WHERE (status = 'running' AND lease_until < ?) OR (status = 'paused' AND updated_at < ?)`,
+  )
+    .bind(now, pausedBefore)
+    .all<JobRow>();
+  return results;
+}
+
+/** Asks the executor to stop: the next progress answers cancel: true. updated_at is kept (it times pauses out). */
+export async function requestCancel(userId: string, jobId: string): Promise<void> {
+  await env.DB.prepare('UPDATE jobs SET cancel_requested = 1 WHERE id = ? AND user_id = ?').bind(jobId, userId).run();
 }
 
 export function toJob(row: JobRow): Job {

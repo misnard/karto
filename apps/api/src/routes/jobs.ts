@@ -25,6 +25,7 @@ import {
   whileClaimed,
 } from '../db/jobs.ts';
 import { AppError, readBody } from '../errors.ts';
+import { wakeLlmRunner } from '../llm/runner.ts';
 import { advanceBasket, type JobOutcome } from '../pipeline/advance-basket.ts';
 
 function claimer(executor: Executor): string {
@@ -69,6 +70,8 @@ async function finish(c: Context<JobsEnv>, job: JobRow, outcome: JobOutcome): Pr
   const guard = whileClaimed(job.user_id, claimer(c.var.executor), job.id, from);
   const { patch, statements } = await advanceBasket(job.user_id, job, outcome, guard);
   await transition(c, job, from, patch, statements);
+  // A completed search may have queued the pick.
+  if (job.kind === 'provider.search') wakeLlmRunner();
 }
 
 export const jobs = new Hono<JobsEnv>()

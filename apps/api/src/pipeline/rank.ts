@@ -76,17 +76,18 @@ function formatNeed({ quantity, unit }: Need): string {
   return `${n(quantity)} ${quantity > 1 ? 'pièces' : 'pièce'}`;
 }
 
+/** Offers that pass the hard filters, in search order, or why none does. */
+export type Filtered = { pool: ProductOffer[]; relaxed?: string } | { pool: []; reason: string };
+
 /**
  * Hard filters, in order: available; brand not banned (never relaxed); no exclude term in the name; organic when
- * required. The last two are relaxed when nothing passes, and the reason says so. Then, among the first WINDOW
- * offers in search order, the lowest cost (price × packs, or unit price for packSize 'value' when every one has
- * a comparable unit price) adjusted by the preferences. Ties keep search order; offers without price come last.
+ * required. The last two are relaxed when nothing passes, and `relaxed` says so.
  */
-export function rank(offers: ProductOffer[], need: Need, excludeTerms: string[], prefs: Preferences): Ranked {
+export function hardFilters(offers: ProductOffer[], excludeTerms: string[], prefs: Preferences): Filtered {
   const available = offers.filter((offer) => offer.available);
-  if (available.length === 0) return { ref: null, reason: 'Aucun produit disponible' };
+  if (available.length === 0) return { pool: [], reason: 'Aucun produit disponible' };
   let pool = available.filter((offer) => !brandIn(offer.brand, prefs.bannedBrands));
-  if (pool.length === 0) return { ref: null, reason: 'Uniquement des marques bannies' };
+  if (pool.length === 0) return { pool: [], reason: 'Uniquement des marques bannies' };
 
   let relaxed: string | undefined;
   const terms = excludeTerms.map(normalize).filter(Boolean);
@@ -98,6 +99,18 @@ export function rank(offers: ProductOffer[], need: Need, excludeTerms: string[],
     if (organic.length > 0) pool = organic;
     else relaxed ??= 'Pas de version bio disponible';
   }
+  return { pool, relaxed };
+}
+
+/**
+ * The hard filters, then, among the first WINDOW offers in search order, the lowest cost (price × packs, or unit
+ * price for packSize 'value' when every one has a comparable unit price) adjusted by the preferences. Ties keep
+ * search order; offers without price come last.
+ */
+export function rank(offers: ProductOffer[], need: Need, excludeTerms: string[], prefs: Preferences): Ranked {
+  const filtered = hardFilters(offers, excludeTerms, prefs);
+  if ('reason' in filtered) return { ref: null, reason: filtered.reason };
+  const { pool, relaxed } = filtered;
 
   const window = pool.slice(0, WINDOW).map((offer, index) => {
     const packs = packsNeeded(need, offer.pack, offer.maxQuantity);

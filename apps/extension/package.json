@@ -1,10 +1,12 @@
 {
   "name": "@karto/extension",
   "private": true,
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite build --watch --mode development",
     "build": "vite build",
+    "zip": "vite build && rm -f karto-*.zip && cd dist && zip -qrX ../karto-$npm_package_version.zip . && echo apps/extension/karto-$npm_package_version.zip",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit -p ."

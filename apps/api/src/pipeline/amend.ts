@@ -48,13 +48,13 @@ export function editItem(item: BasketItem, op: PatchItemRequest): ItemPatch {
 }
 
 /**
- * New need for an item, among its current candidates (no new search): a product the user chose is kept and only
- * its packs change; otherwise the ranking runs again.
+ * New need for an item, among its current candidates (no new search): a product chosen by the user, the LLM or the
+ * memory is kept and only its packs change; a rules' choice is ranked again.
  */
 function resize(item: AmendableItem, quantity: number, unit: Unit, preferences: Preferences): ItemPatch {
   const need = { quantity, unit };
   const chosen = item.candidates.find((offer) => offer.ref === item.productRef);
-  if (item.reasonSource === 'user' && chosen) {
+  if (item.reasonSource !== 'rules' && chosen) {
     return { quantity, unit, packs: packsNeeded(need, chosen.pack, chosen.maxQuantity) };
   }
   const ranked = rank(item.candidates, need, item.excludeTerms, preferences);

@@ -1,7 +1,22 @@
 import { env } from 'cloudflare:workers';
-import { MeResponseSchema, PairResponseSchema, PreferencesSchema } from '@karto/contracts';
+import {
+  DeviceListResponseSchema,
+  MeResponseSchema,
+  PairingCodeResponseSchema,
+  PairResponseSchema,
+  PreferencesSchema,
+} from '@karto/contracts';
 import { describe, expect, it } from 'vitest';
-import { call, expectError, readJson, relayToken, seedPairingCode, seedUser } from '../test/helpers.ts';
+import {
+  call,
+  expectError,
+  expectNoContent,
+  readJson,
+  relayToken,
+  seedDevice,
+  seedPairingCode,
+  seedUser,
+} from '../test/helpers.ts';
 
 describe('POST /v1/pair', () => {
   it('exchanges a valid code for a working device token', async () => {
@@ -121,5 +136,66 @@ describe('PUT /v1/me/preferences', () => {
     expect((await getPreferences(b.token)).diet).toEqual([]);
     await expectError(await put(relayToken, { diet: ['vegan'] }), 401, 'unauthorized');
     await expectError(await call('PUT', '/v1/me/preferences', { body: {} }), 401, 'unauthorized');
+  });
+});
+
+describe('POST /v1/me/pairing-codes', () => {
+  it('pairs another device of the same user, once, for 15 minutes', async () => {
+    const { userId, token } = await seedUser('Alice');
+    const before = Date.now();
+    const { code, expiresAt } = await readJson(
+      await call('POST', '/v1/me/pairing-codes', { token }),
+      PairingCodeResponseSchema,
+      201,
+    );
+    expect(code).toMatch(/^[0-9A-HJKMNP-TV-Z]{10}$/);
+    expect(expiresAt).toBeGreaterThanOrEqual(before + 15 * 60_000);
+    expect(expiresAt).toBeLessThanOrEqual(Date.now() + 15 * 60_000);
+    const stored = await env.DB.prepare('SELECT code_hash FROM pairing_codes WHERE user_id = ?')
+      .bind(userId)
+      .first<string>('code_hash');
+    expect(stored).toMatch(/^[0-9a-f]{64}$/); // only the hash
+
+    const paired = await readJson(
+      await call('POST', '/v1/pair', { body: { code, label: 'Laptop' } }),
+      PairResponseSchema,
+    );
+    expect(paired.user.id).toBe(userId);
+    await expectError(await call('POST', '/v1/pair', { body: { code, label: 'Again' } }), 401, 'invalid_pairing_code');
+  });
+});
+
+describe('/v1/me/devices', () => {
+  const list = async (token: string) =>
+    (await readJson(await call('GET', '/v1/me/devices', { token }), DeviceListResponseSchema)).devices;
+
+  it("lists the caller's devices and flags the current one", async () => {
+    const a = await seedUser();
+    const second = await seedDevice(a.userId);
+    await seedUser(); // another user's device never shows
+
+    const devices = await list(second);
+    expect(devices.map((device) => device.current)).toEqual([false, true]);
+    expect(devices[1]?.lastSeenAt).toEqual(expect.any(Number));
+  });
+
+  it('revokes a device of the caller: its token gets 401 and it leaves the list', async () => {
+    const a = await seedUser();
+    const second = await seedDevice(a.userId);
+    const target = (await list(a.token)).find((device) => !device.current);
+
+    await expectNoContent(await call('DELETE', `/v1/me/devices/${target?.id}`, { token: a.token }));
+    await expectError(await call('GET', '/v1/me', { token: second }), 401, 'unauthorized');
+    expect((await list(a.token)).map((device) => device.id)).not.toContain(target?.id);
+    await expectError(await call('DELETE', `/v1/me/devices/${target?.id}`, { token: a.token }), 404, 'not_found');
+  });
+
+  it("cannot revoke another user's device", async () => {
+    const a = await seedUser();
+    const b = await seedUser();
+    const [bDevice] = await list(b.token);
+
+    await expectError(await call('DELETE', `/v1/me/devices/${bDevice?.id}`, { token: a.token }), 404, 'not_found');
+    expect(await list(b.token)).toHaveLength(1);
   });
 });

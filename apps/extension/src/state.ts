@@ -3,6 +3,7 @@ import { z } from 'zod';
 /* State shared by the side panel and the service worker through chrome.storage, plus the panel → SW messages. */
 
 const TOKEN_KEY = 'deviceToken';
+const SERVER_KEY = 'serverUrl';
 export const EXECUTOR_KEY = 'executor';
 
 export const ExecutorStateSchema = z.object({
@@ -16,8 +17,13 @@ export const MessageSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('wake') }),
   z.object({ type: z.literal('paired') }),
   z.object({ type: z.literal('focusCarrefour') }),
+  /** Dev builds only. The service worker answers with ContractCheckResponse. */
+  z.object({ type: z.literal('checkContract') }),
 ]);
 export type Message = z.infer<typeof MessageSchema>;
+
+export const ContractCheckResponseSchema = z.array(z.object({ name: z.string(), ok: z.boolean(), detail: z.string() }));
+export type ContractCheckResponse = z.infer<typeof ContractCheckResponseSchema>;
 
 export async function getToken(): Promise<string | null> {
   const value = (await chrome.storage.local.get(TOKEN_KEY))[TOKEN_KEY];
@@ -30,6 +36,35 @@ export async function setToken(token: string): Promise<void> {
 
 export async function clearToken(): Promise<void> {
   await chrome.storage.local.remove(TOKEN_KEY);
+}
+
+/** chrome.storage.local: the store seen by the executor's last job (its context), shown by the panel. */
+export const STORE_REF_KEY = 'storeRef';
+
+export async function setStoreRef(storeRef: string): Promise<void> {
+  await chrome.storage.local.set({ [STORE_REF_KEY]: storeRef });
+}
+
+/**
+ * Karto server address typed at pairing → base URL without trailing slash, or null when refused: https only,
+ * except http on localhost or 127.0.0.1 (a server on this machine). No credentials, query or fragment.
+ */
+export function parseServerUrl(input: string): string | null {
+  const url = URL.parse(input.trim());
+  if (!url || url.username || url.password || url.search || url.hash) return null;
+  const local = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
+  if (url.protocol !== 'https:' && !(url.protocol === 'http:' && local)) return null;
+  return `${url.origin}${url.pathname.replace(/\/+$/, '')}`;
+}
+
+/** The server this browser was paired with (kept when unpaired, to prefill the next pairing). */
+export async function getServerUrl(): Promise<string | null> {
+  const value = (await chrome.storage.local.get(SERVER_KEY))[SERVER_KEY];
+  return typeof value === 'string' && value !== '' ? value : null;
+}
+
+export async function setServerUrl(url: string): Promise<void> {
+  await chrome.storage.local.set({ [SERVER_KEY]: url });
 }
 
 export function parseExecutorState(value: unknown): ExecutorState | null {

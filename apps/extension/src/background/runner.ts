@@ -8,7 +8,7 @@ import {
   type SearchPayload,
   type SearchResult,
 } from '@karto/contracts';
-import type { ExecutorState } from '../state.ts';
+import type { ContractCheckResponse, ExecutorState } from '../state.ts';
 import type { FrontTab } from './tab.ts';
 
 /* What job runners share: their context, the errors that abort a job, and how errors are reported. */
@@ -39,15 +39,61 @@ export function needsUser(err: unknown): boolean {
   return err instanceof ProviderError && USER_ACTION[err.code] !== undefined;
 }
 
+/**
+ * True when the error only concerns the current line (e.g. a product the store refuses): the job goes on.
+ * Anything else ends the job: user action needed, provider API changed (schema_mismatch), or a transient error
+ * that withRetry could not get past (the provider is down; failing lets the user retry the whole job).
+ */
+export function isLineError(err: unknown): err is ProviderError {
+  return err instanceof ProviderError && !needsUser(err) && !err.retryable && err.code !== 'schema_mismatch';
+}
+
 /** Error sent to the backend. Unknown errors are not forwarded: their message could quote a raw provider response. */
 export function toJobError(err: unknown): JobError {
   if (err instanceof JobFailure) return err.error;
   if (err instanceof ProviderError) {
     const action = USER_ACTION[err.code];
     if (action) return { code: err.code, message: action.message, retryable: true };
+    // The detail (which response, which field) stays in the extension's local diagnostics.
+    if (err.code === 'schema_mismatch')
+      return { code: err.code, message: 'Réponse inattendue du site', retryable: false };
     return { code: err.code, message: err.message.slice(0, 500), retryable: err.retryable };
   }
   return { code: 'internal', message: 'Erreur interne de l’extension', retryable: false };
+}
+
+/** Waits between tries of a provider call after a 429, a 5xx or a network error. */
+export const BACKOFF_MS = [2_000, 5_000, 15_000] as const;
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Retries every call that fails with a retryable error (rate_limited, 5xx, network) after each BACKOFF_MS delay,
+ * then lets the last error through. Safe: reads change nothing and writes set absolute quantities.
+ * ponytail: Retry-After is not honoured, the Transport response (contracts) does not carry it.
+ */
+export function withRetry(client: ProviderClient, wait: (ms: number) => Promise<unknown> = sleep): ProviderClient {
+  async function retry<T>(call: () => Promise<T>): Promise<T> {
+    for (const delay of BACKOFF_MS) {
+      try {
+        return await call();
+      } catch (err) {
+        if (!(err instanceof ProviderError && err.retryable)) throw err;
+        console.info('[karto] provider call failed, retrying', { code: err.code, status: err.status, delay });
+        await wait(delay);
+      }
+    }
+    return call();
+  }
+  return {
+    id: client.id,
+    session: client.session,
+    getContext: (opts) => retry(() => client.getContext(opts)),
+    search: (query, max) => retry(() => client.search(query, max)),
+    getOffers: (refs) => retry(() => client.getOffers(refs)),
+    getCart: () => retry(() => client.getCart()),
+    setQuantity: (ref, quantity) => retry(() => client.setQuantity(ref, quantity)),
+  };
 }
 
 /** Executor state to show once a job ended with this error. */
@@ -94,7 +140,7 @@ export async function runSearch(payload: SearchPayload, { client, progress }: Ru
       offers = await client.search(item.query, payload.max);
       lines[index] = { key: item.itemId, status: 'ok' };
     } catch (err) {
-      if (!(err instanceof ProviderError) || needsUser(err)) throw err;
+      if (!isLineError(err)) throw err;
       console.warn('[karto] search failed for one item', { itemId: item.itemId, code: err.code });
       lines[index] = { key: item.itemId, status: 'failed', label: lineError(err) };
       lastFailure = err;
@@ -107,4 +153,40 @@ export async function runSearch(payload: SearchPayload, { client, progress }: Ru
   if (lastFailure && lines.every((line) => line.status === 'failed')) throw lastFailure;
   const byRef = payload.refs.length > 0 ? await client.getOffers(payload.refs) : [];
   return { context, byItem, byRef };
+}
+
+/**
+ * Dev builds: read-only checks that the provider still answers what the parsers expect (each call parses a live
+ * response). Never writes to the cart.
+ */
+export async function checkContract(client: ProviderClient): Promise<ContractCheckResponse> {
+  const checks: [string, () => Promise<string>][] = [
+    ['Magasin', async () => `magasin ${(await client.getContext()).storeRef}`],
+    [
+      'Recherche « lait »',
+      async () => {
+        const offers = await client.search('lait', 5);
+        if (offers.length === 0) throw new Error('aucun produit');
+        return `${offers.length} produits, ${offers.filter((o) => o.priceCents !== undefined).length} avec un prix`;
+      },
+    ],
+    ['Lecture du panier', async () => `${(await client.getCart()).length} articles`],
+    [
+      'Session connectée',
+      async () => {
+        await client.getContext({ requireLogin: true });
+        return 'connecté';
+      },
+    ],
+  ];
+  const results: ContractCheckResponse = [];
+  for (const [name, run] of checks) {
+    try {
+      results.push({ name, ok: true, detail: await run() });
+    } catch (err) {
+      const detail = err instanceof ProviderError ? `${err.code} : ${err.message}` : String(err);
+      results.push({ name, ok: false, detail });
+    }
+  }
+  return results;
 }

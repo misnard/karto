@@ -26,6 +26,30 @@ export type PairRequest = z.infer<typeof PairRequestSchema>;
 export const PairResponseSchema = z.strictObject({ token: z.string(), user: UserSchema });
 export type PairResponse = z.infer<typeof PairResponseSchema>;
 
+/** POST /v1/me/pairing-codes: one-time code to pair another device of the same user. */
+export const PairingCodeResponseSchema = z.strictObject({ code: z.string(), expiresAt: z.int() });
+export type PairingCodeResponse = z.infer<typeof PairingCodeResponseSchema>;
+
+export const DeviceSchema = z.strictObject({
+  id: z.string(),
+  label: z.string(),
+  createdAt: z.int(),
+  lastSeenAt: z.int().nullable(),
+  /** The device making the request. */
+  current: z.boolean(),
+});
+export type Device = z.infer<typeof DeviceSchema>;
+
+export const DeviceListResponseSchema = z.strictObject({ devices: z.array(DeviceSchema) });
+export type DeviceListResponse = z.infer<typeof DeviceListResponseSchema>;
+
+/** POST /v1/admin/users (admin only). */
+export const CreateUserRequestSchema = z.strictObject({ name: z.string().trim().min(1).max(100) });
+export type CreateUserRequest = z.infer<typeof CreateUserRequestSchema>;
+
+export const CreateUserResponseSchema = z.strictObject({ user: UserSchema, code: z.string(), expiresAt: z.int() });
+export type CreateUserResponse = z.infer<typeof CreateUserResponseSchema>;
+
 export const MeResponseSchema = z.strictObject({ user: UserSchema, preferences: PreferencesSchema });
 export type MeResponse = z.infer<typeof MeResponseSchema>;
 
@@ -95,6 +119,10 @@ export const PatchItemRequestSchema = z.discriminatedUnion('op', [
   z.strictObject({ op: z.literal('restore') }),
 ]);
 export type PatchItemRequest = z.infer<typeof PatchItemRequestSchema>;
+
+/** POST /v1/baskets/:id/items/:itemId/search: manual search to replace one item's product. */
+export const SearchItemRequestSchema = z.strictObject({ query: z.string().trim().min(1).max(200) });
+export type SearchItemRequest = z.infer<typeof SearchItemRequestSchema>;
 
 /** Free-text change to an existing basket: "ajoute de la mayo, enlève les oignons, j'ai déjà du sel". */
 export const AmendBasketRequestSchema = z.strictObject({ text: z.string().trim().min(1).max(2_000) });

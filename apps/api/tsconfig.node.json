@@ -1,7 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node"]
+    "types": ["node"],
+    "erasableSyntaxOnly": true
   },
-  "include": ["scripts", "eval", "vitest.config.ts"]
+  "include": ["scripts", "eval", "node", "vitest.config.ts"]
 }

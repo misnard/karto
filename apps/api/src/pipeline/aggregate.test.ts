@@ -93,4 +93,28 @@ describe('aggregate', () => {
       expect(result[index]).toMatchObject(item);
     });
   });
+
+  it('scales each recipe to the servings before merging (recipes for 4 and 6, cooked for 4)', () => {
+    const crepes = [
+      line('farine', { unit: 'g', quantity: 250 }),
+      line('oeuf', { quantity: 4 }),
+      line('lait', { unit: 'ml', quantity: 500 }),
+      line('beurre', { unit: 'g', quantity: 50 }),
+    ];
+    const lasagnes = [
+      line('oignon', { quantity: 1, sourceIndex: 1 }),
+      line('beurre', { unit: 'g', quantity: 30, sourceIndex: 1 }),
+      line('lait', { unit: 'ml', quantity: 500, sourceIndex: 1 }),
+      line('oeuf', { quantity: 1, sourceIndex: 1 }),
+    ];
+    expect(aggregate([...crepes, ...lasagnes], [1, 4 / 6]).map((l) => [l.key, l.quantity, l.unit])).toEqual([
+      ['farine', 250, 'g'],
+      ['oeuf', 5, 'piece'], // 4 + 0.67, rounded up
+      ['lait', 833, 'ml'],
+      ['beurre', 70, 'g'],
+      ['oignon', 1, 'piece'], // 0.67, rounded up
+    ]);
+    // Inputs without a scale keep their quantities.
+    expect(aggregate(lasagnes, [2]).map((l) => l.quantity)).toEqual([1, 30, 500, 1]);
+  });
 });

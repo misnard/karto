@@ -2,7 +2,11 @@ node_modules/
 dist/
 .wrangler/
 coverage/
+# SQLite database of the Node server (apps/api/node/server.ts)
+apps/api/data/
 *.log
+# extension packages (pnpm zip:ext)
+apps/extension/karto-*.zip
 .DS_Store
 
 # secrets
@@ -13,3 +17,6 @@ coverage/
 # raw Carrefour spike dumps (may contain personal data)
 Carrefour Spike*.json
 carrefour-spike*.json
+
+# Claude Code (agent worktrees, local settings)
+.claude/

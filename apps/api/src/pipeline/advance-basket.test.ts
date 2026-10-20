@@ -6,14 +6,14 @@ import { chooseOffer, toCartLines } from './advance-basket.ts';
 describe('chooseOffer', () => {
   const need = { quantity: 1000, unit: 'ml' as const, excludeTerms: ['coco'] };
 
-  it('keeps the first 8 offers as candidates and maps the ranking', () => {
+  it('keeps the first 8 offers as candidates, chosen first then those passing the filters, and maps the ranking', () => {
     const offers = [
       { ...offer('1', 100), name: 'Lait de coco' },
       { ...offer('2', 90), pack: { amount: 500, unit: 'ml' as const } },
       ...Array.from({ length: 8 }, (_, i) => offer(`x${i}`, 1)),
     ];
     const outcome = chooseOffer('item', offers, need, PreferencesSchema.parse({}));
-    expect(outcome.candidates).toEqual(offers.slice(0, 8));
+    expect(outcome.candidates.map((c) => c.ref)).toEqual(['x0', '2', 'x1', 'x2', 'x3', 'x4', 'x5', '1']);
     expect(outcome).toMatchObject({
       id: 'item',
       status: 'proposed',

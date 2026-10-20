@@ -19,5 +19,6 @@ export default defineConfig({
       },
     })),
   ],
-  test: { setupFiles: ['./src/test/apply-migrations.ts'] },
+  // node/ tests have their own config (plain Node): `pnpm test` runs both.
+  test: { include: ['src/**/*.test.ts'], setupFiles: ['./src/test/apply-migrations.ts'] },
 });

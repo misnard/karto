@@ -5,17 +5,17 @@ export type RecipeErrorCode = 'invalid_url' | 'unreachable' | 'blocked' | 'not_h
 /** Failure to turn a URL into a recipe. Messages are short English for logs; the caller shows French text. */
 export class RecipeError extends Error {
   override readonly name = 'RecipeError';
+  readonly code: RecipeErrorCode;
 
-  constructor(
-    readonly code: RecipeErrorCode,
-    message: string = code,
-  ) {
+  constructor(code: RecipeErrorCode, message: string = code) {
     super(message);
+    this.code = code;
   }
 }
 
 export const RECIPE_MAX_BYTES = 3 * 1024 * 1024;
 const TIMEOUT_MS = 10_000;
+const MAX_REDIRECTS = 5;
 const HEADERS = {
   'User-Agent':
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
@@ -31,12 +31,22 @@ export async function fetchRecipe(
   url: string,
   fetchImpl: typeof fetch = (input, init) => fetch(input, init),
 ): Promise<RecipeExtract> {
-  const target = parseRecipeUrl(url);
+  let target = parseRecipeUrl(url);
+  const signal = AbortSignal.timeout(TIMEOUT_MS);
   let res: Response;
-  try {
-    res = await fetchImpl(target, { headers: HEADERS, redirect: 'follow', signal: AbortSignal.timeout(TIMEOUT_MS) });
-  } catch (err) {
-    throw new RecipeError('unreachable', `fetch failed: ${errorMessage(err)}`);
+  // Redirects are followed by hand: each hop passes parseRecipeUrl, so a public page cannot bounce the server to
+  // an IP literal (cloud metadata, 127.0.0.1...). ponytail: a domain resolving to a private IP still passes.
+  for (let hops = 0; ; hops++) {
+    try {
+      res = await fetchImpl(target, { headers: HEADERS, redirect: 'manual', signal });
+    } catch (err) {
+      throw new RecipeError('unreachable', `fetch failed: ${errorMessage(err)}`);
+    }
+    const location = res.status >= 300 && res.status < 400 ? res.headers.get('location') : null;
+    if (location === null) break;
+    await res.body?.cancel();
+    if (hops >= MAX_REDIRECTS) throw new RecipeError('unreachable', 'too many redirects');
+    target = parseRecipeUrl(new URL(location, target).href);
   }
 
   if (!res.ok) {

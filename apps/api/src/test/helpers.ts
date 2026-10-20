@@ -133,11 +133,32 @@ export async function claimProviderJob(token: string): Promise<Job> {
   return readJson(await call('POST', '/v1/jobs/claim', { token, body }), JobSchema);
 }
 
-/** Claims the next search and completes it with offers per item label (missing labels: no offer). */
+/**
+ * Plays the relay on the pick job a search queued (the basket is matching): answers `output`, or fails the job
+ * when there is none, so the rules' choices stay.
+ */
+export async function completePick(token: string, basketId: string, output?: unknown): Promise<Basket> {
+  const matching = await readJson(await call('GET', `/v1/baskets/${basketId}`, { token }), BasketSchema);
+  expect(matching).toMatchObject({ status: 'matching', job: { kind: 'llm', status: 'pending' } });
+  const job = await relayClaim(matching.job?.id ?? '');
+  if (output === undefined) {
+    const body = { error: { code: 'internal', message: 'no pick in this test', retryable: false } };
+    await expectNoContent(await call('POST', `/v1/jobs/${job.id}/fail`, { token: relayToken, body }));
+  } else {
+    await expectNoContent(await relayComplete(job.id, llmResult(output)));
+  }
+  return readJson(await call('GET', `/v1/baskets/${basketId}`, { token }), BasketSchema);
+}
+
+/**
+ * Claims the next search and completes it with offers per item label (missing labels: no offer), then plays the
+ * pick if one was queued (see completePick).
+ */
 export async function completeSearch(
   token: string,
   basketId: string,
   offersByLabel: Record<string, ProductOffer[]>,
+  pick?: unknown,
 ): Promise<Basket> {
   const search = await claimProviderJob(token);
   if (search.kind !== 'provider.search') throw new Error(`unexpected job ${search.kind}`);
@@ -149,5 +170,6 @@ export async function completeSearch(
   }));
   const result = { context: { provider: 'carrefour', storeRef: 'store-1' }, byItem, byRef: [] };
   await expectNoContent(await call('POST', `/v1/jobs/${search.id}/complete`, { token, body: { result } }));
-  return readJson(await call('GET', `/v1/baskets/${basketId}`, { token }), BasketSchema);
+  const searched = await readJson(await call('GET', `/v1/baskets/${basketId}`, { token }), BasketSchema);
+  return searched.status === 'matching' ? completePick(token, basketId, pick) : searched;
 }

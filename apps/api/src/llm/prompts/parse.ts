@@ -22,12 +22,15 @@ export type ParseLine = z.infer<typeof ParseLineSchema>;
 export const ParseOutputSchema = z.strictObject({ lines: z.array(ParseLineSchema).min(1).max(100) });
 export type ParseOutput = z.infer<typeof ParseOutputSchema>;
 
-export type ParseInput = Extract<BasketInput, { kind: 'text' | 'recipe_text' }>;
+/** A recipe read from its page: quantities as published, the code scales them to the servings (aggregate). */
+export type FetchedRecipe = { kind: 'fetched_recipe'; text: string };
+export type ParseInput = Extract<BasketInput, { kind: 'text' | 'recipe_text' }> | FetchedRecipe;
 
 /** How to write purchasable lines: shared with the amend prompt. */
 export const LINE_RULES = `- Une ligne par produit distinct. Fusionne les doublons (« lait, du lait » → une seule ligne lait).
 - Développe les plats et les intentions (« de quoi faire des lasagnes ») en ingrédients, pour le nombre de personnes indiqué, 4 s'il n'est pas précisé.
 - Recette collée : reprends ses ingrédients et ses quantités. Si un nombre de personnes est indiqué et diffère de celui de la recette, mets les quantités à l'échelle.
+- Recette « à quantités exactes » : reprends ses quantités telles quelles, sans mise à l'échelle.
 - Garde les quantités explicites (« 6 oeufs » → 6 piece).
 - Unités : g, ml ou piece uniquement. Convertis les unités culinaires (cuillère à soupe ≈ 15 ml, cuillère à café ≈ 5 ml, verre ≈ 200 ml, kg → g, l → ml ; sachet, boîte, paquet, botte → piece). Sans quantité, mets la quantité d'un achat courant.
 - Garde les produits non alimentaires (shampoing, lessive…).
@@ -66,7 +69,7 @@ ${LINE_FIELDS}
 
 ${DATA_NOTE}`;
 
-const DIET_LABELS: Record<Preferences['diet'][number], string> = {
+export const DIET_LABELS: Record<Preferences['diet'][number], string> = {
   vegetarian: 'végétarien',
   vegan: 'végétalien',
   gluten_free: 'sans gluten',
@@ -75,7 +78,7 @@ const DIET_LABELS: Record<Preferences['diet'][number], string> = {
   halal: 'halal',
 };
 
-const GOAL_LABELS: Record<Preferences['goals'][number], string> = {
+export const GOAL_LABELS: Record<Preferences['goals'][number], string> = {
   high_protein: 'riche en protéines',
   low_calorie: 'peu calorique',
   low_sugar: 'peu sucré',
@@ -93,10 +96,14 @@ export function contextHeader(servings?: number, preferences?: Preferences): str
   return header.join('\n');
 }
 
+function entryTitle(input: ParseInput): string {
+  if (input.kind === 'text') return 'Liste';
+  if (input.kind === 'fetched_recipe') return 'Recette à quantités exactes';
+  return input.servings ? `Recette, à préparer pour ${input.servings} personnes` : 'Recette';
+}
+
 export function buildUser(inputs: ParseInput[], servings?: number, preferences?: Preferences): string {
-  const entries = inputs.map(
-    (input, index) => `[${index}] ${input.kind === 'recipe_text' ? 'Recette' : 'Liste'} :\n${input.text.trim()}`,
-  );
+  const entries = inputs.map((input, index) => `[${index}] ${entryTitle(input)} :\n${input.text.trim()}`);
   return [contextHeader(servings, preferences), ...entries].join('\n\n');
 }
 

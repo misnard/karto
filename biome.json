@@ -1,7 +1,15 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
   "files": {
-    "includes": ["**", "!**/node_modules", "!**/dist", "!**/.wrangler", "!**/fixtures", "!**/worker-configuration.d.ts"]
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/.wrangler",
+      "!**/fixtures",
+      "!**/worker-configuration.d.ts",
+      "!.claude"
+    ]
   },
   "formatter": {
     "indentStyle": "space",

@@ -1,7 +1,6 @@
 import { env } from 'cloudflare:workers';
 import {
   type Basket,
-  type BasketInput,
   BasketInputSchema,
   type BasketItem,
   type BasketStatus,
@@ -62,6 +61,8 @@ export interface NewItem {
   searchQuery: string;
   excludeTerms: string[];
   sources: number[];
+  /** The memorized product: the item waits for its refresh instead of a search. */
+  memory?: { productRef: string; reason: string };
 }
 
 export interface ItemOutcome {
@@ -76,11 +77,19 @@ export interface ItemOutcome {
 
 const CandidatesSchema = z.array(ProductOfferSchema);
 const TermsSchema = z.array(z.string());
-/** The inputs column: `{inputs, servings?}`; rows written before servings was stored are a bare array. */
+/**
+ * The inputs column: `{inputs, servings?, scales?}`, `scales[i]` multiplying the parsed quantities of input i
+ * (fetched recipes). Rows written before servings was stored are a bare array.
+ */
 const StoredInputsSchema = z.union([
-  z.strictObject({ inputs: z.array(BasketInputSchema), servings: z.int().min(1).max(20).optional() }),
-  z.array(BasketInputSchema).transform((inputs) => ({ inputs, servings: undefined })),
+  z.strictObject({
+    inputs: z.array(BasketInputSchema),
+    servings: z.int().min(1).max(20).optional(),
+    scales: z.array(z.number().positive()).optional(),
+  }),
+  z.array(BasketInputSchema).transform((inputs) => ({ inputs, servings: undefined, scales: undefined })),
 ]);
+type StoredInputs = z.output<typeof StoredInputsSchema>;
 
 /** Basket columns plus derived totals. Total = Σ over proposed items of (chosen candidate's priceCents ?? 0) × packs. */
 const BASKET_SELECT = `
@@ -95,37 +104,28 @@ const BASKET_SELECT = `
 /** Creates a basket in 'parsing' with its parse job. Items are written once the parse is done. */
 export async function createBasket(
   userId: string,
-  basket: { id: string; provider: ProviderId; inputs: BasketInput[]; servings?: number; job: NewJob },
+  basket: StoredInputs & { id: string; provider: ProviderId; job: NewJob },
 ): Promise<void> {
   const now = Date.now();
+  const { inputs, servings, scales } = basket;
   await env.DB.batch([
     env.DB.prepare(
       `INSERT INTO baskets (id, user_id, provider, status, inputs, created_at, updated_at)
        VALUES (?, ?, ?, 'parsing', ?, ?, ?)`,
-    ).bind(
-      basket.id,
-      userId,
-      basket.provider,
-      JSON.stringify({ inputs: basket.inputs, servings: basket.servings }),
-      now,
-      now,
-    ),
+    ).bind(basket.id, userId, basket.provider, JSON.stringify({ inputs, servings, scales }), now, now),
     insertJobStatement(userId, basket.job, now),
   ]);
 }
 
-/** What the user typed to create a basket of this user, and for how many people. */
-export async function getBasketInputs(
-  userId: string,
-  basketId: string,
-): Promise<{ inputs: BasketInput[]; servings?: number } | null> {
+/** What the user typed to create a basket of this user, for how many people, and the scales of its recipes. */
+export async function getBasketInputs(userId: string, basketId: string): Promise<StoredInputs | null> {
   const inputs = await env.DB.prepare('SELECT inputs FROM baskets WHERE id = ? AND user_id = ?')
     .bind(basketId, userId)
     .first<string>('inputs');
   return inputs === null ? null : StoredInputsSchema.parse(JSON.parse(inputs));
 }
 
-/** Inserts pending items into a basket of this user, while `guard` holds. */
+/** Inserts pending items into a basket of this user, while `guard` holds. A memorized item gets its product ref. */
 export function insertItemStatements(
   userId: string,
   basketId: string,
@@ -135,8 +135,9 @@ export function insertItemStatements(
   return items.map((item) =>
     env.DB.prepare(
       `INSERT INTO basket_items
-         (id, basket_id, position, ingredient_key, label, quantity, unit, sources, search_query, exclude_terms, status)
-       SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending'
+         (id, basket_id, position, ingredient_key, label, quantity, unit, sources, search_query, exclude_terms, status,
+          product_ref, reason, reason_source)
+       SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?, ?, ?
        WHERE EXISTS (SELECT 1 FROM baskets WHERE id = ? AND user_id = ?) AND ${guard.sql}`,
     ).bind(
       item.id,
@@ -149,6 +150,9 @@ export function insertItemStatements(
       JSON.stringify(item.sources),
       item.searchQuery,
       JSON.stringify(item.excludeTerms),
+      item.memory?.productRef ?? null,
+      item.memory?.reason ?? null,
+      item.memory ? 'memory' : null,
       basketId,
       userId,
       ...guard.params,
@@ -156,25 +160,45 @@ export function insertItemStatements(
   );
 }
 
-/** What each item of a basket of this user needs, by item id: quantity, unit, search query and exclude terms. */
-export async function getItemNeeds(
-  userId: string,
-  basketId: string,
-): Promise<Map<string, { quantity: number; unit: Unit; searchQuery: string; excludeTerms: string[] }>> {
+export interface ItemNeed {
+  label: string;
+  status: ItemStatus;
+  quantity: number;
+  unit: Unit;
+  searchQuery: string;
+  excludeTerms: string[];
+  productRef: string | null;
+  reason: string | null;
+  reasonSource: ReasonSource | null;
+}
+
+/** What each item of a basket of this user needs, by item id: quantity, unit, search query, exclude terms... */
+export async function getItemNeeds(userId: string, basketId: string): Promise<Map<string, ItemNeed>> {
   const { results } = await env.DB.prepare(
-    `SELECT i.id, i.quantity, i.unit, i.search_query, i.exclude_terms FROM basket_items i
-     JOIN baskets b ON b.id = i.basket_id WHERE i.basket_id = ? AND b.user_id = ?`,
+    `SELECT i.id, i.label, i.status, i.quantity, i.unit, i.search_query, i.exclude_terms, i.product_ref, i.reason,
+       i.reason_source
+     FROM basket_items i JOIN baskets b ON b.id = i.basket_id WHERE i.basket_id = ? AND b.user_id = ?`,
   )
     .bind(basketId, userId)
-    .all<{ id: string; quantity: number; unit: Unit; search_query: string; exclude_terms: string }>();
+    .all<
+      Pick<ItemRow, 'id' | 'label' | 'status' | 'quantity' | 'unit' | 'product_ref' | 'reason' | 'reason_source'> & {
+        search_query: string;
+        exclude_terms: string;
+      }
+    >();
   return new Map(
     results.map((row) => [
       row.id,
       {
+        label: row.label,
+        status: row.status,
         quantity: row.quantity,
         unit: row.unit,
         searchQuery: row.search_query,
         excludeTerms: TermsSchema.parse(JSON.parse(row.exclude_terms)),
+        productRef: row.product_ref,
+        reason: row.reason,
+        reasonSource: row.reason_source,
       },
     ]),
   );
@@ -221,12 +245,13 @@ export async function listBaskets(userId: string, limit: number): Promise<Basket
   }));
 }
 
-/** Stores the search outcome of every item and marks the basket ready, while `guard` holds. */
+/** Stores the search outcome of every item and moves the basket to `status`, while `guard` holds. */
 export function searchOutcomeStatements(
   userId: string,
   basketId: string,
   storeRef: string,
   outcomes: ItemOutcome[],
+  status: 'searching' | 'matching' | 'ready',
   guard: SqlGuard,
 ): D1PreparedStatement[] {
   return [
@@ -248,9 +273,9 @@ export function searchOutcomeStatements(
       ),
     ),
     env.DB.prepare(
-      `UPDATE baskets SET status = 'ready', store_ref = ?, error = NULL, updated_at = ?
+      `UPDATE baskets SET status = ?, store_ref = ?, error = NULL, updated_at = ?
        WHERE id = ? AND user_id = ? AND ${guard.sql}`,
-    ).bind(storeRef, Date.now(), basketId, userId, ...guard.params),
+    ).bind(status, storeRef, Date.now(), basketId, userId, ...guard.params),
   ];
 }
 
@@ -322,17 +347,21 @@ export function itemUpdateStatement(
   ).bind(...entries.map(([, value]) => value), itemId, basketId, userId, ...guard.params);
 }
 
-/** Creates the cart sync job and moves the basket to pushing. Returns false when a push is already active. */
-export async function startPush(userId: string, job: NewJob): Promise<boolean> {
-  const now = Date.now();
+/**
+ * Creates the cart sync job and moves the basket from ready or pushed to pushing, with the `statements` (carrying
+ * `guard`) in the same transaction. Returns false, and applies nothing, when a push is already active or the basket
+ * left ready/pushed meanwhile (amend, search...).
+ */
+export async function startPush(
+  userId: string,
+  job: NewJob,
+  statements: (guard: SqlGuard) => D1PreparedStatement[] = () => [],
+): Promise<boolean> {
   try {
-    await env.DB.batch([
-      insertJobStatement(userId, job, now),
-      env.DB.prepare(
-        `UPDATE baskets SET status = 'pushing', error = NULL, updated_at = ? WHERE id = ? AND user_id = ?`,
-      ).bind(now, job.basketId, userId),
+    return await transitionBasket(userId, job.basketId, ['ready', 'pushed'], 'pushing', (guard) => [
+      insertJobStatement(userId, job, Date.now(), guard),
+      ...statements(guard),
     ]);
-    return true;
   } catch (err) {
     // jobs_one_active_cart_sync: at most one pending/running/paused cart sync per user.
     if (err instanceof Error && err.message.includes('UNIQUE constraint failed')) return false;
