@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { auth, executorAuth } from './auth.ts';
 import { notFound, onError } from './errors.ts';
+import { runPendingLlmJobs } from './llm/runner.ts';
 import { expireLeases } from './pipeline/expire-jobs.ts';
 import { admin } from './routes/admin.ts';
 import { baskets } from './routes/baskets.ts';
@@ -33,8 +34,9 @@ const app = new Hono()
 
 export default {
   fetch: app.fetch,
-  // Cron trigger (wrangler.jsonc), once a minute.
+  // Cron trigger (wrangler.jsonc), once a minute; node/server.ts calls it on a timer. Leases first, so a requeued
+  // llm job runs in the same pass. runPendingLlmJobs does nothing unless LLM_RUNTIME is 'api'.
   scheduled(_controller, _env, ctx) {
-    ctx.waitUntil(expireLeases());
+    ctx.waitUntil(expireLeases().then(() => runPendingLlmJobs()));
   },
 } satisfies ExportedHandler<Env>;

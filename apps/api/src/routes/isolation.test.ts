@@ -30,6 +30,7 @@ describe('isolation between users', () => {
     const attempts: [string, string, unknown?][] = [
       ['GET', path],
       ['PATCH', `${path}/items/${itemId}`, { op: 'remove' }],
+      ['POST', `${path}/items/${itemId}/search`, { query: 'lait d’avoine' }],
       ['POST', `${path}/push`],
       ['POST', `${path}/retry`],
       ['POST', `${path}/amend`, { text: 'enlève le lait' }],
