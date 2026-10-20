@@ -14,6 +14,7 @@ import { z } from 'zod';
 import {
   basketStatusStatement,
   getBasket,
+  getBasketInputs,
   getItemNeeds,
   type ItemOutcome,
   insertItemStatements,
@@ -145,8 +146,17 @@ function newItems(lines: AggregatedLine[], firstPosition: number, sources: boole
   }));
 }
 
-/** Parse done: write the aggregated items, queue their search, basket → searching. Else retry once, then fail. */
-function advanceParse(userId: string, basketId: string, job: JobRow, outcome: JobOutcome, guard: SqlGuard): Advance {
+/**
+ * Parse done: write the aggregated items (fetched recipes scaled to the servings), queue their search, basket →
+ * searching. Else retry once, then fail.
+ */
+async function advanceParse(
+  userId: string,
+  basketId: string,
+  job: JobRow,
+  outcome: JobOutcome,
+  guard: SqlGuard,
+): Promise<Advance> {
   const result = outcome.status === 'done' ? LlmResultSchema.parse(outcome.result) : null;
   const usage = addUsage(job.usage, result?.usage);
   const output = result ? readOutput(ParseOutputSchema, result.text) : 'No output';
@@ -159,7 +169,8 @@ function advanceParse(userId: string, basketId: string, job: JobRow, outcome: Jo
       return [basketStatusStatement(userId, basketId, 'failed', { ...error, message }, guard)];
     });
   }
-  const items = newItems(aggregate(output.lines), 0, true);
+  const scales = (await getBasketInputs(userId, basketId))?.scales;
+  const items = newItems(aggregate(output.lines, scales), 0, true);
   return {
     patch: { status: 'done', result: JSON.stringify(result), usage },
     statements: [

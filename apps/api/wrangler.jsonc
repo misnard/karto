@@ -4,7 +4,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-08-22",
   "observability": { "enabled": true },
-  // LLM_RUNTIME: only "cli" exists (llm jobs wait for the relay). RELAY_TOKEN is a secret (wrangler secret put).
+  // LLM_RUNTIME: "api" (the Worker calls the Anthropic API, secret ANTHROPIC_API_KEY) or "cli" (llm jobs wait for
+  // the relay, secret RELAY_TOKEN). Secrets: wrangler secret put <NAME>.
   "vars": { "LLM_RUNTIME": "cli", "LLM_MODEL": "claude-haiku-5-5" },
   "d1_databases": [
     {

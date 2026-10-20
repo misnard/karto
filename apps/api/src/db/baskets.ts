@@ -1,7 +1,6 @@
 import { env } from 'cloudflare:workers';
 import {
   type Basket,
-  type BasketInput,
   BasketInputSchema,
   type BasketItem,
   type BasketStatus,
@@ -76,11 +75,19 @@ export interface ItemOutcome {
 
 const CandidatesSchema = z.array(ProductOfferSchema);
 const TermsSchema = z.array(z.string());
-/** The inputs column: `{inputs, servings?}`; rows written before servings was stored are a bare array. */
+/**
+ * The inputs column: `{inputs, servings?, scales?}`, `scales[i]` multiplying the parsed quantities of input i
+ * (fetched recipes). Rows written before servings was stored are a bare array.
+ */
 const StoredInputsSchema = z.union([
-  z.strictObject({ inputs: z.array(BasketInputSchema), servings: z.int().min(1).max(20).optional() }),
-  z.array(BasketInputSchema).transform((inputs) => ({ inputs, servings: undefined })),
+  z.strictObject({
+    inputs: z.array(BasketInputSchema),
+    servings: z.int().min(1).max(20).optional(),
+    scales: z.array(z.number().positive()).optional(),
+  }),
+  z.array(BasketInputSchema).transform((inputs) => ({ inputs, servings: undefined, scales: undefined })),
 ]);
+type StoredInputs = z.output<typeof StoredInputsSchema>;
 
 /** Basket columns plus derived totals. Total = Σ over proposed items of (chosen candidate's priceCents ?? 0) × packs. */
 const BASKET_SELECT = `
@@ -95,30 +102,21 @@ const BASKET_SELECT = `
 /** Creates a basket in 'parsing' with its parse job. Items are written once the parse is done. */
 export async function createBasket(
   userId: string,
-  basket: { id: string; provider: ProviderId; inputs: BasketInput[]; servings?: number; job: NewJob },
+  basket: StoredInputs & { id: string; provider: ProviderId; job: NewJob },
 ): Promise<void> {
   const now = Date.now();
+  const { inputs, servings, scales } = basket;
   await env.DB.batch([
     env.DB.prepare(
       `INSERT INTO baskets (id, user_id, provider, status, inputs, created_at, updated_at)
        VALUES (?, ?, ?, 'parsing', ?, ?, ?)`,
-    ).bind(
-      basket.id,
-      userId,
-      basket.provider,
-      JSON.stringify({ inputs: basket.inputs, servings: basket.servings }),
-      now,
-      now,
-    ),
+    ).bind(basket.id, userId, basket.provider, JSON.stringify({ inputs, servings, scales }), now, now),
     insertJobStatement(userId, basket.job, now),
   ]);
 }
 
-/** What the user typed to create a basket of this user, and for how many people. */
-export async function getBasketInputs(
-  userId: string,
-  basketId: string,
-): Promise<{ inputs: BasketInput[]; servings?: number } | null> {
+/** What the user typed to create a basket of this user, for how many people, and the scales of its recipes. */
+export async function getBasketInputs(userId: string, basketId: string): Promise<StoredInputs | null> {
   const inputs = await env.DB.prepare('SELECT inputs FROM baskets WHERE id = ? AND user_id = ?')
     .bind(basketId, userId)
     .first<string>('inputs');
