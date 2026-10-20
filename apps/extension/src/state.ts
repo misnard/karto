@@ -37,6 +37,13 @@ export async function clearToken(): Promise<void> {
   await chrome.storage.local.remove(TOKEN_KEY);
 }
 
+/** chrome.storage.local: the store seen by the executor's last job (its context), shown by the panel. */
+export const STORE_REF_KEY = 'storeRef';
+
+export async function setStoreRef(storeRef: string): Promise<void> {
+  await chrome.storage.local.set({ [STORE_REF_KEY]: storeRef });
+}
+
 export function parseExecutorState(value: unknown): ExecutorState | null {
   const parsed = ExecutorStateSchema.safeParse(value);
   return parsed.success ? parsed.data : null;

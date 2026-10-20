@@ -8,6 +8,7 @@ import {
   type Message,
   MessageSchema,
   setExecutorState,
+  setStoreRef,
 } from '../state.ts';
 import { runCartSync } from './cart-sync.ts';
 import {
@@ -94,9 +95,13 @@ async function runJob(token: string, job: Job): Promise<void> {
     });
     const result = await inFrontTab(tab, () => runWithSession(() => execute(job, ctx), control));
     // The backend validates too; checking here keeps anything unexpected from leaving the extension.
-    if (!JobResultSchemas[job.kind].safeParse(result).success)
+    const checked = JobResultSchemas[job.kind].safeParse(result);
+    if (!checked.success)
       throw new JobFailure({ code: 'invalid_result', message: 'Invalid job result', retryable: false });
     await completeJob(token, job.id, result);
+    if ('context' in checked.data) {
+      await setStoreRef(checked.data.context.storeRef).catch(logError('could not store the store ref'));
+    }
     console.info('[karto] job done', { jobId: job.id, kind: job.kind });
     await setExecutorState({ state: 'idle' });
   } catch (err) {

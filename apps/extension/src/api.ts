@@ -7,6 +7,11 @@ import {
   BasketSummarySchema,
   type ClaimRequest,
   type CreateBasketRequest,
+  type CreateUserRequest,
+  type CreateUserResponse,
+  CreateUserResponseSchema,
+  type Device,
+  DeviceListResponseSchema,
   type Job,
   type JobError,
   type JobProgress,
@@ -15,6 +20,8 @@ import {
   JobSummarySchema,
   type MeResponse,
   MeResponseSchema,
+  type PairingCodeResponse,
+  PairingCodeResponseSchema,
   type PairResponse,
   PairResponseSchema,
   type PatchItemRequest,
@@ -120,6 +127,25 @@ export async function cancelBasket(token: string, id: string): Promise<Basket> {
 export async function pushBasket(token: string, id: string): Promise<string> {
   const res = await send(`/v1/baskets/${encodeURIComponent(id)}/push`, token, 'POST');
   return (await json(PushResponseSchema, res)).jobId;
+}
+
+// --- Devices and admin ---
+
+export async function createPairingCode(token: string): Promise<PairingCodeResponse> {
+  return json(PairingCodeResponseSchema, await send('/v1/me/pairing-codes', token, 'POST'));
+}
+
+export async function listDevices(token: string): Promise<Device[]> {
+  return (await json(DeviceListResponseSchema, await send('/v1/me/devices', token))).devices;
+}
+
+export async function revokeDevice(token: string, id: string): Promise<void> {
+  await send(`/v1/me/devices/${encodeURIComponent(id)}`, token, 'DELETE');
+}
+
+export async function createUser(token: string, name: string): Promise<CreateUserResponse> {
+  const body: CreateUserRequest = { name };
+  return json(CreateUserResponseSchema, await send('/v1/admin/users', token, 'POST', body));
 }
 
 // --- Executor (job protocol) ---

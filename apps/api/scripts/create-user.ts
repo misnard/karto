@@ -4,12 +4,8 @@
  * Plain Node (type stripping), no dependency.
  */
 import { execFileSync } from 'node:child_process';
-import { createHash, randomInt, randomUUID } from 'node:crypto';
-
-// Crockford base32: no I, L, O, U, easy to read and type.
-const ALPHABET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
-const CODE_LENGTH = 10;
-const CODE_TTL_MS = 15 * 60_000;
+import { createHash, randomUUID } from 'node:crypto';
+import { newPairingCode } from '../src/pairing-code.ts';
 
 const args = process.argv.slice(2);
 const name = args.find((arg) => !arg.startsWith('--'))?.trim();
@@ -20,9 +16,8 @@ if (!name) {
 
 const now = Date.now();
 const userId = randomUUID();
-const code = Array.from({ length: CODE_LENGTH }, () => ALPHABET[randomInt(ALPHABET.length)]).join('');
+const { code, expiresAt } = newPairingCode(now);
 const codeHash = createHash('sha256').update(code).digest('hex');
-const expiresAt = now + CODE_TTL_MS;
 const sqlName = name.replaceAll("'", "''");
 
 const sql = [
