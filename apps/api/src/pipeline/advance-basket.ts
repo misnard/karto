@@ -25,6 +25,7 @@ import {
   type NewItem,
   searchOutcomeStatements,
 } from '../db/baskets.ts';
+import { getChoices } from '../db/choices.ts';
 import {
   insertJobStatement,
   type JobPatch,
@@ -39,6 +40,7 @@ import { ParseOutputSchema } from '../llm/prompts/parse.ts';
 import * as pick from '../llm/prompts/pick.ts';
 import { type AggregatedLine, aggregate } from './aggregate.ts';
 import { planAmend } from './amend.ts';
+import { MEMORY_UNAVAILABLE, memoryReason, resolveMemory, withMemoryNote } from './memory.ts';
 import { applyPick, orderCandidates, type PickableItem, pickLines } from './pick.ts';
 import { hardFilters, type Need, rank } from './rank.ts';
 
@@ -130,12 +132,12 @@ function retryOrFail(
   return { patch: { status: 'failed', error: JSON.stringify(error), usage }, statements: fail(error) };
 }
 
-/** A search job for `items` only: its completion ranks just these items. */
-export function searchJob(basketId: string, items: Pick<NewItem, 'id' | 'searchQuery'>[]): NewJob {
+/** A search job for `items` only (its completion ranks just these items), refreshing the memorized `refs`. */
+export function searchJob(basketId: string, items: Pick<NewItem, 'id' | 'searchQuery'>[], refs: string[] = []): NewJob {
   const payload = SearchPayloadSchema.parse({
     provider: PROVIDER,
     items: items.map((item) => ({ itemId: item.id, query: item.searchQuery })),
-    refs: [],
+    refs,
     max: SEARCH_MAX_OFFERS,
   });
   return { id: crypto.randomUUID(), basketId, kind: 'provider.search', payload };
@@ -158,7 +160,8 @@ function newItems(lines: AggregatedLine[], firstPosition: number, sources: boole
 
 /**
  * Parse done: write the aggregated items (fetched recipes scaled to the servings), queue their search, basket →
- * searching. Else retry once, then fail.
+ * searching. Items with a memorized product get no query: their refs are refreshed in the same job. Else retry
+ * once, then fail.
  */
 async function advanceParse(
   userId: string,
@@ -180,12 +183,25 @@ async function advanceParse(
     });
   }
   const scales = (await getBasketInputs(userId, basketId))?.scales;
-  const items = newItems(aggregate(output.lines, scales), 0, true);
+  const lines = newItems(aggregate(output.lines, scales), 0, true);
+  const memory = await getChoices(
+    userId,
+    PROVIDER,
+    lines.map((item) => item.ingredientKey),
+  );
+  const items = lines.map((item): NewItem => {
+    const choice = memory.get(item.ingredientKey);
+    return choice
+      ? { ...item, memory: { productRef: choice.productRef, reason: memoryReason(choice.updatedAt) } }
+      : item;
+  });
+  const toSearch = items.filter((item) => !item.memory);
+  const refs = [...new Set(items.flatMap((item) => (item.memory ? [item.memory.productRef] : [])))];
   return {
     patch: { status: 'done', result: JSON.stringify(result), usage },
     statements: [
       ...insertItemStatements(userId, basketId, items, guard),
-      insertJobStatement(userId, searchJob(basketId, items), Date.now(), guard),
+      insertJobStatement(userId, searchJob(basketId, toSearch, refs), Date.now(), guard),
       basketStatusStatement(userId, basketId, 'searching', null, guard),
     ],
   };
@@ -257,6 +273,9 @@ function pickJob(basketId: string, lines: pick.PickLine[], preferences: Preferen
  * Search done: the rules choose for every searched item. Pipeline items (parse, amend, retry: still pending) with
  * several candidates left go to one pick job (→ matching); otherwise → ready. A manual search (its item is
  * proposed or unmatched) takes the user's query as is: no exclude terms, no LLM.
+ *
+ * Memorized items take their refreshed product. Those whose product is unavailable are searched again (still
+ * searching) and the pick waits for that search, so a basket keeps a single pick.
  */
 async function advanceSearch(
   userId: string,
@@ -269,19 +288,41 @@ async function advanceSearch(
 ): Promise<Advance> {
   const offersByItem = new Map(result.byItem.map((entry) => [entry.itemId, entry.offers]));
   const preferences = await getPreferences(userId);
-  const outcomes: ItemOutcome[] = [];
+  const payload = SearchPayloadSchema.parse(JSON.parse(job.payload));
+  const memory = resolveMemory(needs, payload.refs, result.byRef, preferences);
+  const outcomes: ItemOutcome[] = [...memory.outcomes];
   const pickable: PickableItem[] = [];
-  for (const { itemId } of SearchPayloadSchema.parse(JSON.parse(job.payload)).items) {
+  for (const { itemId } of payload.items) {
     const need = needs.get(itemId);
     if (!need) continue;
     const manual = need.status !== 'pending';
     const offers = offersByItem.get(itemId) ?? [];
     const outcome = chooseOffer(itemId, offers, manual ? { ...need, excludeTerms: [] } : need, preferences);
-    outcomes.push(outcome);
+    outcomes.push(manual ? outcome : { ...outcome, reason: withMemoryNote(need.reason, outcome.reason) });
     if (!manual) pickable.push({ ...need, id: itemId, candidates: outcome.candidates });
   }
-  const lines = pickLines(pickable, preferences);
   const storeRef = result.context.storeRef;
+  if (memory.unavailable.length > 0) {
+    const fallback = { product_ref: null, reason: MEMORY_UNAVAILABLE, reason_source: null };
+    const search = searchJob(basketId, memory.unavailable);
+    return {
+      patch,
+      statements: [
+        ...searchOutcomeStatements(userId, basketId, storeRef, outcomes, 'searching', guard),
+        ...memory.unavailable.map(({ id }) => itemUpdateStatement(userId, basketId, id, fallback, guard)),
+        insertJobStatement(userId, search, Date.now(), guard),
+      ],
+    };
+  }
+  if (payload.items.some(({ itemId }) => needs.get(itemId)?.reason === MEMORY_UNAVAILABLE)) {
+    // The search of unavailable memorized products: the lines the first search left to the rules join the pick.
+    const searched = new Set(payload.items.map(({ itemId }) => itemId));
+    for (const item of (await getBasket(userId, basketId))?.items ?? []) {
+      if (item.reasonSource !== 'rules' || searched.has(item.id)) continue;
+      pickable.push({ ...item, excludeTerms: needs.get(item.id)?.excludeTerms ?? [] });
+    }
+  }
+  const lines = pickLines(pickable, preferences);
   if (lines.length === 0) {
     return { patch, statements: searchOutcomeStatements(userId, basketId, storeRef, outcomes, 'ready', guard) };
   }
@@ -352,8 +393,8 @@ export async function advanceBasket(
         return advanceSearch(userId, basketId, job, SearchResultSchema.parse(outcome.result), needs, patch, guard);
       }
       // A failed manual search leaves the basket reviewable, like a failed push; a failed pipeline search fails it.
-      const { items } = SearchPayloadSchema.parse(JSON.parse(job.payload));
-      const manual = items.every(({ itemId }) => needs.get(itemId)?.status !== 'pending');
+      const { items, refs } = SearchPayloadSchema.parse(JSON.parse(job.payload));
+      const manual = refs.length === 0 && items.every(({ itemId }) => needs.get(itemId)?.status !== 'pending');
       const status = manual ? 'ready' : 'failed';
       return { patch, statements: [basketStatusStatement(userId, basketId, status, outcome.error, guard)] };
     }

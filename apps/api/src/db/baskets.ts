@@ -61,6 +61,8 @@ export interface NewItem {
   searchQuery: string;
   excludeTerms: string[];
   sources: number[];
+  /** The memorized product: the item waits for its refresh instead of a search. */
+  memory?: { productRef: string; reason: string };
 }
 
 export interface ItemOutcome {
@@ -123,7 +125,7 @@ export async function getBasketInputs(userId: string, basketId: string): Promise
   return inputs === null ? null : StoredInputsSchema.parse(JSON.parse(inputs));
 }
 
-/** Inserts pending items into a basket of this user, while `guard` holds. */
+/** Inserts pending items into a basket of this user, while `guard` holds. A memorized item gets its product ref. */
 export function insertItemStatements(
   userId: string,
   basketId: string,
@@ -133,8 +135,9 @@ export function insertItemStatements(
   return items.map((item) =>
     env.DB.prepare(
       `INSERT INTO basket_items
-         (id, basket_id, position, ingredient_key, label, quantity, unit, sources, search_query, exclude_terms, status)
-       SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending'
+         (id, basket_id, position, ingredient_key, label, quantity, unit, sources, search_query, exclude_terms, status,
+          product_ref, reason, reason_source)
+       SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?, ?, ?
        WHERE EXISTS (SELECT 1 FROM baskets WHERE id = ? AND user_id = ?) AND ${guard.sql}`,
     ).bind(
       item.id,
@@ -147,6 +150,9 @@ export function insertItemStatements(
       JSON.stringify(item.sources),
       item.searchQuery,
       JSON.stringify(item.excludeTerms),
+      item.memory?.productRef ?? null,
+      item.memory?.reason ?? null,
+      item.memory ? 'memory' : null,
       basketId,
       userId,
       ...guard.params,
@@ -161,17 +167,24 @@ export interface ItemNeed {
   unit: Unit;
   searchQuery: string;
   excludeTerms: string[];
+  productRef: string | null;
+  reason: string | null;
+  reasonSource: ReasonSource | null;
 }
 
 /** What each item of a basket of this user needs, by item id: quantity, unit, search query, exclude terms... */
 export async function getItemNeeds(userId: string, basketId: string): Promise<Map<string, ItemNeed>> {
   const { results } = await env.DB.prepare(
-    `SELECT i.id, i.label, i.status, i.quantity, i.unit, i.search_query, i.exclude_terms FROM basket_items i
-     JOIN baskets b ON b.id = i.basket_id WHERE i.basket_id = ? AND b.user_id = ?`,
+    `SELECT i.id, i.label, i.status, i.quantity, i.unit, i.search_query, i.exclude_terms, i.product_ref, i.reason,
+       i.reason_source
+     FROM basket_items i JOIN baskets b ON b.id = i.basket_id WHERE i.basket_id = ? AND b.user_id = ?`,
   )
     .bind(basketId, userId)
     .all<
-      Pick<ItemRow, 'id' | 'label' | 'status' | 'quantity' | 'unit'> & { search_query: string; exclude_terms: string }
+      Pick<ItemRow, 'id' | 'label' | 'status' | 'quantity' | 'unit' | 'product_ref' | 'reason' | 'reason_source'> & {
+        search_query: string;
+        exclude_terms: string;
+      }
     >();
   return new Map(
     results.map((row) => [
@@ -183,6 +196,9 @@ export async function getItemNeeds(userId: string, basketId: string): Promise<Ma
         unit: row.unit,
         searchQuery: row.search_query,
         excludeTerms: TermsSchema.parse(JSON.parse(row.exclude_terms)),
+        productRef: row.product_ref,
+        reason: row.reason,
+        reasonSource: row.reason_source,
       },
     ]),
   );
@@ -235,7 +251,7 @@ export function searchOutcomeStatements(
   basketId: string,
   storeRef: string,
   outcomes: ItemOutcome[],
-  status: 'matching' | 'ready',
+  status: 'searching' | 'matching' | 'ready',
   guard: SqlGuard,
 ): D1PreparedStatement[] {
   return [
@@ -331,8 +347,11 @@ export function itemUpdateStatement(
   ).bind(...entries.map(([, value]) => value), itemId, basketId, userId, ...guard.params);
 }
 
-/** Creates the cart sync job and moves the basket to pushing. Returns false when a push is already active. */
-export async function startPush(userId: string, job: NewJob): Promise<boolean> {
+/**
+ * Creates the cart sync job and moves the basket to pushing, with `statements` in the same transaction. Returns
+ * false, and applies nothing, when a push is already active.
+ */
+export async function startPush(userId: string, job: NewJob, statements: D1PreparedStatement[] = []): Promise<boolean> {
   const now = Date.now();
   try {
     await env.DB.batch([
@@ -340,6 +359,7 @@ export async function startPush(userId: string, job: NewJob): Promise<boolean> {
       env.DB.prepare(
         `UPDATE baskets SET status = 'pushing', error = NULL, updated_at = ? WHERE id = ? AND user_id = ?`,
       ).bind(now, job.basketId, userId),
+      ...statements,
     ]);
     return true;
   } catch (err) {

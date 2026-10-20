@@ -2,6 +2,7 @@
 import type { BasketItem, Preferences, ProductOffer } from '@karto/contracts';
 import type { ItemPatch } from '../db/baskets.ts';
 import type { GivenLine, PickCandidate, PickLine, PickOutput } from '../llm/prompts/pick.ts';
+import { withMemoryNote } from './memory.ts';
 import { hardFilters, type Need, packsNeeded } from './rank.ts';
 
 /** Candidates per line shown to the LLM. */
@@ -75,7 +76,7 @@ export function applyPick(
     const alternatives = [...new Set(pick.alternatives)].filter((ref) => ref !== pick.ref).slice(0, MAX_ALTERNATIVES);
     const common = {
       candidates: JSON.stringify(orderCandidates(item.candidates, [...chosen, ...alternatives])),
-      reason: pick.reason.slice(0, MAX_REASON),
+      reason: withMemoryNote(item.reason, pick.reason.slice(0, MAX_REASON)),
       reason_source: 'llm',
     } as const;
     patches.push({

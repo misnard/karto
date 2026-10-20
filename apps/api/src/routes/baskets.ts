@@ -24,6 +24,7 @@ import {
   startPush,
   transitionBasket,
 } from '../db/baskets.ts';
+import { saveChoiceStatements } from '../db/choices.ts';
 import { getLatestBasketJob, insertJobStatement, toJob } from '../db/jobs.ts';
 import { getPreferences } from '../db/users.ts';
 import { AppError, readBody } from '../errors.ts';
@@ -32,6 +33,7 @@ import { buildUser, jsonSchema, type ParseInput, system } from '../llm/prompts/p
 import { wakeLlmRunner } from '../llm/runner.ts';
 import { PROVIDER, searchJob, toCartLines } from '../pipeline/advance-basket.ts';
 import { editItem } from '../pipeline/amend.ts';
+import { pushedChoices } from '../pipeline/memory.ts';
 import { fetchRecipe, RecipeError, type RecipeErrorCode } from '../recipes/fetch-recipe.ts';
 
 const LimitSchema = z.coerce.number().int().min(1).max(50).default(20);
@@ -140,12 +142,12 @@ export const baskets = new Hono<AppEnv>()
     if (lines.length === 0) throw new AppError('conflict', 409, 'No proposed product to push');
     const payload = CartSyncPayloadSchema.parse({ provider: basket.provider, lines });
     const jobId = crypto.randomUUID();
-    const started = await startPush(c.var.userId, {
-      id: jobId,
-      basketId: basket.id,
-      kind: 'provider.cart_sync',
-      payload,
-    });
+    // The memory is written with the push: the next baskets choose these products directly.
+    const started = await startPush(
+      c.var.userId,
+      { id: jobId, basketId: basket.id, kind: 'provider.cart_sync', payload },
+      saveChoiceStatements(c.var.userId, basket.provider, pushedChoices(basket.items)),
+    );
     if (!started) throw new AppError('conflict', 409, 'Push already running');
     return c.json({ jobId } satisfies PushResponse);
   })
