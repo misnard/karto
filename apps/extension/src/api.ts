@@ -23,10 +23,9 @@ import {
   PushResponseSchema,
 } from '@karto/contracts';
 import { z } from 'zod';
+import { getServerUrl } from './state.ts';
 
 /* Karto backend client, shared by the side panel and the executor. Every response is validated. */
-
-export const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8787';
 
 const AGENT: ClaimRequest['agent'] = { name: 'karto-extension', version: '0.1.0' };
 
@@ -42,11 +41,28 @@ export class ApiError extends Error {
   }
 }
 
-async function send(path: string, token: string | null, method = 'GET', body?: unknown): Promise<Response> {
+/**
+ * The server this browser talks to: the one chosen at pairing (chrome.storage.local), else the build-time default
+ * (pairings made before the address was asked).
+ */
+export async function getApiUrl(): Promise<string | null> {
+  return (await getServerUrl()) ?? import.meta.env.VITE_API_URL ?? null;
+}
+
+/** `baseUrl` defaults to getApiUrl(); without any server, the device counts as unpaired (401). */
+async function send(
+  path: string,
+  token: string | null,
+  method = 'GET',
+  body?: unknown,
+  baseUrl?: string,
+): Promise<Response> {
+  const base = baseUrl ?? (await getApiUrl());
+  if (!base) throw new ApiError(401, 'unauthorized', 'No Karto server configured');
   const headers: Record<string, string> = {};
   if (token) headers.authorization = `Bearer ${token}`;
   if (body !== undefined) headers['content-type'] = 'application/json';
-  const res = await fetch(`${API_URL}${path}`, {
+  const res = await fetch(`${base}${path}`, {
     method,
     headers,
     body: body === undefined ? undefined : JSON.stringify(body),
@@ -65,8 +81,9 @@ async function json<S extends z.ZodType>(schema: S, res: Response): Promise<z.in
 
 // --- Side panel ---
 
-export async function pair(code: string, label: string): Promise<PairResponse> {
-  return json(PairResponseSchema, await send('/v1/pair', null, 'POST', { code, label }));
+/** `serverUrl`: a parseServerUrl() result. The caller stores it once pairing succeeds. */
+export async function pair(code: string, label: string, serverUrl: string): Promise<PairResponse> {
+  return json(PairResponseSchema, await send('/v1/pair', null, 'POST', { code, label }, serverUrl));
 }
 
 export async function createBasket(token: string, request: CreateBasketRequest): Promise<Basket> {

@@ -1,0 +1,30 @@
+# Karto API on Node (apps/api/node/server.ts), listening on 127.0.0.1:8787 behind Caddy.
+# Install: copy to /etc/systemd/system/, then `systemctl daemon-reload && systemctl enable --now karto-api`.
+# Assumes the repo in /opt/karto (pnpm install --frozen-lockfile --prod), a system user `karto` whose home is
+# /var/lib/karto, and /etc/karto/karto.env (see karto.env.example). Node >= 22.18 (24 LTS recommended).
+
+[Unit]
+Description=Karto API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=karto
+Group=karto
+WorkingDirectory=/opt/karto/apps/api
+EnvironmentFile=/etc/karto/karto.env
+# Absolute path to node (`command -v node`). No pnpm in between: SIGTERM reaches node, which finishes requests.
+ExecStart=/usr/bin/node node/server.ts
+Restart=on-failure
+RestartSec=5
+
+# Hardening: read-only system, writable state only (the SQLite database and its WAL files).
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/karto
+
+[Install]
+WantedBy=multi-user.target

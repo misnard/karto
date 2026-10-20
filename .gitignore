@@ -2,6 +2,8 @@ node_modules/
 dist/
 .wrangler/
 coverage/
+# SQLite database of the Node server (apps/api/node/server.ts)
+apps/api/data/
 *.log
 .DS_Store
 

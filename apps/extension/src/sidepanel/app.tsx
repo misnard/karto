@@ -6,8 +6,11 @@ import {
   EXECUTOR_KEY,
   type ExecutorState,
   getExecutorState,
+  getServerUrl,
   getToken,
   parseExecutorState,
+  parseServerUrl,
+  setServerUrl,
   setToken,
 } from '../state.ts';
 import { BasketView } from './basket-view.tsx';
@@ -77,6 +80,12 @@ export function App() {
         initial={preferences}
         onBack={() => setEditing(false)}
         onUnauthorized={onUnauthorized}
+        onChangeServer={() => {
+          // Unpairs: the token and the open basket belong to the current server.
+          setEditing(false);
+          openBasket(null);
+          onUnauthorized();
+        }}
         onSaved={(saved) => {
           setPreferences(saved);
           setEditing(false);
@@ -116,17 +125,32 @@ export function App() {
 }
 
 function PairView({ onPaired }: { onPaired: (token: string) => void }) {
+  const [server, setServer] = useState(import.meta.env.VITE_API_URL ?? '');
   const [code, setCode] = useState('');
   const [label, setLabel] = useState('Chrome');
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
+  // The last server used wins over the build-time default.
+  useEffect(() => {
+    getServerUrl()
+      .then((stored) => stored && setServer(stored))
+      .catch((err: unknown) => console.error('[karto] could not read the server address', err));
+  }, []);
+
   async function submit(event: FormEvent) {
     event.preventDefault();
+    const serverUrl = parseServerUrl(server);
+    if (!serverUrl) {
+      setError('Adresse du serveur invalide : elle doit commencer par https:// (http:// seulement pour localhost).');
+      return;
+    }
     setBusy(true);
     setError(null);
     try {
-      const { token } = await pair(code.trim(), label.trim());
+      const { token } = await pair(code.trim(), label.trim(), serverUrl);
+      // Server first: the executor starts as soon as a token exists.
+      await setServerUrl(serverUrl);
       await setToken(token);
       notifyExecutor({ type: 'paired' });
       onPaired(token);
@@ -142,10 +166,24 @@ function PairView({ onPaired }: { onPaired: (token: string) => void }) {
       <div className="stack">
         <h1 className="title">Relie ce navigateur</h1>
         <p className="lead">
-          Entre le code d’appairage reçu pour connecter Karto à ton compte. Il ne sert qu’une fois.
+          Entre l’adresse du serveur Karto et le code d’appairage reçus pour connecter Karto à ton compte. Le code ne
+          sert qu’une fois.
         </p>
       </div>
       <form className="form" onSubmit={submit}>
+        <div className="field">
+          <label htmlFor="pair-server">Adresse du serveur</label>
+          <input
+            id="pair-server"
+            type="url"
+            value={server}
+            onChange={(e) => setServer(e.target.value)}
+            placeholder="https://karto.exemple.fr"
+            autoComplete="url"
+            spellCheck={false}
+            required
+          />
+        </div>
         <div className="field">
           <label htmlFor="pair-code">Code d’appairage</label>
           <input
@@ -169,7 +207,11 @@ function PairView({ onPaired }: { onPaired: (token: string) => void }) {
             {error}
           </p>
         )}
-        <button type="submit" className="btn btn-primary btn-block" disabled={busy || code.trim() === ''}>
+        <button
+          type="submit"
+          className="btn btn-primary btn-block"
+          disabled={busy || code.trim() === '' || server.trim() === ''}
+        >
           {busy ? 'Connexion…' : 'Relier ce navigateur'}
         </button>
       </form>
