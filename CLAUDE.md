@@ -6,17 +6,18 @@ Karto transforme une liste de courses ou des recettes en panier Carrefour Drive,
 
 ```
 apps/
-  api/                    Worker Cloudflare (Hono) : API, pipeline panier, règles, mémoire, jobs, runner LLM, cron
+  api/                    API (Hono), Worker Cloudflare ou Node : pipeline panier, règles, mémoire, jobs, runner LLM, cron
     src/routes/           me, baskets, jobs, admin
-    src/pipeline/         advanceBasket, aggregate, units, rank, memory
-    src/llm/              LlmClient, anthropic, runner, prompts/
+    src/pipeline/         advance-basket, aggregate, rank, pick, memory, amend, expire-jobs
+    src/llm/              LlmClient, anthropic, runner, prompts/ (parse, pick, amend)
     src/recipes/          fetch d'URL + extraction JSON-LD
     src/db/               requêtes D1 (toujours scopées par userId)
+    node/                 auto-hébergement : node:http → fetch du Worker, D1 sur node:sqlite, migrations, shim cloudflare:workers
     migrations/           SQL D1, append-only
     scripts/              create-user.ts (Node, sans dépendance)
     eval/                 éval LLM (payante, hors CI)
   extension/              Chrome MV3
-    public/manifest.json
+    public/manifest.json  sans version : le build y écrit celle de package.json
     src/background/       exécutant : boucle de jobs, onglet, transport MAIN, session, cart-sync
     src/sidepanel/        SPA React
 packages/
@@ -25,7 +26,8 @@ packages/
 services/
   llm-relay/              (option) script Node du VPS, relais claude -p
 scripts/                  check-boundaries.sh
-docs/                     spike-carrefour.md
+deploy/                   VPS : units systemd (API, relais), Caddyfile, karto.env.example
+docs/                     spike-carrefour.md, confidentialite.md, chrome-web-store.md
 ```
 
 ## Commandes
@@ -36,17 +38,20 @@ Elles existent à partir de l'étape 1. Toutes se lancent depuis la racine.
 |---|---|
 | `pnpm install` | Installe le workspace |
 | `pnpm dev:api` | `wrangler dev`, avec D1 local, sur http://localhost:8787 |
+| `pnpm serve` | Serveur Node (`apps/api/node/server.ts`) sur http://127.0.0.1:8787, base `apps/api/data/karto.sqlite`, migrée au démarrage, avec `.dev.vars` chargé |
+| `pnpm relay` | Relais LLM en local (`claude -p`), avec `RELAY_TOKEN` lu dans `.dev.vars` |
 | `pnpm dev:ext` | `vite build --watch` dans `apps/extension/dist` |
 | `pnpm test` / `pnpm test:watch` | Vitest dans tous les packages (aucun appel réseau réel) |
-| `pnpm lint` / `pnpm format` | `biome check` / `biome format --write` |
+| `pnpm lint` / `pnpm format` | `biome check` / `biome check --write` |
 | `pnpm typecheck` | `tsc --noEmit` dans chaque package |
 | `pnpm check:boundaries` | Échoue si du code Carrefour sort de son module ou si un endpoint interdit apparaît |
 | `pnpm verify` | lint, typecheck, test et check:boundaries. **Obligatoire avant de déclarer une tâche finie** |
-| `pnpm build` | Build de l'API et de l'extension |
+| `pnpm build` | Build de l'API (`wrangler deploy --dry-run`) et de l'extension |
+| `pnpm zip:ext` | Build de production de l'extension, puis `apps/extension/karto-<version>.zip` |
 | `pnpm db:migrate:local` / `pnpm db:migrate:remote` | Applique les migrations D1 |
-| `pnpm user:create <nom> [--admin] [--remote]` | Crée un utilisateur et affiche un code d'appairage (D1 locale par défaut) |
-| `pnpm eval:llm` | Éval du parse et du pick. **Payante**, à lancer à la main |
-| `pnpm --filter api deploy` | Déploie le Worker |
+| `pnpm user:create <nom> [--admin] [--remote \| --db <fichier>]` | Crée un utilisateur et affiche un code d'appairage. Par défaut sur la D1 locale. `--db` vise la base SQLite du serveur Node ; un chemin relatif part de `apps/api` |
+| `pnpm --filter api eval:llm` / `eval:amend` | Éval du parse et de l'amend avec `claude -p`. **Payante**, à lancer à la main |
+| `pnpm --filter api deploy` | Déploie le Worker et son cron |
 
 Pour charger l'extension en local :
 1. `pnpm dev:ext`.
@@ -54,9 +59,13 @@ Pour charger l'extension en local :
 3. Cliquer sur « Charger l'extension non empaquetée » et choisir `apps/extension/dist`.
 4. Après chaque rebuild, recharger l'extension, puis fermer et rouvrir le side panel.
 
+Dans le panneau, l'adresse du serveur se saisit à l'appairage (http://localhost:8787 en local).
+
 Variables d'environnement locales, toutes gitignorées :
-- `apps/api/.dev.vars` : `ANTHROPIC_API_KEY`, `LLM_RUNTIME=api`, `LLM_MODEL=claude-haiku-5-5`, `RELAY_TOKEN` ;
-- `apps/extension/.env.local` : `VITE_API_URL=http://localhost:8787`.
+- `apps/api/.dev.vars` : `LLM_RUNTIME` (`cli` ou `api`), `LLM_MODEL=claude-haiku-5-5`, `RELAY_TOKEN`, et `ANTHROPIC_API_KEY` en mode `api`. Pour `pnpm serve`, il faut aussi `HOST`, `PORT` et `KARTO_DB` (facultatifs) ;
+- `apps/extension/.env.local` : `VITE_API_URL=http://localhost:8787`, qui ne fait que préremplir l'adresse du serveur.
+
+La version de l'extension se change uniquement dans `apps/extension/package.json`. Le déploiement sur VPS ou Cloudflare est décrit dans `README.md`.
 
 ## Règles non négociables
 
@@ -76,6 +85,7 @@ Variables d'environnement locales, toutes gitignorées :
 
 - **Langue :** le code, les identifiants et les commentaires sont en anglais ; la documentation et les textes de l'UI sont en français.
 - **TypeScript :** strict, ESM, sans `any` (règle Biome), sans `!` non justifié. On préfère des fonctions et des modules simples aux classes ; les erreurs sont la seule exception.
+- **API sous Node :** Node exécute `apps/api/src` tel quel (type stripping, `erasableSyntaxOnly`), donc pas de parameter properties, d'enum ni de namespace. Tout nouvel import depuis `cloudflare:workers` doit exister dans `apps/api/node/cloudflare-workers.ts`.
 - **Nommage :**
   - fichiers en `kebab-case.ts` ;
   - fonctions en `camelCase`, types en `PascalCase` ;

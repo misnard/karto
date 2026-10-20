@@ -39,8 +39,6 @@ import { getServerUrl } from './state.ts';
 
 /* Karto backend client, shared by the side panel and the executor. Every response is validated. */
 
-const AGENT: ClaimRequest['agent'] = { name: 'karto-extension', version: '0.1.0' };
-
 export class ApiError extends Error {
   override readonly name = 'ApiError';
 
@@ -177,7 +175,9 @@ export async function createUser(token: string, name: string): Promise<CreateUse
 
 /** Null when there is nothing to do (204). */
 export async function claimJob(token: string, kinds: ClaimRequest['kinds']): Promise<Job | null> {
-  const res = await send('/v1/jobs/claim', token, 'POST', { kinds, agent: AGENT } satisfies ClaimRequest);
+  // The version comes from package.json, written into the manifest at build time.
+  const agent = { name: 'karto-extension', version: chrome.runtime.getManifest().version };
+  const res = await send('/v1/jobs/claim', token, 'POST', { kinds, agent } satisfies ClaimRequest);
   return res.status === 204 ? null : json(JobSchema, res);
 }
 

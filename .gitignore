@@ -5,6 +5,8 @@ coverage/
 # SQLite database of the Node server (apps/api/node/server.ts)
 apps/api/data/
 *.log
+# extension packages (pnpm zip:ext)
+apps/extension/karto-*.zip
 .DS_Store
 
 # secrets
