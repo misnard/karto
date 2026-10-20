@@ -1,0 +1,2995 @@
+{
+  "data": {
+    "filteredSuggestions": [
+      {
+        "category": "Epicerie sucrée",
+        "filterKey": "product.categories.name",
+        "text": "lait",
+        "highlighted": "<em>lait</em>",
+        "matches": "lait",
+        "link": "/s?q=lait&filters%5Bproduct.categories.name%5D=Epicerie%20sucr%C3%A9e"
+      },
+      {
+        "category": "Crèmerie et Produits laitiers",
+        "filterKey": "product.categories.name",
+        "text": "lait",
+        "highlighted": "<em>lait</em>",
+        "matches": "lait",
+        "link": "/s?q=lait&filters%5Bproduct.categories.name%5D=Cr%C3%A8merie%20et%20Produits%20laitiers"
+      },
+      {
+        "category": "Bio et Ecologie",
+        "filterKey": "product.categories.name",
+        "text": "lait",
+        "highlighted": "<em>lait</em>",
+        "matches": "lait",
+        "link": "/s?q=lait&filters%5Bproduct.categories.name%5D=Bio%20et%20Ecologie"
+      },
+      {
+        "category": "Hygiène et Beauté",
+        "filterKey": "product.categories.name",
+        "text": "lait",
+        "highlighted": "<em>lait</em>",
+        "matches": "lait",
+        "link": "/s?q=lait&filters%5Bproduct.categories.name%5D=Hygi%C3%A8ne%20et%20Beaut%C3%A9"
+      },
+      {
+        "category": "Parapharmacie",
+        "filterKey": "product.categories.name",
+        "text": "lait",
+        "highlighted": "<em>lait</em>",
+        "matches": "lait",
+        "link": "/s?q=lait&filters%5Bproduct.categories.name%5D=Parapharmacie"
+      }
+    ],
+    "suggestions": [
+      {
+        "highlighted": "<em>lait</em> demi-ecrémé",
+        "text": "lait demi-ecrémé",
+        "link": "/s?q=lait%20demi-ecr%C3%A9m%C3%A9"
+      },
+      {
+        "highlighted": "<em>lait</em> de coco",
+        "text": "lait de coco",
+        "link": "/s?q=lait%20de%20coco"
+      },
+      {
+        "highlighted": "<em>lait</em> entier",
+        "text": "lait entier",
+        "link": "/s?q=lait%20entier"
+      },
+      {
+        "highlighted": "<em>lait</em> sans lactose",
+        "text": "lait sans lactose",
+        "link": "/s?q=lait%20sans%20lactose"
+      },
+      {
+        "highlighted": "<em>lait</em> bio",
+        "text": "lait bio",
+        "link": "/s?q=lait%20bio"
+      },
+      {
+        "highlighted": "<em>lait</em> végétale",
+        "text": "lait végétale",
+        "link": "/s?q=lait%20v%C3%A9g%C3%A9tale"
+      },
+      {
+        "highlighted": "<em>lait</em> d'amande",
+        "text": "lait d'amande",
+        "link": "/s?q=lait%20d%27amande"
+      },
+      {
+        "highlighted": "<em>lait</em> bébé",
+        "text": "lait bébé",
+        "link": "/s?q=lait%20b%C3%A9b%C3%A9"
+      },
+      {
+        "highlighted": "<em>lait</em> d'avoine",
+        "text": "lait d'avoine",
+        "link": "/s?q=lait%20d%27avoine"
+      }
+    ],
+    "meta": {
+      "autocorrect": null,
+      "keyword": "lait",
+      "searchType": "",
+      "allStoreLink": "/s?q=lait"
+    },
+    "products": [
+      {
+        "type": "product",
+        "id": "product-3560070435272",
+        "attributes": {
+          "ean": "3560070435272",
+          "cdbase": "3970901",
+          "title": "Lait Demi-Ecrémé UHT Bio CARREFOUR BIO",
+          "shortTitle": "Lait Demi-Ecrémé UHT Bio CARREFOUR BIO",
+          "brand": "CARREFOUR BIO",
+          "slug": "lait-demi-ecreme-uht-bio-carrefour-bio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-demi-ecreme",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29298",
+              "label": "Lait demi-écrémé",
+              "code": "R00F00SF00",
+              "slug": "lait-demi-ecreme",
+              "uri": "cremerie/laits/lait-demi-ecreme",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/eb154fcd5b2739f28851367c62958dcd/p_FORMAT/3560070435272-photosite-20161005-083216-0.jpg",
+              "https://media.carrefour.fr/medias/868e11a277ca3ed599706ebbdd3832f6/p_FORMAT/3560070435272-photosite-20161005-083216-1.jpg",
+              "https://media.carrefour.fr/medias/5cc0687f0b943ff79cedd08c92344f0d/p_FORMAT/3560070435272-photosite-20161005-083216-2.jpg",
+              "https://media.carrefour.fr/medias/823406b8c7a83de69528a79835ea1f77/p_FORMAT/3560070435272-photosite-20161005-083216-8.jpg",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/eb154fcd5b2739f28851367c62958dcd/p_FORMAT/3560070435272-photosite-20161005-083216-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/868e11a277ca3ed599706ebbdd3832f6/p_FORMAT/3560070435272-photosite-20161005-083216-1.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5cc0687f0b943ff79cedd08c92344f0d/p_FORMAT/3560070435272-photosite-20161005-083216-2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/823406b8c7a83de69528a79835ea1f77/p_FORMAT/3560070435272-photosite-20161005-083216-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560070435272": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 0.91,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.82,
+                    "perUnitLabel": "1.82 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "club",
+                    "key": "flag.club.bio"
+                  },
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3560070435272",
+                  "promotion": {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.09,
+                      "discountedPrice": 0.91,
+                      "initialPrice": 0.91,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004445"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "rd_fid_market",
+                      "label": "-10% Club",
+                      "message": "promotion.rd_fid_market",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": true,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.09,
+                        "discountedPrice": 0.91,
+                        "initialPrice": 0.91,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004445"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "la bouteille 50cL",
+          "format": "50cl",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [
+            "flag.club.bio"
+          ],
+          "origin": "",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.9,
+            "count": 58,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-uht-bio-carrefour-bio-3560070435272",
+          "reviews": "/product/3560070435272/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560070437917",
+        "attributes": {
+          "ean": "3560070437917",
+          "cdbase": "3971609",
+          "title": "Lait Demi-Ecrémé Bio CARREFOUR BIO",
+          "shortTitle": "Lait Demi-Ecrémé Bio CARREFOUR BIO",
+          "brand": "CARREFOUR BIO",
+          "slug": "lait-demi-ecreme-bio-carrefour-bio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-demi-ecreme",
+          "categories": [
+            {
+              "id": "1838",
+              "label": "Bio et Ecologie",
+              "code": "R00F00SF00",
+              "slug": "bio-et-ecologie",
+              "uri": "bio-et-ecologie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "1844",
+              "label": "Crèmerie",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "bio-et-ecologie/cremerie",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "1845",
+              "label": "Lait et Oeufs",
+              "code": "R00F00SF00",
+              "slug": "lait-et-oeufs",
+              "uri": "bio-et-ecologie/cremerie/lait-et-oeufs",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Bio et Ecologie",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/ba3c0d18a4713a4489fba9d184f0bfee/p_FORMAT/3560070437917-photosite-20171128-162321-0.jpg",
+              "https://media.carrefour.fr/medias/885548cd94b534f99462613b2415b6a0/p_FORMAT/3560070437917-photosite-20171128-162321-4.jpg",
+              "https://media.carrefour.fr/medias/2503d292c36c3342966e66c4fde76641/p_FORMAT/3560070437917-photosite-20171128-162321-5.jpg",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/ba3c0d18a4713a4489fba9d184f0bfee/p_FORMAT/3560070437917-photosite-20171128-162321-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/885548cd94b534f99462613b2415b6a0/p_FORMAT/3560070437917-photosite-20171128-162321-4.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/2503d292c36c3342966e66c4fde76641/p_FORMAT/3560070437917-photosite-20171128-162321-5.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560070437917": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 5.46,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.82,
+                    "perUnitLabel": "1.82 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 10
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "club",
+                    "key": "flag.club.bio"
+                  },
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3560070437917",
+                  "promotion": {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.55,
+                      "discountedPrice": 5.46,
+                      "initialPrice": 5.46,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004445"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "rd_fid_market",
+                      "label": "-10% Club",
+                      "message": "promotion.rd_fid_market",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": true,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.55,
+                        "discountedPrice": 5.46,
+                        "initialPrice": 5.46,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004445"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le pack de 6 bouteilles de 50cL",
+          "format": "6x50cl",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [
+            "flag.club.bio"
+          ],
+          "origin": "",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.8,
+            "count": 130,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-bio-carrefour-bio-3560070437917",
+          "reviews": "/product/3560070437917/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3229820181950",
+        "attributes": {
+          "ean": "3229820181950",
+          "cdbase": "3336546",
+          "title": "Biscuits bio Chocolat lait BJORG",
+          "shortTitle": "Biscuits bio Chocolat lait BJORG",
+          "brand": "BJORG",
+          "slug": "biscuits-bio-chocolat-lait-bjorg",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "bio-et-ecologie/epicerie-sucree/biscuits-gateaux-moelleux",
+          "categories": [
+            {
+              "id": "2183",
+              "label": "Epicerie sucrée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-sucree",
+              "uri": "epicerie-sucree",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "35095",
+              "label": "Biscuits",
+              "code": "R00F00SF00",
+              "slug": "biscuits",
+              "uri": "epicerie-sucree/biscuits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2222",
+              "label": "Biscuits au chocolat ou à la vanille",
+              "code": "R00F00SF00",
+              "slug": "biscuits-au-chocolat-ou-a-la-vanille",
+              "uri": "epicerie-sucree/biscuits/biscuits-au-chocolat-ou-a-la-vanille",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie sucrée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/399e7c52b22249a08c58b45ac10cf82a/p_FORMAT/03229820181950_H1N1_s27.png",
+              "https://media.carrefour.fr/media/referential/media/92112ace40d5463eaee243cc50891c88/p_FORMAT/03229820181950_C8N1_s32.png",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/399e7c52b22249a08c58b45ac10cf82a/p_FORMAT/03229820181950_H1N1_s27.png",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/92112ace40d5463eaee243cc50891c88/p_FORMAT/03229820181950_C8N1_s32.png",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3229820181950": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.95,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 13.11,
+                    "perUnitLabel": "13.11 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3229820181950",
+                  "promotion": null,
+                  "promotions": [],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "Le paquet de 225g",
+          "format": "225g",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "D",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.75,
+            "count": 4,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/biscuits-bio-chocolat-lait-bjorg-3229820181950",
+          "reviews": "/product/3229820181950/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3270190021162",
+        "attributes": {
+          "ean": "3270190021162",
+          "cdbase": "0843402",
+          "title": "Lait entier, de montagne et français CARREFOUR EXTRA",
+          "shortTitle": "Lait entier, de montagne et français CARREFOUR EXTRA",
+          "brand": "CARREFOUR EXTRA",
+          "slug": "lait-entier-de-montagne-et-francais-carrefour-extra",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-entier",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29300",
+              "label": "Lait entier",
+              "code": "R00F00SF00",
+              "slug": "lait-entier",
+              "uri": "cremerie/laits/lait-entier",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/f285311e066746d8991f9bb4aed79320/p_FORMAT/3270190021162_0.jpg",
+              "https://media.carrefour.fr/media/referential/media/82a5f55567004d01a1bbe2aae52713e0/p_FORMAT/3270190021162_2.jpg",
+              "https://media.carrefour.fr/media/referential/media/1faacac779344c1ab9a72f47ed5d8cb2/p_FORMAT/3270190021162_8.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/f285311e066746d8991f9bb4aed79320/p_FORMAT/3270190021162_0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/82a5f55567004d01a1bbe2aae52713e0/p_FORMAT/3270190021162_2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/1faacac779344c1ab9a72f47ed5d8cb2/p_FORMAT/3270190021162_8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3270190021162": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 1.2,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.2,
+                    "perUnitLabel": "1.20 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3270190021162",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.18,
+                        "discountedPrice": 1.2,
+                        "initialPrice": 1.2,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "la brique de 1 L",
+          "format": "1l",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.fsc"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "B",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.84,
+            "count": 61,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-entier-de-montagne-et-francais-carrefour-extra-3270190021162",
+          "reviews": "/product/3270190021162/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3276554163158",
+        "attributes": {
+          "ean": "3276554163158",
+          "cdbase": "5940259",
+          "title": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+          "shortTitle": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+          "brand": "CARREFOUR CLASSIC'",
+          "slug": "lait-demi-ecreme-carrefour-classic",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-demi-ecreme",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29298",
+              "label": "Lait demi-écrémé",
+              "code": "R00F00SF00",
+              "slug": "lait-demi-ecreme",
+              "uri": "cremerie/laits/lait-demi-ecreme",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/6236a56cbc6c46c4a47aaeea5b9ffe0b/p_FORMAT/3276554163158-photosite-20241112-171948-0.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/6236a56cbc6c46c4a47aaeea5b9ffe0b/p_FORMAT/3276554163158-photosite-20241112-171948-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3276554163158": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 1.05,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.05,
+                    "perUnitLabel": "1.05 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3276554163158",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.16,
+                        "discountedPrice": 1.05,
+                        "initialPrice": 1.05,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": "PASS",
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "la bouteille 1L",
+          "format": "1L",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.72,
+            "count": 164,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-carrefour-classic-3276554163158",
+          "reviews": "/product/3276554163158/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560071267964",
+        "attributes": {
+          "ean": "3560071267964",
+          "cdbase": "7177563",
+          "title": "Lait Demi-Ecrémé demi-écrémé SIMPL",
+          "shortTitle": "Lait Demi-Ecrémé demi-écrémé SIMPL",
+          "brand": "SIMPL",
+          "slug": "lait-demi-ecreme-demi-ecreme-simpl",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-demi-ecreme",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29298",
+              "label": "Lait demi-écrémé",
+              "code": "R00F00SF00",
+              "slug": "lait-demi-ecreme",
+              "uri": "cremerie/laits/lait-demi-ecreme",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/9af83bb7b46d3d2ba6db1814c093cd3a/p_FORMAT/3560071267964-0.jpg",
+              "https://media.carrefour.fr/medias/8e0d26f5800b3a58bcecf177103e6b87/p_FORMAT/3560071267964-2.jpg",
+              "https://media.carrefour.fr/medias/9e4c47ef192d3f7fafc0775ca05aa5fd/p_FORMAT/3560071267964-7.jpg",
+              "https://media.carrefour.fr/medias/0f36649035e432059997eb829cef5a26/p_FORMAT/3560071267964-8.jpg",
+              "https://media.carrefour.fr/medias/e5afa79a3d6e32b3933bdc6c7b63964b/p_FORMAT/3560071267964-9.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/9af83bb7b46d3d2ba6db1814c093cd3a/p_FORMAT/3560071267964-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/8e0d26f5800b3a58bcecf177103e6b87/p_FORMAT/3560071267964-2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/9e4c47ef192d3f7fafc0775ca05aa5fd/p_FORMAT/3560071267964-7.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/0f36649035e432059997eb829cef5a26/p_FORMAT/3560071267964-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/e5afa79a3d6e32b3933bdc6c7b63964b/p_FORMAT/3560071267964-9.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560071267964": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 5.64,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 0.94,
+                    "perUnitLabel": "0.94 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 10
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3560071267964",
+                  "promotion": null,
+                  "promotions": [],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le pack de 6 briques d'1L",
+          "format": "6x1l",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.88,
+            "count": 24,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-demi-ecreme-simpl-3560071267964",
+          "reviews": "/product/3560071267964/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3270190430049",
+        "attributes": {
+          "ean": "3270190430049",
+          "cdbase": "1093820",
+          "title": "Lait Demi-Écrémé CARREFOUR EXTRA",
+          "shortTitle": "Lait Demi-Écrémé CARREFOUR EXTRA",
+          "brand": "CARREFOUR EXTRA",
+          "slug": "lait-demi-ecreme-carrefour-extra",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-demi-ecreme",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29298",
+              "label": "Lait demi-écrémé",
+              "code": "R00F00SF00",
+              "slug": "lait-demi-ecreme",
+              "uri": "cremerie/laits/lait-demi-ecreme",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/11bae5b7375a317593e606fdabd76474/p_FORMAT/3270190430049-photosite-20210504-175356-0.jpg",
+              "https://media.carrefour.fr/medias/3373fa95d4b0341abc084bf6cd317700/p_FORMAT/3270190430049-photosite-20210504-175357-2.jpg",
+              "https://media.carrefour.fr/medias/7e5c0b7aeb8b34d6913b56021a148be1/p_FORMAT/3270190430049-photosite-20210504-175357-3.jpg",
+              "https://media.carrefour.fr/medias/f652ec8747223b94bbc6222ead566ed5/p_FORMAT/3270190430049-photosite-20210504-175358-7.jpg",
+              "https://media.carrefour.fr/medias/4cd6e6b79fed3a668e8e5e0e617e0774/p_FORMAT/3270190430049-photosite-20210504-175359-8.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/11bae5b7375a317593e606fdabd76474/p_FORMAT/3270190430049-photosite-20210504-175356-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/3373fa95d4b0341abc084bf6cd317700/p_FORMAT/3270190430049-photosite-20210504-175357-2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/7e5c0b7aeb8b34d6913b56021a148be1/p_FORMAT/3270190430049-photosite-20210504-175357-3.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/f652ec8747223b94bbc6222ead566ed5/p_FORMAT/3270190430049-photosite-20210504-175358-7.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/4cd6e6b79fed3a668e8e5e0e617e0774/p_FORMAT/3270190430049-photosite-20210504-175359-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3270190430049": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 6.54,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.09,
+                    "perUnitLabel": "1.09 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 10
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3270190430049",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.98,
+                        "discountedPrice": 6.54,
+                        "initialPrice": 6.54,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le pack de 6 bouteilles de 1L",
+          "format": "6x1L",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.71,
+            "count": 1845,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-carrefour-extra-3270190430049",
+          "reviews": "/product/3270190430049/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560071013257",
+        "attributes": {
+          "ean": "3560071013257",
+          "cdbase": "5988398",
+          "title": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+          "shortTitle": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+          "brand": "CARREFOUR CLASSIC'",
+          "slug": "lait-demi-ecreme-carrefour-classic",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-demi-ecreme",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29298",
+              "label": "Lait demi-écrémé",
+              "code": "R00F00SF00",
+              "slug": "lait-demi-ecreme",
+              "uri": "cremerie/laits/lait-demi-ecreme",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/51b50d6337c03dccbbfa06712c057f38/p_FORMAT/3560071013257-0.jpg",
+              "https://media.carrefour.fr/medias/a842157593a73491a697eabe8534d222/p_FORMAT/3560071013257-photosite-20210219-181302-2.jpg",
+              "https://media.carrefour.fr/medias/c00fe634567836e09c3b00cf46b0b6ef/p_FORMAT/3560071013257-photosite-20210219-181302-8.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/51b50d6337c03dccbbfa06712c057f38/p_FORMAT/3560071013257-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/a842157593a73491a697eabe8534d222/p_FORMAT/3560071013257-photosite-20210219-181302-2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/c00fe634567836e09c3b00cf46b0b6ef/p_FORMAT/3560071013257-photosite-20210219-181302-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560071013257": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 6.18,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.03,
+                    "perUnitLabel": "1.03 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 10
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "promotion",
+                    "key": "product.label.promotion"
+                  },
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3560071013257",
+                  "promotion": {
+                    "type": "ri",
+                    "label": "Le 2ème à -20%",
+                    "message": "promotion.ri",
+                    "isLoyalty": false,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": false,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 2,
+                    "messageArgs": {
+                      "quantity": 2,
+                      "discountAmount": 0,
+                      "discountedPrice": 12.36,
+                      "initialPrice": 12.36,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2026-10-12T00:00:00+0200",
+                      "endDate": "2026-10-28T23:59:00+0100"
+                    },
+                    "promoStartDate": "2026-10-12T00:00:00+0200",
+                    "promoEndDate": "2026-10-28T23:59:00+0100",
+                    "mixableGtins": [
+                      "3560071013332",
+                      "3560071013387",
+                      "3560071013462",
+                      "3560071013295",
+                      "3560071459185",
+                      "3560071013424",
+                      "3560071013257"
+                    ],
+                    "isPriceAlreadyDiscounted": true,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120260000108235"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "ri",
+                      "label": "Le 2ème à -20%",
+                      "message": "promotion.ri",
+                      "isLoyalty": false,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 2,
+                      "messageArgs": {
+                        "quantity": 2,
+                        "discountAmount": 0,
+                        "discountedPrice": 12.36,
+                        "initialPrice": 12.36,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2026-10-12T00:00:00+0200",
+                        "endDate": "2026-10-28T23:59:00+0100"
+                      },
+                      "promoStartDate": "2026-10-12T00:00:00+0200",
+                      "promoEndDate": "2026-10-28T23:59:00+0100",
+                      "mixableGtins": [
+                        "3560071013332",
+                        "3560071013387",
+                        "3560071013462",
+                        "3560071013295",
+                        "3560071459185",
+                        "3560071013424",
+                        "3560071013257"
+                      ],
+                      "isPriceAlreadyDiscounted": true,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120260000108235"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le pack de 6 briques d'1L",
+          "format": "6x1L",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.fsc"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.76,
+            "count": 372,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-carrefour-classic-3560071013257",
+          "reviews": "/product/3560071013257/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3270190216834",
+        "attributes": {
+          "ean": "3270190216834",
+          "cdbase": "1678984",
+          "title": "Lait Demi-Ecrémé Bio CARREFOUR BIO",
+          "shortTitle": "Lait Demi-Ecrémé Bio CARREFOUR BIO",
+          "brand": "CARREFOUR BIO",
+          "slug": "lait-demi-ecreme-bio-carrefour-bio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "bio-et-ecologie/cremerie/lait-et-oeufs",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29298",
+              "label": "Lait demi-écrémé",
+              "code": "R00F00SF00",
+              "slug": "lait-demi-ecreme",
+              "uri": "cremerie/laits/lait-demi-ecreme",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/dbb6c58171d83fff9ffd23a822366ec8/p_FORMAT/3270190216834-0.jpg",
+              "https://media.carrefour.fr/medias/dbd96c1af11c3c0699c67a16c9775261/p_FORMAT/3270190216834-2.jpg",
+              "https://media.carrefour.fr/medias/e2f81493e1123eb1b2ea0099a8dbb7c1/p_FORMAT/3270190216834-8.jpg",
+              "https://media.carrefour.fr/medias/9250d3abdacf37fabc963ad2c4835c51/p_FORMAT/3270190216834-9.jpg",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/dbb6c58171d83fff9ffd23a822366ec8/p_FORMAT/3270190216834-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/dbd96c1af11c3c0699c67a16c9775261/p_FORMAT/3270190216834-2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/e2f81493e1123eb1b2ea0099a8dbb7c1/p_FORMAT/3270190216834-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/9250d3abdacf37fabc963ad2c4835c51/p_FORMAT/3270190216834-9.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3270190216834": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 7.08,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.18,
+                    "perUnitLabel": "1.18 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 10
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "promotion",
+                    "key": "product.label.promotion"
+                  },
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3270190216834",
+                  "promotion": {
+                    "type": "ri",
+                    "label": "Le 2ème à -20%",
+                    "message": "promotion.ri",
+                    "isLoyalty": false,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": false,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 2,
+                    "messageArgs": {
+                      "quantity": 2,
+                      "discountAmount": 0,
+                      "discountedPrice": 14.16,
+                      "initialPrice": 14.16,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2026-10-05T00:00:00+0200",
+                      "endDate": "2026-10-21T23:59:00+0200"
+                    },
+                    "promoStartDate": "2026-10-05T00:00:00+0200",
+                    "promoEndDate": "2026-10-21T23:59:00+0200",
+                    "mixableGtins": [
+                      "3276558688213",
+                      "3270190216834"
+                    ],
+                    "isPriceAlreadyDiscounted": true,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120260000092894"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "ri",
+                      "label": "Le 2ème à -20%",
+                      "message": "promotion.ri",
+                      "isLoyalty": false,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 2,
+                      "messageArgs": {
+                        "quantity": 2,
+                        "discountAmount": 0,
+                        "discountedPrice": 14.16,
+                        "initialPrice": 14.16,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2026-10-05T00:00:00+0200",
+                        "endDate": "2026-10-21T23:59:00+0200"
+                      },
+                      "promoStartDate": "2026-10-05T00:00:00+0200",
+                      "promoEndDate": "2026-10-21T23:59:00+0200",
+                      "mixableGtins": [
+                        "3276558688213",
+                        "3270190216834"
+                      ],
+                      "isPriceAlreadyDiscounted": true,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120260000092894"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le pack de 6 bouteilles de 1L",
+          "format": "6x1l",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.79,
+            "count": 419,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-bio-carrefour-bio-3270190216834",
+          "reviews": "/product/3270190216834/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3245414192508",
+        "attributes": {
+          "ean": "3245414192508",
+          "cdbase": "3511157",
+          "title": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+          "shortTitle": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+          "brand": "CARREFOUR CLASSIC'",
+          "slug": "lait-demi-ecreme-carrefour-classic",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/laits/lait-demi-ecreme",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29297",
+              "label": "Laits et Boissons végétales",
+              "code": "R00F00SF00",
+              "slug": "laits",
+              "uri": "cremerie/laits",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29298",
+              "label": "Lait demi-écrémé",
+              "code": "R00F00SF00",
+              "slug": "lait-demi-ecreme",
+              "uri": "cremerie/laits/lait-demi-ecreme",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/42185668d0a2351cb40b1c6cb23b1cc2/p_FORMAT/3245414192508-photosite-20210323-175033-0.jpg",
+              "https://media.carrefour.fr/medias/9b01ded11a18301e802daff02991d62f/p_FORMAT/3245414192508-photosite-20210323-175033-2.jpg",
+              "https://media.carrefour.fr/medias/c1068a0dd2bb3320b3f8d64f75fa6580/p_FORMAT/3245414192508-photosite-20210323-175034-8.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/42185668d0a2351cb40b1c6cb23b1cc2/p_FORMAT/3245414192508-photosite-20210323-175033-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/9b01ded11a18301e802daff02991d62f/p_FORMAT/3245414192508-photosite-20210323-175033-2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/c1068a0dd2bb3320b3f8d64f75fa6580/p_FORMAT/3245414192508-photosite-20210323-175034-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3245414192508": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 0.81,
+                    "taxMessage": "",
+                    "unitOfMeasure": "L",
+                    "perUnit": 1.62,
+                    "perUnitLabel": "1.62 € / L"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 10,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3245414192508",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.12,
+                        "discountedPrice": 0.81,
+                        "initialPrice": 0.81,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "la bouteille 50cL",
+          "format": "50cL",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.75,
+            "count": 77,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/lait-demi-ecreme-carrefour-classic-3245414192508",
+          "reviews": "/product/3245414192508/reviews"
+        }
+      }
+    ]
+  }
+}

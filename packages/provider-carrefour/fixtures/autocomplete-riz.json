@@ -1,0 +1,1520 @@
+{
+  "data": {
+    "filteredSuggestions": [
+      {
+        "category": "Epicerie salée",
+        "filterKey": "product.categories.name",
+        "text": "riz",
+        "highlighted": "<em>riz</em>",
+        "matches": "riz",
+        "link": "/s?q=riz&filters%5Bproduct.categories.name%5D=Epicerie%20sal%C3%A9e"
+      },
+      {
+        "category": "Charcuterie et Traiteur",
+        "filterKey": "product.categories.name",
+        "text": "riz",
+        "highlighted": "<em>riz</em>",
+        "matches": "riz",
+        "link": "/s?q=riz&filters%5Bproduct.categories.name%5D=Charcuterie%20et%20Traiteur"
+      },
+      {
+        "category": "Bio et Ecologie",
+        "filterKey": "product.categories.name",
+        "text": "riz",
+        "highlighted": "<em>riz</em>",
+        "matches": "riz",
+        "link": "/s?q=riz&filters%5Bproduct.categories.name%5D=Bio%20et%20Ecologie"
+      },
+      {
+        "category": "Bébé",
+        "filterKey": "product.categories.name",
+        "text": "riz",
+        "highlighted": "<em>riz</em>",
+        "matches": "riz",
+        "link": "/s?q=riz&filters%5Bproduct.categories.name%5D=B%C3%A9b%C3%A9"
+      },
+      {
+        "category": "Epicerie sucrée",
+        "filterKey": "product.categories.name",
+        "text": "riz",
+        "highlighted": "<em>riz</em>",
+        "matches": "riz",
+        "link": "/s?q=riz&filters%5Bproduct.categories.name%5D=Epicerie%20sucr%C3%A9e"
+      }
+    ],
+    "suggestions": [
+      {
+        "highlighted": "<em>riz</em> basmati",
+        "text": "riz basmati",
+        "link": "/s?q=riz%20basmati"
+      },
+      {
+        "highlighted": "<em>riz</em> au lait",
+        "text": "riz au lait",
+        "link": "/s?q=riz%20au%20lait"
+      },
+      {
+        "highlighted": "<em>riz</em> complet",
+        "text": "riz complet",
+        "link": "/s?q=riz%20complet"
+      },
+      {
+        "highlighted": "<em>riz</em> bio",
+        "text": "riz bio",
+        "link": "/s?q=riz%20bio"
+      },
+      {
+        "highlighted": "<em>riz</em> rond",
+        "text": "riz rond",
+        "link": "/s?q=riz%20rond"
+      },
+      {
+        "highlighted": "<em>riz</em> thai",
+        "text": "riz thai",
+        "link": "/s?q=riz%20thai"
+      },
+      {
+        "highlighted": "<em>riz</em> cantonais",
+        "text": "riz cantonais",
+        "link": "/s?q=riz%20cantonais"
+      },
+      {
+        "highlighted": "<em>riz</em> noir",
+        "text": "riz noir",
+        "link": "/s?q=riz%20noir"
+      },
+      {
+        "highlighted": "<em>riz</em> long",
+        "text": "riz long",
+        "link": "/s?q=riz%20long"
+      }
+    ],
+    "meta": {
+      "autocorrect": null,
+      "keyword": "riz",
+      "searchType": "",
+      "allStoreLink": "/s?q=riz"
+    },
+    "products": [
+      {
+        "type": "product",
+        "id": "product-3661945170202",
+        "attributes": {
+          "ean": "3661945170202",
+          "cdbase": "7764017",
+          "title": "Riz Spécial Sushi MEI ASIA",
+          "shortTitle": "Riz Spécial Sushi MEI ASIA",
+          "brand": "MEI ASIA",
+          "slug": "riz-special-sushi-mei-asia",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "epicerie-salee/pates-riz-feculents/riz/basmati-et-thai",
+          "categories": [
+            {
+              "id": "2112",
+              "label": "Epicerie salée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-salee",
+              "uri": "epicerie-salee",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "2143",
+              "label": "Riz, Purées et Féculents",
+              "code": "R00F00SF00",
+              "slug": "pates-riz-feculents",
+              "uri": "epicerie-salee/pates-riz-feculents",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2150",
+              "label": "Riz",
+              "code": "R00F00SF00",
+              "slug": "riz",
+              "uri": "epicerie-salee/pates-riz-feculents/riz",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            },
+            {
+              "id": "2152",
+              "label": "Riz basmati et Thai",
+              "code": "R00F00SF00",
+              "slug": "basmati-et-thai",
+              "uri": "epicerie-salee/pates-riz-feculents/riz/basmati-et-thai",
+              "type": "RAYON",
+              "level": 4,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie salée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/b43fbcef8b9c43b58a200d279a01818a/p_FORMAT/03661945170202_D1C1_s01.jpeg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/b43fbcef8b9c43b58a200d279a01818a/p_FORMAT/03661945170202_D1C1_s01.jpeg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3661945170202": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 3.79,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 3.79,
+                    "perUnitLabel": "3.79 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3661945170202",
+                  "promotion": null,
+                  "promotions": [],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le sachet de 1kg",
+          "format": "1kg",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": null,
+            "count": null,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/riz-special-sushi-mei-asia-3661945170202",
+          "reviews": "/product/3661945170202/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560070393619",
+        "attributes": {
+          "ean": "3560070393619",
+          "cdbase": "3887246",
+          "title": "Riz Basmati Long Bio CARREFOUR BIO",
+          "shortTitle": "Riz Basmati Long Bio CARREFOUR BIO",
+          "brand": "CARREFOUR BIO",
+          "slug": "riz-basmati-long-bio-carrefour-bio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "bio-et-ecologie/epicerie-salee/pates-riz-et-feculents/riz",
+          "categories": [
+            {
+              "id": "2112",
+              "label": "Epicerie salée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-salee",
+              "uri": "epicerie-salee",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "2143",
+              "label": "Riz, Purées et Féculents",
+              "code": "R00F00SF00",
+              "slug": "pates-riz-feculents",
+              "uri": "epicerie-salee/pates-riz-feculents",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2150",
+              "label": "Riz",
+              "code": "R00F00SF00",
+              "slug": "riz",
+              "uri": "epicerie-salee/pates-riz-feculents/riz",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            },
+            {
+              "id": "2152",
+              "label": "Riz basmati et Thai",
+              "code": "R00F00SF00",
+              "slug": "basmati-et-thai",
+              "uri": "epicerie-salee/pates-riz-feculents/riz/basmati-et-thai",
+              "type": "RAYON",
+              "level": 4,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie salée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/448ab601bca0444aa5baa0a871a8b50b/p_FORMAT/3560070393619_0.jpg",
+              "https://media.carrefour.fr/medias/3ebf1b59a94a4e069c7febb5fbc07644/p_FORMAT/3560070393619_2.jpg",
+              "https://media.carrefour.fr/medias/b3626aeb5c83445ebd97d912e3f93e3f/p_FORMAT/3560070393619_8.jpg",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/448ab601bca0444aa5baa0a871a8b50b/p_FORMAT/3560070393619_0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/3ebf1b59a94a4e069c7febb5fbc07644/p_FORMAT/3560070393619_2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/b3626aeb5c83445ebd97d912e3f93e3f/p_FORMAT/3560070393619_8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560070393619": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 1.59,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 3.18,
+                    "perUnitLabel": "3.18 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "club",
+                    "key": "flag.club.bio"
+                  },
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3560070393619",
+                  "promotion": {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.16,
+                      "discountedPrice": 1.59,
+                      "initialPrice": 1.59,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": "CLUB",
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004445"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "rd_fid_market",
+                      "label": "-10% Club",
+                      "message": "promotion.rd_fid_market",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": true,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.16,
+                        "discountedPrice": 1.59,
+                        "initialPrice": 1.59,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": "CLUB",
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004445"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le paquet de 500g",
+          "format": "500g",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [
+            "flag.club.bio"
+          ],
+          "origin": "",
+          "nutriscore": {
+            "value": "B",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.56,
+            "count": 369,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/riz-basmati-long-bio-carrefour-bio-3560070393619",
+          "reviews": "/product/3560070393619/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560070837984",
+        "attributes": {
+          "ean": "3560070837984",
+          "cdbase": "4957752",
+          "title": "Riz Basmati Long CARREFOUR EXTRA",
+          "shortTitle": "Riz Basmati Long CARREFOUR EXTRA",
+          "brand": "CARREFOUR EXTRA",
+          "slug": "riz-basmati-long-carrefour-extra",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "epicerie-salee/pates-riz-feculents/riz/basmati-et-thai",
+          "categories": [
+            {
+              "id": "2112",
+              "label": "Epicerie salée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-salee",
+              "uri": "epicerie-salee",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "2143",
+              "label": "Riz, Purées et Féculents",
+              "code": "R00F00SF00",
+              "slug": "pates-riz-feculents",
+              "uri": "epicerie-salee/pates-riz-feculents",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2150",
+              "label": "Riz",
+              "code": "R00F00SF00",
+              "slug": "riz",
+              "uri": "epicerie-salee/pates-riz-feculents/riz",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            },
+            {
+              "id": "2152",
+              "label": "Riz basmati et Thai",
+              "code": "R00F00SF00",
+              "slug": "basmati-et-thai",
+              "uri": "epicerie-salee/pates-riz-feculents/riz/basmati-et-thai",
+              "type": "RAYON",
+              "level": 4,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie salée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/444d40a9de684737b31fefb8d883f45c/p_FORMAT/3560070837984_0.JPG",
+              "https://media.carrefour.fr/medias/04540926d96749a08eb89d7e2698ec1f/p_FORMAT/3560070837984_1.JPG",
+              "https://media.carrefour.fr/medias/e9fcf3ab7dae4721b6ea7c8b694d7e80/p_FORMAT/3560070837984_2.JPG",
+              "https://media.carrefour.fr/medias/b5e866e57ba44ec081c641a9634a7fe3/p_FORMAT/3560070837984_8.JPG"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/444d40a9de684737b31fefb8d883f45c/p_FORMAT/3560070837984_0.JPG",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/04540926d96749a08eb89d7e2698ec1f/p_FORMAT/3560070837984_1.JPG",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/e9fcf3ab7dae4721b6ea7c8b694d7e80/p_FORMAT/3560070837984_2.JPG",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/b5e866e57ba44ec081c641a9634a7fe3/p_FORMAT/3560070837984_8.JPG",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560070837984": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.49,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 2.49,
+                    "perUnitLabel": "2.49 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3560070837984",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.37,
+                        "discountedPrice": 2.49,
+                        "initialPrice": 2.49,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "1 kg e",
+          "format": "1kg",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.6,
+            "count": 530,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/riz-basmati-long-carrefour-extra-3560070837984",
+          "reviews": "/product/3560070837984/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560071053345",
+        "attributes": {
+          "ean": "3560071053345",
+          "cdbase": "5870319",
+          "title": "Riz Basmati Penjab CARREFOUR EXTRA",
+          "shortTitle": "Riz Basmati Penjab CARREFOUR EXTRA",
+          "brand": "CARREFOUR EXTRA",
+          "slug": "riz-basmati-penjab-carrefour-extra",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "epicerie-salee/pates-riz-feculents/riz/basmati-et-thai",
+          "categories": [
+            {
+              "id": "2112",
+              "label": "Epicerie salée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-salee",
+              "uri": "epicerie-salee",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "2143",
+              "label": "Riz, Purées et Féculents",
+              "code": "R00F00SF00",
+              "slug": "pates-riz-feculents",
+              "uri": "epicerie-salee/pates-riz-feculents",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2150",
+              "label": "Riz",
+              "code": "R00F00SF00",
+              "slug": "riz",
+              "uri": "epicerie-salee/pates-riz-feculents/riz",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            },
+            {
+              "id": "2152",
+              "label": "Riz basmati et Thai",
+              "code": "R00F00SF00",
+              "slug": "basmati-et-thai",
+              "uri": "epicerie-salee/pates-riz-feculents/riz/basmati-et-thai",
+              "type": "RAYON",
+              "level": 4,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie salée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/d4f28bf722f5391db9356be1058c3172/p_FORMAT/3560071053345-0.jpg",
+              "https://media.carrefour.fr/medias/1dcf644a40723f0582033a19675be150/p_FORMAT/3560071053345-1.jpg",
+              "https://media.carrefour.fr/medias/1a74c5300ce836b5928ae752f3cc18e3/p_FORMAT/3560071053345-2.jpg",
+              "https://media.carrefour.fr/medias/be25dd857472384b9a7e2e3ebb591e92/p_FORMAT/3560071053345-8.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/d4f28bf722f5391db9356be1058c3172/p_FORMAT/3560071053345-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/1dcf644a40723f0582033a19675be150/p_FORMAT/3560071053345-1.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/1a74c5300ce836b5928ae752f3cc18e3/p_FORMAT/3560071053345-2.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/be25dd857472384b9a7e2e3ebb591e92/p_FORMAT/3560071053345-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560071053345": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 3.45,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 3.45,
+                    "perUnitLabel": "3.45 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3560071053345",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.52,
+                        "discountedPrice": 3.45,
+                        "initialPrice": 3.45,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le paquet d'1Kg",
+          "format": "1kg",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.69,
+            "count": 247,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/riz-basmati-penjab-carrefour-extra-3560071053345",
+          "reviews": "/product/3560071053345/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560071016562",
+        "attributes": {
+          "ean": "3560071016562",
+          "cdbase": "6267254",
+          "title": "Riz long grain Camargue CARREFOUR EXTRA",
+          "shortTitle": "Riz long grain Camargue CARREFOUR EXTRA",
+          "brand": "CARREFOUR EXTRA",
+          "slug": "riz-long-grain-camargue-carrefour-extra",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "epicerie-salee/pates-riz-feculents/riz/riz-long-grain",
+          "categories": [
+            {
+              "id": "2112",
+              "label": "Epicerie salée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-salee",
+              "uri": "epicerie-salee",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "2143",
+              "label": "Riz, Purées et Féculents",
+              "code": "R00F00SF00",
+              "slug": "pates-riz-feculents",
+              "uri": "epicerie-salee/pates-riz-feculents",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2150",
+              "label": "Riz",
+              "code": "R00F00SF00",
+              "slug": "riz",
+              "uri": "epicerie-salee/pates-riz-feculents/riz",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            },
+            {
+              "id": "33567",
+              "label": "Riz long grain",
+              "code": "R00F00SF00",
+              "slug": "riz-long-grain",
+              "uri": "epicerie-salee/pates-riz-feculents/riz/riz-long-grain",
+              "type": "RAYON",
+              "level": 4,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie salée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/a43a86cc7dfd410bbccc9340d3edd703/p_FORMAT/3560071016562_0.jpeg",
+              "https://media.carrefour.fr/media/referential/media/2b7fcec1b60f48018e79e5f6bb02a58a/p_FORMAT/3560071016562_2.jpeg",
+              "https://media.carrefour.fr/media/referential/media/85846c42e4864416b3f736375478ab43/p_FORMAT/3560071016562_7.jpeg",
+              "https://media.carrefour.fr/media/referential/media/ec393757193245e483dc1de07beb97ba/p_FORMAT/3560071016562_8.jpeg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/a43a86cc7dfd410bbccc9340d3edd703/p_FORMAT/3560071016562_0.jpeg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/2b7fcec1b60f48018e79e5f6bb02a58a/p_FORMAT/3560071016562_2.jpeg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/85846c42e4864416b3f736375478ab43/p_FORMAT/3560071016562_7.jpeg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/ec393757193245e483dc1de07beb97ba/p_FORMAT/3560071016562_8.jpeg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560071016562": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.25,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 2.25,
+                    "perUnitLabel": "2.25 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3560071016562",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.34,
+                        "discountedPrice": 2.25,
+                        "initialPrice": 2.25,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le paquet de 1 kg",
+          "format": "1kg",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.igp"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 5,
+            "count": 1,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/riz-long-grain-camargue-carrefour-extra-3560071016562",
+          "reviews": "/product/3560071016562/reviews"
+        }
+      }
+    ]
+  }
+}

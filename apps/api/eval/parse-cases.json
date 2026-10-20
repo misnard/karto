@@ -1,0 +1,516 @@
+[
+  {
+    "id": "lasagnes-shampoing-capotes",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "je voudrais de quoi faire des lasagnes, et du shampoing et des capotes"
+      }
+    ],
+    "expect": {
+      "required": [
+        ["feuille de lasagne", "pâte à lasagne", "lasagne"],
+        ["viande hachée", "boeuf haché", "steak haché", "viande de boeuf hachée"],
+        [
+          "sauce tomate",
+          "coulis de tomate",
+          "tomate concassée",
+          "passata",
+          "purée de tomate",
+          "tomate pelée",
+          "tomate"
+        ],
+        ["fromage râpé", "emmental râpé", "emmental", "parmesan", "mozzarella", "gruyère râpé"],
+        ["shampoing", "shampooing"],
+        ["préservatif"]
+      ],
+      "forbidden": ["capote", "je voudrais"]
+    }
+  },
+  {
+    "id": "guacamole-et-liste",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "lait, 6 oeufs, pâtes, de quoi faire un guacamole"
+      }
+    ],
+    "expect": {
+      "required": [
+        ["lait"],
+        ["oeuf"],
+        ["pâte"],
+        ["avocat"],
+        ["citron vert", "citron"],
+        ["oignon"],
+        ["coriandre"],
+        ["tomate"]
+      ],
+      "quantities": [
+        {
+          "key": ["oeuf"],
+          "unit": "piece",
+          "min": 6,
+          "max": 6
+        }
+      ]
+    }
+  },
+  {
+    "id": "fautes-de-frappe",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "tomatte, couregette, fromge blanc, yahourt nature, bananne"
+      }
+    ],
+    "expect": {
+      "required": [["tomate"], ["courgette"], ["fromage blanc"], ["yaourt nature", "yaourt"], ["banane"]],
+      "lineCount": {
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "quantites-explicites",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "2 kg de pommes de terre, 500 g de farine, 1 litre de lait, 3 citrons"
+      }
+    ],
+    "expect": {
+      "required": [["pomme de terre"], ["farine"], ["lait"], ["citron"]],
+      "quantities": [
+        {
+          "key": ["pomme de terre"],
+          "unit": "g",
+          "min": 1600,
+          "max": 2400
+        },
+        {
+          "key": ["farine"],
+          "unit": "g",
+          "min": 400,
+          "max": 600
+        },
+        {
+          "key": ["lait"],
+          "unit": "ml",
+          "min": 800,
+          "max": 1200
+        },
+        {
+          "key": ["citron"],
+          "unit": "piece",
+          "min": 3,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "recette-collee-6-personnes",
+    "inputs": [
+      {
+        "kind": "recipe_text",
+        "text": "Pâte à crêpes pour 6 personnes\n- 375 g de farine\n- 6 oeufs\n- 75 cl de lait\n- 50 g de beurre fondu\n- 1 pincée de sel"
+      }
+    ],
+    "expect": {
+      "required": [["farine"], ["oeuf"], ["lait"], ["beurre"]],
+      "quantities": [
+        {
+          "key": ["farine"],
+          "unit": "g",
+          "min": 300,
+          "max": 450
+        },
+        {
+          "key": ["oeuf"],
+          "unit": "piece",
+          "min": 6,
+          "max": 6
+        },
+        {
+          "key": ["lait"],
+          "unit": "ml",
+          "min": 600,
+          "max": 900
+        },
+        {
+          "key": ["beurre"],
+          "unit": "g",
+          "min": 40,
+          "max": 60
+        }
+      ]
+    }
+  },
+  {
+    "id": "recette-mise-a-l-echelle",
+    "servings": 3,
+    "inputs": [
+      {
+        "kind": "recipe_text",
+        "text": "Pâte à crêpes pour 6 personnes\n- 375 g de farine\n- 6 oeufs\n- 75 cl de lait\n- 50 g de beurre fondu"
+      }
+    ],
+    "expect": {
+      "required": [["farine"], ["oeuf"], ["lait"], ["beurre"]],
+      "quantities": [
+        {
+          "key": ["farine"],
+          "unit": "g",
+          "min": 150,
+          "max": 225
+        },
+        {
+          "key": ["oeuf"],
+          "unit": "piece",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "key": ["lait"],
+          "unit": "ml",
+          "min": 300,
+          "max": 450
+        }
+      ]
+    }
+  },
+  {
+    "id": "non-alimentaire",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "lessive, papier toilette, éponges, liquide vaisselle, dentifrice"
+      }
+    ],
+    "expect": {
+      "required": [["lessive"], ["papier toilette"], ["éponge"], ["liquide vaisselle"], ["dentifrice"]],
+      "lineCount": {
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "doublons",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "lait, du lait"
+      }
+    ],
+    "expect": {
+      "required": [["lait"]],
+      "lineCount": {
+        "max": 1
+      }
+    }
+  },
+  {
+    "id": "argot",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "PQ, sopalin, du coca"
+      }
+    ],
+    "expect": {
+      "required": [["papier toilette"], ["essuie-tout", "papier essuie-tout"], ["coca", "coca-cola", "cola", "soda"]],
+      "forbidden": ["pq", "sopalin"]
+    }
+  },
+  {
+    "id": "marque-nommee",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "nutella, café moulu"
+      }
+    ],
+    "expect": {
+      "required": [["pâte à tartiner", "nutella"], ["café moulu", "café"]]
+    }
+  },
+  {
+    "id": "mots-de-liaison",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "il me faudrait aussi du beurre et puis des yaourts nature"
+      }
+    ],
+    "expect": {
+      "required": [["beurre"], ["yaourt nature", "yaourt"]],
+      "forbidden": ["il me faudrait", "puis"],
+      "lineCount": {
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "plat-pour-2",
+    "servings": 2,
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "de quoi faire une salade niçoise"
+      }
+    ],
+    "expect": {
+      "required": [["thon"], ["oeuf"], ["tomate"], ["olive", "olive noire"]]
+    }
+  },
+  {
+    "id": "unites-culinaires",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "2 cuillères à soupe d'huile d'olive, 1 sachet de levure chimique, 1 botte de radis"
+      }
+    ],
+    "expect": {
+      "required": [["huile d'olive"], ["levure chimique", "levure"], ["radis"]],
+      "quantities": [
+        {
+          "key": ["levure chimique", "levure"],
+          "unit": "piece",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "key": ["radis"],
+          "unit": "piece",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "pluriels",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "carottes, poireaux, pommes"
+      }
+    ],
+    "expect": {
+      "required": [["carotte"], ["poireau"], ["pomme"]],
+      "lineCount": {
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "douzaine",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "une douzaine d'oeufs, un pack d'eau"
+      }
+    ],
+    "expect": {
+      "required": [["oeuf"], ["eau", "eau minérale", "eau de source"]],
+      "quantities": [
+        {
+          "key": ["oeuf"],
+          "unit": "piece",
+          "min": 12,
+          "max": 12
+        }
+      ]
+    }
+  },
+  {
+    "id": "plusieurs-entrees",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "lait, pain"
+      },
+      {
+        "kind": "recipe_text",
+        "text": "Omelette : 3 oeufs, 20 g de beurre"
+      }
+    ],
+    "expect": {
+      "required": [["lait"], ["pain", "baguette"], ["oeuf"], ["beurre"]],
+      "quantities": [
+        {
+          "key": ["oeuf"],
+          "unit": "piece",
+          "min": 3,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "bebe",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "couches taille 4, lingettes bébé, shampoing bébé"
+      }
+    ],
+    "expect": {
+      "required": [["couche", "couche bébé"], ["lingette", "lingette bébé"], ["shampoing bébé", "shampoing"]]
+    }
+  },
+  {
+    "id": "boissons",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "6 bouteilles d'eau gazeuse, jus d'orange"
+      }
+    ],
+    "expect": {
+      "required": [["eau gazeuse"], ["jus d'orange"]]
+    }
+  },
+  {
+    "id": "franglais",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "cheddar, bacon, burger buns"
+      }
+    ],
+    "expect": {
+      "required": [
+        ["cheddar"],
+        ["bacon", "lardon"],
+        ["pain à burger", "pain burger", "pain à hamburger", "pain hamburger", "pain pour burger"]
+      ]
+    }
+  },
+  {
+    "id": "animaux",
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "croquettes pour chat, litière"
+      }
+    ],
+    "expect": {
+      "required": [["croquette pour chat", "croquette"], ["litière", "litière pour chat"]]
+    }
+  },
+  {
+    "id": "vegetarien-lasagnes",
+    "preferences": {
+      "diet": ["vegetarian"]
+    },
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "de quoi faire des lasagnes"
+      }
+    ],
+    "expect": {
+      "required": [
+        ["feuille de lasagne", "pâte à lasagne", "lasagne"],
+        ["sauce tomate", "coulis de tomate", "tomate concassée", "passata", "purée de tomate", "tomate pelée", "tomate"]
+      ],
+      "forbidden": [
+        "viande",
+        "boeuf",
+        "steak haché",
+        "porc",
+        "jambon",
+        "lardon",
+        "veau",
+        "poulet",
+        "saucisse",
+        "chair à saucisse"
+      ]
+    }
+  },
+  {
+    "id": "sans-lactose",
+    "preferences": {
+      "diet": ["lactose_free"]
+    },
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "lait, beurre"
+      }
+    ],
+    "expect": {
+      "required": [["lait"], ["beurre"]],
+      "queries": [
+        {
+          "key": ["lait"],
+          "includes": "sans lactose"
+        }
+      ]
+    }
+  },
+  {
+    "id": "allergie-arachide",
+    "preferences": {
+      "allergies": ["arachide"]
+    },
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "de quoi faire un pad thaï"
+      }
+    ],
+    "expect": {
+      "required": [["nouille de riz", "nouille", "pâte de riz"]],
+      "forbidden": ["arachide", "cacahuète", "cacahouète", "beurre de cacahuète", "beurre d'arachide"]
+    }
+  },
+  {
+    "id": "objectif-proteines",
+    "preferences": {
+      "goals": ["high_protein"]
+    },
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "pour mes petits-déjeuners et mes en-cas de la semaine : yaourts, céréales, de quoi grignoter"
+      }
+    ],
+    "expect": {
+      "required": [["yaourt", "skyr", "fromage blanc"], ["céréale", "muesli", "flocon d'avoine", "granola"]],
+      "queries": [
+        {
+          "key": ["yaourt", "skyr", "fromage blanc"],
+          "includes": ["prot", "skyr", "grec", "fromage blanc"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "objectif-leger-lasagnes",
+    "preferences": {
+      "goals": ["low_calorie"]
+    },
+    "inputs": [
+      {
+        "kind": "text",
+        "text": "de quoi faire des lasagnes"
+      }
+    ],
+    "expect": {
+      "required": [
+        ["feuille de lasagne", "pâte à lasagne", "lasagne"],
+        ["viande hachée", "boeuf haché", "steak haché", "viande de boeuf hachée"]
+      ],
+      "queries": [
+        {
+          "key": ["viande hachée", "boeuf haché", "steak haché", "viande de boeuf hachée"],
+          "includes": ["5%", "maigre", "allégé"]
+        }
+      ]
+    }
+  }
+]

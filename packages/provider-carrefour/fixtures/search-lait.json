@@ -1,0 +1,3281 @@
+{
+  "data": [
+    {
+      "type": "product",
+      "id": "product-3560070435272",
+      "attributes": {
+        "ean": "3560070435272",
+        "cdbase": "3970901",
+        "title": "Lait Demi-Ecrémé UHT Bio CARREFOUR BIO",
+        "shortTitle": "Lait Demi-Ecrémé UHT Bio CARREFOUR BIO",
+        "brand": "CARREFOUR BIO",
+        "slug": "lait-demi-ecreme-uht-bio-carrefour-bio",
+        "businessType": "food",
+        "offerServiceId": "0046-150-112",
+        "uri": "cremerie/laits/lait-demi-ecreme",
+        "categories": [
+          {
+            "id": "36993",
+            "label": "Crèmerie et Produits laitiers",
+            "code": "R00F00SF00",
+            "slug": "cremerie",
+            "uri": "cremerie",
+            "type": "RAYON",
+            "level": 1,
+            "sellerId": null
+          },
+          {
+            "id": "29297",
+            "label": "Laits et Boissons végétales",
+            "code": "R00F00SF00",
+            "slug": "laits",
+            "uri": "cremerie/laits",
+            "type": "RAYON",
+            "level": 2,
+            "sellerId": null
+          },
+          {
+            "id": "29298",
+            "label": "Lait demi-écrémé",
+            "code": "R00F00SF00",
+            "slug": "lait-demi-ecreme",
+            "uri": "cremerie/laits/lait-demi-ecreme",
+            "type": "RAYON",
+            "level": 3,
+            "sellerId": null
+          }
+        ],
+        "topCategoryName": "Crèmerie et Produits laitiers",
+        "images": {
+          "formats": {
+            "largest": "540x540",
+            "common": [
+              "43x43",
+              "200x200",
+              "540x540",
+              "1500x1500"
+            ]
+          },
+          "paths": [
+            "https://media.carrefour.fr/medias/eb154fcd5b2739f28851367c62958dcd/p_FORMAT/3560070435272-photosite-20161005-083216-0.jpg",
+            "https://media.carrefour.fr/medias/868e11a277ca3ed599706ebbdd3832f6/p_FORMAT/3560070435272-photosite-20161005-083216-1.jpg",
+            "https://media.carrefour.fr/medias/5cc0687f0b943ff79cedd08c92344f0d/p_FORMAT/3560070435272-photosite-20161005-083216-2.jpg",
+            "https://media.carrefour.fr/medias/823406b8c7a83de69528a79835ea1f77/p_FORMAT/3560070435272-photosite-20161005-083216-8.jpg",
+            "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+          ],
+          "withFormats": [
+            {
+              "pattern": "https://media.carrefour.fr/medias/eb154fcd5b2739f28851367c62958dcd/p_FORMAT/3560070435272-photosite-20161005-083216-0.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/868e11a277ca3ed599706ebbdd3832f6/p_FORMAT/3560070435272-photosite-20161005-083216-1.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/5cc0687f0b943ff79cedd08c92344f0d/p_FORMAT/3560070435272-photosite-20161005-083216-2.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/823406b8c7a83de69528a79835ea1f77/p_FORMAT/3560070435272-photosite-20161005-083216-8.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            }
+          ]
+        },
+        "isDonation": false,
+        "isBestSeller": false,
+        "warnings": [],
+        "traceability": null,
+        "keyFeatures": [],
+        "moreOffers": {
+          "count": 0,
+          "bestOfferId": null,
+          "bestOfferPrice": null,
+          "hasNonFoodDeliveryOffer": false,
+          "isRexEligible": false,
+          "withdrawalDelivery": {
+            "exists": false,
+            "expressWithdrawalEligibility": {
+              "global": false,
+              "inCurrentStore": false
+            }
+          },
+          "hasCarrefourPlus": false
+        },
+        "offers": {
+          "3560070435272": {
+            "0046-150-112": {
+              "type": "offer",
+              "subType": "carrefour",
+              "id": "0046-150-112",
+              "attributes": {
+                "availability": {
+                  "indispensable": false,
+                  "purchasable": true,
+                  "stopped": false,
+                  "suspended": false,
+                  "suspensionReason": null,
+                  "hasLowQuantity": false
+                },
+                "preorder": null,
+                "price": {
+                  "price": 0.91,
+                  "taxMessage": "",
+                  "unitOfMeasure": "L",
+                  "perUnit": 1.82,
+                  "perUnitLabel": "1.82 € / L"
+                },
+                "ordering": {
+                  "min": 1,
+                  "step": 1,
+                  "max": 50
+                },
+                "offerServiceId": "0046-150-112",
+                "highlightLabel": {
+                  "type": "club",
+                  "key": "flag.club.bio"
+                },
+                "freshness": {
+                  "value": 10,
+                  "period": "day"
+                },
+                "marketplace": null,
+                "ean": "3560070435272",
+                "promotion": {
+                  "type": "rd_fid_market",
+                  "label": "-10% Club",
+                  "message": "promotion.rd_fid_market",
+                  "isLoyalty": true,
+                  "isPromo": false,
+                  "isPrixBarre": false,
+                  "isPrixForce": false,
+                  "isVuEnCatalogue": false,
+                  "isCrescendo": false,
+                  "isClubActive": true,
+                  "promotionParts": [],
+                  "progression": {
+                    "current": null,
+                    "total": null,
+                    "completed": null
+                  },
+                  "bestQuantity": 1,
+                  "messageArgs": {
+                    "quantity": 1,
+                    "discountAmount": 0.09,
+                    "discountedPrice": 0.91,
+                    "initialPrice": 0.91,
+                    "discountedPricePerUnit": null,
+                    "startDate": "2025-01-01T00:00:00+0100",
+                    "endDate": "2026-12-31T23:59:00+0100"
+                  },
+                  "promoStartDate": "2025-01-01T00:00:00+0100",
+                  "promoEndDate": "2026-12-31T23:59:00+0100",
+                  "mixableGtins": [],
+                  "isPriceAlreadyDiscounted": false,
+                  "cardholder": null,
+                  "isStamp": false,
+                  "mandateId": [
+                    "1120250000004445"
+                  ],
+                  "isDisplayed": true
+                },
+                "promotions": [
+                  {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.09,
+                      "discountedPrice": 0.91,
+                      "initialPrice": 0.91,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004445"
+                    ],
+                    "isDisplayed": true
+                  }
+                ],
+                "variableWeight": false,
+                "isRexEligible": false,
+                "expressWithdrawalEligibility": {
+                  "global": false,
+                  "inCurrentStore": false
+                },
+                "isNonFoodDelivery": false,
+                "isRelayPointEligible": false,
+                "description": null,
+                "shopReturnPolicy": null,
+                "bundle": {
+                  "label": null
+                },
+                "isNew": false,
+                "isInnovation": false,
+                "isDigitalCard": false,
+                "isWholesale": false,
+                "isClcv": false,
+                "isZiqy": false,
+                "isHealthy": false,
+                "isVignetteEligible": false,
+                "isPhysicalStoreOffer": false,
+                "isExpressDelivery": false,
+                "isRecoverable": false,
+                "operatorContact": null,
+                "consumerContact": null,
+                "guarantees": []
+              },
+              "meta": {
+                "cta": "buy"
+              },
+              "links": {
+                "self": ""
+              }
+            }
+          }
+        },
+        "packaging": "la bouteille 50cL",
+        "format": "50cl",
+        "deliveryModalities": null,
+        "flags": [
+          "flag.common.organic"
+        ],
+        "sustainabilityIndex": null,
+        "addedSugar": null,
+        "isAlreadyPurchased": true,
+        "provenanceStatement": null,
+        "charger": null,
+        "clubs": [
+          "flag.club.bio"
+        ],
+        "origin": "",
+        "nutriscore": null,
+        "customerReviews": {
+          "average": 4.9,
+          "count": 58,
+          "rates": null
+        },
+        "variants": [],
+        "weightsAndMeasures": [],
+        "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+      },
+      "relationships": {
+        "substitution": null
+      },
+      "meta": {
+        "recommendation": {
+          "strategy": "rfp-rerankStore-AL-AB_AUTOCOMPLETE_SUGGESTIONS_TEST-AB_RANKER_NAL_PLP_CONTROL",
+          "type": "recommendation",
+          "isSponsored": false,
+          "trackingId": null
+        },
+        "cta": "buy",
+        "features": {
+          "deletable": false,
+          "swap": false,
+          "feedback": false,
+          "freshness": true
+        }
+      },
+      "links": {
+        "self": "/p/lait-demi-ecreme-uht-bio-carrefour-bio-3560070435272",
+        "reviews": "/product/3560070435272/reviews"
+      }
+    },
+    {
+      "type": "product",
+      "id": "product-3560070437917",
+      "attributes": {
+        "ean": "3560070437917",
+        "cdbase": "3971609",
+        "title": "Lait Demi-Ecrémé Bio CARREFOUR BIO",
+        "shortTitle": "Lait Demi-Ecrémé Bio CARREFOUR BIO",
+        "brand": "CARREFOUR BIO",
+        "slug": "lait-demi-ecreme-bio-carrefour-bio",
+        "businessType": "food",
+        "offerServiceId": "0046-150-112",
+        "uri": "cremerie/laits/lait-demi-ecreme",
+        "categories": [
+          {
+            "id": "1838",
+            "label": "Bio et Ecologie",
+            "code": "R00F00SF00",
+            "slug": "bio-et-ecologie",
+            "uri": "bio-et-ecologie",
+            "type": "RAYON",
+            "level": 1,
+            "sellerId": null
+          },
+          {
+            "id": "1844",
+            "label": "Crèmerie",
+            "code": "R00F00SF00",
+            "slug": "cremerie",
+            "uri": "bio-et-ecologie/cremerie",
+            "type": "RAYON",
+            "level": 2,
+            "sellerId": null
+          },
+          {
+            "id": "1845",
+            "label": "Lait et Oeufs",
+            "code": "R00F00SF00",
+            "slug": "lait-et-oeufs",
+            "uri": "bio-et-ecologie/cremerie/lait-et-oeufs",
+            "type": "RAYON",
+            "level": 3,
+            "sellerId": null
+          }
+        ],
+        "topCategoryName": "Bio et Ecologie",
+        "images": {
+          "formats": {
+            "largest": "540x540",
+            "common": [
+              "43x43",
+              "200x200",
+              "540x540",
+              "1500x1500"
+            ]
+          },
+          "paths": [
+            "https://media.carrefour.fr/medias/ba3c0d18a4713a4489fba9d184f0bfee/p_FORMAT/3560070437917-photosite-20171128-162321-0.jpg",
+            "https://media.carrefour.fr/medias/885548cd94b534f99462613b2415b6a0/p_FORMAT/3560070437917-photosite-20171128-162321-4.jpg",
+            "https://media.carrefour.fr/medias/2503d292c36c3342966e66c4fde76641/p_FORMAT/3560070437917-photosite-20171128-162321-5.jpg",
+            "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+          ],
+          "withFormats": [
+            {
+              "pattern": "https://media.carrefour.fr/medias/ba3c0d18a4713a4489fba9d184f0bfee/p_FORMAT/3560070437917-photosite-20171128-162321-0.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/885548cd94b534f99462613b2415b6a0/p_FORMAT/3560070437917-photosite-20171128-162321-4.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/2503d292c36c3342966e66c4fde76641/p_FORMAT/3560070437917-photosite-20171128-162321-5.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            }
+          ]
+        },
+        "isDonation": false,
+        "isBestSeller": false,
+        "warnings": [],
+        "traceability": null,
+        "keyFeatures": [],
+        "moreOffers": {
+          "count": 0,
+          "bestOfferId": null,
+          "bestOfferPrice": null,
+          "hasNonFoodDeliveryOffer": false,
+          "isRexEligible": false,
+          "withdrawalDelivery": {
+            "exists": false,
+            "expressWithdrawalEligibility": {
+              "global": false,
+              "inCurrentStore": false
+            }
+          },
+          "hasCarrefourPlus": false
+        },
+        "offers": {
+          "3560070437917": {
+            "0046-150-112": {
+              "type": "offer",
+              "subType": "carrefour",
+              "id": "0046-150-112",
+              "attributes": {
+                "availability": {
+                  "indispensable": false,
+                  "purchasable": true,
+                  "stopped": false,
+                  "suspended": false,
+                  "suspensionReason": null,
+                  "hasLowQuantity": false
+                },
+                "preorder": null,
+                "price": {
+                  "price": 5.46,
+                  "taxMessage": "",
+                  "unitOfMeasure": "L",
+                  "perUnit": 1.82,
+                  "perUnitLabel": "1.82 € / L"
+                },
+                "ordering": {
+                  "min": 1,
+                  "step": 1,
+                  "max": 10
+                },
+                "offerServiceId": "0046-150-112",
+                "highlightLabel": {
+                  "type": "club",
+                  "key": "flag.club.bio"
+                },
+                "freshness": {
+                  "value": 10,
+                  "period": "day"
+                },
+                "marketplace": null,
+                "ean": "3560070437917",
+                "promotion": {
+                  "type": "rd_fid_market",
+                  "label": "-10% Club",
+                  "message": "promotion.rd_fid_market",
+                  "isLoyalty": true,
+                  "isPromo": false,
+                  "isPrixBarre": false,
+                  "isPrixForce": false,
+                  "isVuEnCatalogue": false,
+                  "isCrescendo": false,
+                  "isClubActive": true,
+                  "promotionParts": [],
+                  "progression": {
+                    "current": null,
+                    "total": null,
+                    "completed": null
+                  },
+                  "bestQuantity": 1,
+                  "messageArgs": {
+                    "quantity": 1,
+                    "discountAmount": 0.55,
+                    "discountedPrice": 5.46,
+                    "initialPrice": 5.46,
+                    "discountedPricePerUnit": null,
+                    "startDate": "2025-01-01T00:00:00+0100",
+                    "endDate": "2026-12-31T23:59:00+0100"
+                  },
+                  "promoStartDate": "2025-01-01T00:00:00+0100",
+                  "promoEndDate": "2026-12-31T23:59:00+0100",
+                  "mixableGtins": [],
+                  "isPriceAlreadyDiscounted": false,
+                  "cardholder": null,
+                  "isStamp": false,
+                  "mandateId": [
+                    "1120250000004445"
+                  ],
+                  "isDisplayed": true
+                },
+                "promotions": [
+                  {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.55,
+                      "discountedPrice": 5.46,
+                      "initialPrice": 5.46,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004445"
+                    ],
+                    "isDisplayed": true
+                  }
+                ],
+                "variableWeight": false,
+                "isRexEligible": false,
+                "expressWithdrawalEligibility": {
+                  "global": false,
+                  "inCurrentStore": false
+                },
+                "isNonFoodDelivery": false,
+                "isRelayPointEligible": false,
+                "description": null,
+                "shopReturnPolicy": null,
+                "bundle": {
+                  "label": null
+                },
+                "isNew": false,
+                "isInnovation": false,
+                "isDigitalCard": false,
+                "isWholesale": false,
+                "isClcv": false,
+                "isZiqy": false,
+                "isHealthy": false,
+                "isVignetteEligible": false,
+                "isPhysicalStoreOffer": false,
+                "isExpressDelivery": false,
+                "isRecoverable": false,
+                "operatorContact": null,
+                "consumerContact": null,
+                "guarantees": []
+              },
+              "meta": {
+                "cta": "buy"
+              },
+              "links": {
+                "self": ""
+              }
+            }
+          }
+        },
+        "packaging": "le pack de 6 bouteilles de 50cL",
+        "format": "6x50cl",
+        "deliveryModalities": null,
+        "flags": [
+          "flag.common.organic"
+        ],
+        "sustainabilityIndex": null,
+        "addedSugar": null,
+        "isAlreadyPurchased": true,
+        "provenanceStatement": null,
+        "charger": null,
+        "clubs": [
+          "flag.club.bio"
+        ],
+        "origin": "",
+        "nutriscore": null,
+        "customerReviews": {
+          "average": 4.8,
+          "count": 130,
+          "rates": null
+        },
+        "variants": [],
+        "weightsAndMeasures": [],
+        "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+      },
+      "relationships": {
+        "substitution": null
+      },
+      "meta": {
+        "recommendation": {
+          "strategy": "rfp-rerankStore-AL-AB_AUTOCOMPLETE_SUGGESTIONS_TEST-AB_RANKER_NAL_PLP_CONTROL",
+          "type": "recommendation",
+          "isSponsored": false,
+          "trackingId": null
+        },
+        "cta": "buy",
+        "features": {
+          "deletable": false,
+          "swap": false,
+          "feedback": false,
+          "freshness": true
+        }
+      },
+      "links": {
+        "self": "/p/lait-demi-ecreme-bio-carrefour-bio-3560070437917",
+        "reviews": "/product/3560070437917/reviews"
+      }
+    },
+    {
+      "type": "product",
+      "id": "product-3229820181950",
+      "attributes": {
+        "ean": "3229820181950",
+        "cdbase": "3336546",
+        "title": "Biscuits bio Chocolat lait BJORG",
+        "shortTitle": "Biscuits bio Chocolat lait BJORG",
+        "brand": "BJORG",
+        "slug": "biscuits-bio-chocolat-lait-bjorg",
+        "businessType": "food",
+        "offerServiceId": "0046-150-112",
+        "uri": "bio-et-ecologie/epicerie-sucree/biscuits-gateaux-moelleux",
+        "categories": [
+          {
+            "id": "2183",
+            "label": "Epicerie sucrée",
+            "code": "R00F00SF00",
+            "slug": "epicerie-sucree",
+            "uri": "epicerie-sucree",
+            "type": "RAYON",
+            "level": 1,
+            "sellerId": null
+          },
+          {
+            "id": "35095",
+            "label": "Biscuits",
+            "code": "R00F00SF00",
+            "slug": "biscuits",
+            "uri": "epicerie-sucree/biscuits",
+            "type": "RAYON",
+            "level": 2,
+            "sellerId": null
+          },
+          {
+            "id": "2222",
+            "label": "Biscuits au chocolat ou à la vanille",
+            "code": "R00F00SF00",
+            "slug": "biscuits-au-chocolat-ou-a-la-vanille",
+            "uri": "epicerie-sucree/biscuits/biscuits-au-chocolat-ou-a-la-vanille",
+            "type": "RAYON",
+            "level": 3,
+            "sellerId": null
+          }
+        ],
+        "topCategoryName": "Epicerie sucrée",
+        "images": {
+          "formats": {
+            "largest": "540x540",
+            "common": [
+              "43x43",
+              "200x200",
+              "540x540",
+              "1500x1500"
+            ]
+          },
+          "paths": [
+            "https://media.carrefour.fr/media/referential/media/399e7c52b22249a08c58b45ac10cf82a/p_FORMAT/03229820181950_H1N1_s27.png",
+            "https://media.carrefour.fr/media/referential/media/92112ace40d5463eaee243cc50891c88/p_FORMAT/03229820181950_C8N1_s32.png",
+            "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+          ],
+          "withFormats": [
+            {
+              "pattern": "https://media.carrefour.fr/media/referential/media/399e7c52b22249a08c58b45ac10cf82a/p_FORMAT/03229820181950_H1N1_s27.png",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/media/referential/media/92112ace40d5463eaee243cc50891c88/p_FORMAT/03229820181950_C8N1_s32.png",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            }
+          ]
+        },
+        "isDonation": false,
+        "isBestSeller": false,
+        "warnings": [],
+        "traceability": null,
+        "keyFeatures": [],
+        "moreOffers": {
+          "count": 0,
+          "bestOfferId": null,
+          "bestOfferPrice": null,
+          "hasNonFoodDeliveryOffer": false,
+          "isRexEligible": false,
+          "withdrawalDelivery": {
+            "exists": false,
+            "expressWithdrawalEligibility": {
+              "global": false,
+              "inCurrentStore": false
+            }
+          },
+          "hasCarrefourPlus": false
+        },
+        "offers": {
+          "3229820181950": {
+            "0046-150-112": {
+              "type": "offer",
+              "subType": "carrefour",
+              "id": "0046-150-112",
+              "attributes": {
+                "availability": {
+                  "indispensable": false,
+                  "purchasable": true,
+                  "stopped": false,
+                  "suspended": false,
+                  "suspensionReason": null,
+                  "hasLowQuantity": false
+                },
+                "preorder": null,
+                "price": {
+                  "price": 2.95,
+                  "taxMessage": "",
+                  "unitOfMeasure": "KG",
+                  "perUnit": 13.11,
+                  "perUnitLabel": "13.11 € / KG"
+                },
+                "ordering": {
+                  "min": 1,
+                  "step": 1,
+                  "max": 50
+                },
+                "offerServiceId": "0046-150-112",
+                "highlightLabel": null,
+                "freshness": null,
+                "marketplace": null,
+                "ean": "3229820181950",
+                "promotion": null,
+                "promotions": [],
+                "variableWeight": false,
+                "isRexEligible": false,
+                "expressWithdrawalEligibility": {
+                  "global": false,
+                  "inCurrentStore": false
+                },
+                "isNonFoodDelivery": false,
+                "isRelayPointEligible": false,
+                "description": null,
+                "shopReturnPolicy": null,
+                "bundle": {
+                  "label": null
+                },
+                "isNew": false,
+                "isInnovation": false,
+                "isDigitalCard": false,
+                "isWholesale": false,
+                "isClcv": false,
+                "isZiqy": false,
+                "isHealthy": false,
+                "isVignetteEligible": false,
+                "isPhysicalStoreOffer": false,
+                "isExpressDelivery": false,
+                "isRecoverable": false,
+                "operatorContact": null,
+                "consumerContact": null,
+                "guarantees": []
+              },
+              "meta": {
+                "cta": "buy"
+              },
+              "links": {
+                "self": ""
+              }
+            }
+          }
+        },
+        "packaging": "Le paquet de 225g",
+        "format": "225g",
+        "deliveryModalities": null,
+        "flags": [
+          "flag.common.organic"
+        ],
+        "sustainabilityIndex": null,
+        "addedSugar": null,
+        "isAlreadyPurchased": true,
+        "provenanceStatement": null,
+        "charger": null,
+        "clubs": [],
+        "origin": "",
+        "nutriscore": {
+          "value": "D",
+          "source": "",
+          "licence": "",
+          "isCalculated": false
+        },
+        "customerReviews": {
+          "average": 4.75,
+          "count": 4,
+          "rates": null
+        },
+        "variants": [],
+        "weightsAndMeasures": [],
+        "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+      },
+      "relationships": {
+        "substitution": null
+      },
+      "meta": {
+        "recommendation": {
+          "strategy": "rfp-rerankStore-AL-AB_AUTOCOMPLETE_SUGGESTIONS_TEST-AB_RANKER_NAL_PLP_CONTROL",
+          "type": "recommendation",
+          "isSponsored": false,
+          "trackingId": null
+        },
+        "cta": "buy",
+        "features": {
+          "deletable": false,
+          "swap": false,
+          "feedback": false,
+          "freshness": true
+        }
+      },
+      "links": {
+        "self": "/p/biscuits-bio-chocolat-lait-bjorg-3229820181950",
+        "reviews": "/product/3229820181950/reviews"
+      }
+    },
+    {
+      "type": "product",
+      "id": "product-3270190021162",
+      "attributes": {
+        "ean": "3270190021162",
+        "cdbase": "0843402",
+        "title": "Lait entier, de montagne et français CARREFOUR EXTRA",
+        "shortTitle": "Lait entier, de montagne et français CARREFOUR EXTRA",
+        "brand": "CARREFOUR EXTRA",
+        "slug": "lait-entier-de-montagne-et-francais-carrefour-extra",
+        "businessType": "food",
+        "offerServiceId": "0046-150-112",
+        "uri": "cremerie/laits/lait-entier",
+        "categories": [
+          {
+            "id": "36993",
+            "label": "Crèmerie et Produits laitiers",
+            "code": "R00F00SF00",
+            "slug": "cremerie",
+            "uri": "cremerie",
+            "type": "RAYON",
+            "level": 1,
+            "sellerId": null
+          },
+          {
+            "id": "29297",
+            "label": "Laits et Boissons végétales",
+            "code": "R00F00SF00",
+            "slug": "laits",
+            "uri": "cremerie/laits",
+            "type": "RAYON",
+            "level": 2,
+            "sellerId": null
+          },
+          {
+            "id": "29300",
+            "label": "Lait entier",
+            "code": "R00F00SF00",
+            "slug": "lait-entier",
+            "uri": "cremerie/laits/lait-entier",
+            "type": "RAYON",
+            "level": 3,
+            "sellerId": null
+          }
+        ],
+        "topCategoryName": "Crèmerie et Produits laitiers",
+        "images": {
+          "formats": {
+            "largest": "540x540",
+            "common": [
+              "43x43",
+              "200x200",
+              "540x540",
+              "1500x1500"
+            ]
+          },
+          "paths": [
+            "https://media.carrefour.fr/media/referential/media/f285311e066746d8991f9bb4aed79320/p_FORMAT/3270190021162_0.jpg",
+            "https://media.carrefour.fr/media/referential/media/82a5f55567004d01a1bbe2aae52713e0/p_FORMAT/3270190021162_2.jpg",
+            "https://media.carrefour.fr/media/referential/media/1faacac779344c1ab9a72f47ed5d8cb2/p_FORMAT/3270190021162_8.jpg"
+          ],
+          "withFormats": [
+            {
+              "pattern": "https://media.carrefour.fr/media/referential/media/f285311e066746d8991f9bb4aed79320/p_FORMAT/3270190021162_0.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/media/referential/media/82a5f55567004d01a1bbe2aae52713e0/p_FORMAT/3270190021162_2.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/media/referential/media/1faacac779344c1ab9a72f47ed5d8cb2/p_FORMAT/3270190021162_8.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            }
+          ]
+        },
+        "isDonation": false,
+        "isBestSeller": false,
+        "warnings": [],
+        "traceability": null,
+        "keyFeatures": [],
+        "moreOffers": {
+          "count": 0,
+          "bestOfferId": null,
+          "bestOfferPrice": null,
+          "hasNonFoodDeliveryOffer": false,
+          "isRexEligible": false,
+          "withdrawalDelivery": {
+            "exists": false,
+            "expressWithdrawalEligibility": {
+              "global": false,
+              "inCurrentStore": false
+            }
+          },
+          "hasCarrefourPlus": false
+        },
+        "offers": {
+          "3270190021162": {
+            "0046-150-112": {
+              "type": "offer",
+              "subType": "carrefour",
+              "id": "0046-150-112",
+              "attributes": {
+                "availability": {
+                  "indispensable": false,
+                  "purchasable": true,
+                  "stopped": false,
+                  "suspended": false,
+                  "suspensionReason": null,
+                  "hasLowQuantity": false
+                },
+                "preorder": null,
+                "price": {
+                  "price": 1.2,
+                  "taxMessage": "",
+                  "unitOfMeasure": "L",
+                  "perUnit": 1.2,
+                  "perUnitLabel": "1.20 € / L"
+                },
+                "ordering": {
+                  "min": 1,
+                  "step": 1,
+                  "max": 50
+                },
+                "offerServiceId": "0046-150-112",
+                "highlightLabel": null,
+                "freshness": {
+                  "value": 10,
+                  "period": "day"
+                },
+                "marketplace": null,
+                "ean": "3270190021162",
+                "promotion": null,
+                "promotions": [
+                  {
+                    "type": "rd_offre_pass",
+                    "label": "-15% Mardi PASS",
+                    "message": "promotion.rd_offre_pass",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": false,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.18,
+                      "discountedPrice": 1.2,
+                      "initialPrice": 1.2,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004776"
+                    ],
+                    "isDisplayed": false
+                  }
+                ],
+                "variableWeight": false,
+                "isRexEligible": false,
+                "expressWithdrawalEligibility": {
+                  "global": false,
+                  "inCurrentStore": false
+                },
+                "isNonFoodDelivery": false,
+                "isRelayPointEligible": false,
+                "description": null,
+                "shopReturnPolicy": null,
+                "bundle": {
+                  "label": null
+                },
+                "isNew": false,
+                "isInnovation": false,
+                "isDigitalCard": false,
+                "isWholesale": false,
+                "isClcv": false,
+                "isZiqy": false,
+                "isHealthy": false,
+                "isVignetteEligible": false,
+                "isPhysicalStoreOffer": false,
+                "isExpressDelivery": false,
+                "isRecoverable": false,
+                "operatorContact": null,
+                "consumerContact": null,
+                "guarantees": []
+              },
+              "meta": {
+                "cta": "buy"
+              },
+              "links": {
+                "self": ""
+              }
+            }
+          }
+        },
+        "packaging": "la brique de 1 L",
+        "format": "1l",
+        "deliveryModalities": null,
+        "flags": [
+          "flag.common.fsc"
+        ],
+        "sustainabilityIndex": null,
+        "addedSugar": null,
+        "isAlreadyPurchased": true,
+        "provenanceStatement": null,
+        "charger": null,
+        "clubs": [],
+        "origin": "",
+        "nutriscore": {
+          "value": "B",
+          "source": "",
+          "licence": "",
+          "isCalculated": false
+        },
+        "customerReviews": {
+          "average": 4.84,
+          "count": 61,
+          "rates": null
+        },
+        "variants": [],
+        "weightsAndMeasures": [],
+        "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+      },
+      "relationships": {
+        "substitution": null
+      },
+      "meta": {
+        "recommendation": {
+          "strategy": "rfp-rerankStore-AL-AB_AUTOCOMPLETE_SUGGESTIONS_TEST-AB_RANKER_NAL_PLP_CONTROL",
+          "type": "recommendation",
+          "isSponsored": false,
+          "trackingId": null
+        },
+        "cta": "buy",
+        "features": {
+          "deletable": false,
+          "swap": false,
+          "feedback": false,
+          "freshness": true
+        }
+      },
+      "links": {
+        "self": "/p/lait-entier-de-montagne-et-francais-carrefour-extra-3270190021162",
+        "reviews": "/product/3270190021162/reviews"
+      }
+    },
+    {
+      "type": "product",
+      "id": "product-3276554163158",
+      "attributes": {
+        "ean": "3276554163158",
+        "cdbase": "5940259",
+        "title": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+        "shortTitle": "Lait Demi-Écrémé CARREFOUR CLASSIC'",
+        "brand": "CARREFOUR CLASSIC'",
+        "slug": "lait-demi-ecreme-carrefour-classic",
+        "businessType": "food",
+        "offerServiceId": "0046-150-112",
+        "uri": "cremerie/laits/lait-demi-ecreme",
+        "categories": [
+          {
+            "id": "36993",
+            "label": "Crèmerie et Produits laitiers",
+            "code": "R00F00SF00",
+            "slug": "cremerie",
+            "uri": "cremerie",
+            "type": "RAYON",
+            "level": 1,
+            "sellerId": null
+          },
+          {
+            "id": "29297",
+            "label": "Laits et Boissons végétales",
+            "code": "R00F00SF00",
+            "slug": "laits",
+            "uri": "cremerie/laits",
+            "type": "RAYON",
+            "level": 2,
+            "sellerId": null
+          },
+          {
+            "id": "29298",
+            "label": "Lait demi-écrémé",
+            "code": "R00F00SF00",
+            "slug": "lait-demi-ecreme",
+            "uri": "cremerie/laits/lait-demi-ecreme",
+            "type": "RAYON",
+            "level": 3,
+            "sellerId": null
+          }
+        ],
+        "topCategoryName": "Crèmerie et Produits laitiers",
+        "images": {
+          "formats": {
+            "largest": "540x540",
+            "common": [
+              "43x43",
+              "200x200",
+              "540x540",
+              "1500x1500"
+            ]
+          },
+          "paths": [
+            "https://media.carrefour.fr/medias/6236a56cbc6c46c4a47aaeea5b9ffe0b/p_FORMAT/3276554163158-photosite-20241112-171948-0.jpg"
+          ],
+          "withFormats": [
+            {
+              "pattern": "https://media.carrefour.fr/medias/6236a56cbc6c46c4a47aaeea5b9ffe0b/p_FORMAT/3276554163158-photosite-20241112-171948-0.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            }
+          ]
+        },
+        "isDonation": false,
+        "isBestSeller": false,
+        "warnings": [],
+        "traceability": null,
+        "keyFeatures": [],
+        "moreOffers": {
+          "count": 0,
+          "bestOfferId": null,
+          "bestOfferPrice": null,
+          "hasNonFoodDeliveryOffer": false,
+          "isRexEligible": false,
+          "withdrawalDelivery": {
+            "exists": false,
+            "expressWithdrawalEligibility": {
+              "global": false,
+              "inCurrentStore": false
+            }
+          },
+          "hasCarrefourPlus": false
+        },
+        "offers": {
+          "3276554163158": {
+            "0046-150-112": {
+              "type": "offer",
+              "subType": "carrefour",
+              "id": "0046-150-112",
+              "attributes": {
+                "availability": {
+                  "indispensable": false,
+                  "purchasable": true,
+                  "stopped": false,
+                  "suspended": false,
+                  "suspensionReason": null,
+                  "hasLowQuantity": false
+                },
+                "preorder": null,
+                "price": {
+                  "price": 1.05,
+                  "taxMessage": "",
+                  "unitOfMeasure": "L",
+                  "perUnit": 1.05,
+                  "perUnitLabel": "1.05 € / L"
+                },
+                "ordering": {
+                  "min": 1,
+                  "step": 1,
+                  "max": 50
+                },
+                "offerServiceId": "0046-150-112",
+                "highlightLabel": null,
+                "freshness": {
+                  "value": 10,
+                  "period": "day"
+                },
+                "marketplace": null,
+                "ean": "3276554163158",
+                "promotion": null,
+                "promotions": [
+                  {
+                    "type": "rd_offre_pass",
+                    "label": "-15% Mardi PASS",
+                    "message": "promotion.rd_offre_pass",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": false,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.16,
+                      "discountedPrice": 1.05,
+                      "initialPrice": 1.05,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": "PASS",
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004776"
+                    ],
+                    "isDisplayed": false
+                  }
+                ],
+                "variableWeight": false,
+                "isRexEligible": false,
+                "expressWithdrawalEligibility": {
+                  "global": false,
+                  "inCurrentStore": false
+                },
+                "isNonFoodDelivery": false,
+                "isRelayPointEligible": false,
+                "description": null,
+                "shopReturnPolicy": null,
+                "bundle": {
+                  "label": null
+                },
+                "isNew": false,
+                "isInnovation": false,
+                "isDigitalCard": false,
+                "isWholesale": false,
+                "isClcv": false,
+                "isZiqy": false,
+                "isHealthy": false,
+                "isVignetteEligible": false,
+                "isPhysicalStoreOffer": false,
+                "isExpressDelivery": false,
+                "isRecoverable": false,
+                "operatorContact": null,
+                "consumerContact": null,
+                "guarantees": []
+              },
+              "meta": {
+                "cta": "buy"
+              },
+              "links": {
+                "self": ""
+              }
+            }
+          }
+        },
+        "packaging": "la bouteille 1L",
+        "format": "1L",
+        "deliveryModalities": null,
+        "flags": [],
+        "sustainabilityIndex": null,
+        "addedSugar": null,
+        "isAlreadyPurchased": false,
+        "provenanceStatement": null,
+        "charger": null,
+        "clubs": [],
+        "origin": "",
+        "nutriscore": {
+          "value": "A",
+          "source": "",
+          "licence": "",
+          "isCalculated": false
+        },
+        "customerReviews": {
+          "average": 4.72,
+          "count": 164,
+          "rates": null
+        },
+        "variants": [],
+        "weightsAndMeasures": [],
+        "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+      },
+      "relationships": {
+        "substitution": null
+      },
+      "meta": {
+        "recommendation": {
+          "strategy": "rtp-rerankStore-AL-AB_AUTOCOMPLETE_SUGGESTIONS_TEST-AB_RANKER_NAL_PLP_CONTROL",
+          "type": "recommendation",
+          "isSponsored": false,
+          "trackingId": null
+        },
+        "cta": "buy",
+        "features": {
+          "deletable": false,
+          "swap": false,
+          "feedback": false,
+          "freshness": true
+        }
+      },
+      "links": {
+        "self": "/p/lait-demi-ecreme-carrefour-classic-3276554163158",
+        "reviews": "/product/3276554163158/reviews"
+      }
+    }
+  ],
+  "links": {
+    "default": "/s?q=lait",
+    "self": "/s?q=lait",
+    "prev": null,
+    "next": "/s?q=lait&page=2",
+    "last": "/s?q=lait&page=13"
+  },
+  "meta": {
+    "total": 376,
+    "itemsPerPage": 30,
+    "totalPage": 13,
+    "currentPage": 1,
+    "suggestions": [],
+    "autocorrect": null,
+    "searchType": "",
+    "keyword": "lait",
+    "facets": [
+      {
+        "type": "boolean",
+        "field": "ES_discount_quickaccess",
+        "label": "Promotions",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "false",
+            "count": 296,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "true",
+            "count": 107,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 107,
+        "rapidAccess": true,
+        "searchable": false,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "checkbox",
+        "field": "facet_promotions",
+        "label": "Promotions",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "Toutes les promotions",
+            "count": 109,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "Remises immédiates",
+            "count": 25,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "Avantage Fidélité",
+            "count": 54,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "Avantage Carrefour Bio",
+            "count": 21,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "Mardi PASS",
+            "count": 50,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "Vu en catalogue",
+            "count": 9,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "rapidAccess": false,
+        "searchable": false,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "boolean",
+        "field": "ES_Carrefour_Brands",
+        "label": "Produits Carrefour",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "false",
+            "count": 289,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "true",
+            "count": 75,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 75,
+        "rapidAccess": true,
+        "searchable": false,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "boolean",
+        "field": "offers.is_new",
+        "label": "Nouveauté",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "false",
+            "count": 364,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "true",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 1,
+        "rapidAccess": true,
+        "searchable": false,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "checkbox",
+        "field": "facet_marque",
+        "label": "Marque",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "CARREFOUR",
+            "count": 75,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LACTEL",
+            "count": 36,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CANDIA",
+            "count": 32,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "A-DERMA",
+            "count": 6,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "ADAM FOODS",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "ALINE & OLIVIER",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "AVENE",
+            "count": 5,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "AVENT",
+            "count": 6,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BAHLSEN",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BASKALIA",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BEAUTY OF JOSEON",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BIODERMA",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BJORG",
+            "count": 7,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BLEU BLANC LAIT",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BN",
+            "count": 5,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BOLANDS",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BOUNTY",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BRIDEL",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "BRIOCHE PASQUIER",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "C'EST QUI LE PATRON ?!",
+            "count": 5,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CACOLAC",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CADBURY",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CANDIA COLUMBUS",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CANDIA+",
+            "count": 9,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CERAVE",
+            "count": 6,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CICABIAFINE",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "CURLS MATTER",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "DANETTE",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "DELACRE",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "DELICHOC",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "DEXERYL",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "DUCRAY",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "EAFIT",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "EAU THERMALE JONZAC",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "ELGYDIUM",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "EMBRYOLISSE",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "EYE CARE COSMETICS",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "FAIREFRANCE",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "KAMBLY",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "KINDER",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "KINDER CARDS",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "KINDER DUO",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "KINDER HAPPY HIPPO",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "KLORANE",
+            "count": 15,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "KNOPPERS",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LA BOULANGERE",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LA BRIQUE ROSE",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LA MARQUE DU CONSOMMATEUR",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LA ROCHE POSAY",
+            "count": 8,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LABORATOIRE SVR",
+            "count": 4,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LE PETIT BASQUE",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LES ELEVEURS DU SUD-OUEST",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LIERAC",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LOTUS DINOSAURUS",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LOVREN",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "LU",
+            "count": 21,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "MC VITIE'S",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "MERVEILLES DU MONDE",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "MILKA",
+            "count": 5,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "MKL COSM'ETHIK",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "MKL GREEN NATURE",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "MUSTELA",
+            "count": 20,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "NATESSANCE",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "NEUTROGENA",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "NOCILLA",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "NUXE",
+            "count": 5,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "ONETIK",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "OREO",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "PAYSAN BRETON",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "PETIT ECOLIER",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "PHYSIOLAC",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "PHYTO",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "PURALOE",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "ROGE CAVAILLES",
+            "count": 4,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "ROGER & GALLET",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "SCHAR",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "SIMPL",
+            "count": 3,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "ST MICHEL",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "TOPICREM",
+            "count": 12,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "URIAGE",
+            "count": 5,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "VICHY",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "VICHY LABORATOIRES",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "VRAI",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "WELEDA",
+            "count": 5,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "rapidAccess": false,
+        "searchable": true,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "checkbox",
+        "field": "facette_format_lait",
+        "label": "Format",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "Pack de bouteilles",
+            "count": 75,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "Bouteille",
+            "count": 43,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "rapidAccess": false,
+        "searchable": true,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "boolean",
+        "field": "offers.is_ziqy",
+        "label": "Ma Communauté recommande",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "false",
+            "count": 335,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "true",
+            "count": 30,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 30,
+        "rapidAccess": true,
+        "searchable": false,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "boolean",
+        "field": "product.flags.is_free_from_lactose",
+        "label": "Sans lactose",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "false",
+            "count": 345,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "true",
+            "count": 20,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 20
+      },
+      {
+        "type": "boolean",
+        "field": "product.flags.is_fresh_product",
+        "label": "Lait frais",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "true",
+            "count": 21,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "false",
+            "count": 375,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 21
+      },
+      {
+        "type": "checkbox",
+        "field": "facet_contenance_lait",
+        "label": "Contenance",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "1L",
+            "count": 79,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "50cL",
+            "count": 21,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "20cL",
+            "count": 9,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "25cL",
+            "count": 6,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "2L",
+            "count": 2,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "1,5L",
+            "count": 1,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "rapidAccess": false,
+        "searchable": true,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "boolean",
+        "field": "product.flags.is_organic",
+        "label": "Bio",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "false",
+            "count": 339,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "true",
+            "count": 53,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 53,
+        "rapidAccess": true,
+        "searchable": false,
+        "searchPlaceholder": null
+      },
+      {
+        "type": "checkbox",
+        "field": "facet_nutriscore",
+        "label": "Nutriscore",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "A",
+            "count": 49,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "B",
+            "count": 43,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "C",
+            "count": 12,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "D",
+            "count": 15,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "E",
+            "count": 61,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": []
+      },
+      {
+        "type": "slider",
+        "field": "facet_price",
+        "label": "Prix",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [],
+        "ranges": [
+          {
+            "gte": 0,
+            "lt": 135
+          },
+          {
+            "gte": 135,
+            "lt": 270
+          },
+          {
+            "gte": 270,
+            "lt": 405
+          },
+          {
+            "gte": 405,
+            "lt": 540
+          },
+          {
+            "gte": 540,
+            "lt": 675
+          },
+          {
+            "gte": 675,
+            "lt": 810
+          },
+          {
+            "gte": 810,
+            "lt": 945
+          },
+          {
+            "gte": 945,
+            "lt": 1080
+          },
+          {
+            "gte": 1080,
+            "lt": 1215
+          },
+          {
+            "gte": 1215,
+            "lt": 8142
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "field": "product.customer_review.average_range",
+        "label": "Avis produits",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "5.0",
+            "count": 44,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "4.5",
+            "count": 147,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "4.0",
+            "count": 12,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": []
+      },
+      {
+        "type": "boolean",
+        "field": "offers.is_alternative_healthy",
+        "label": "Ma Communauté a testé",
+        "selected": false,
+        "slug": null,
+        "rank": null,
+        "topTerms": [
+          {
+            "label": "false",
+            "count": 361,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          },
+          {
+            "label": "true",
+            "count": 4,
+            "selected": false,
+            "code": null,
+            "id": null,
+            "indexable": false,
+            "slug": null,
+            "rank": null,
+            "seoUrl": null,
+            "indexableCombinations": []
+          }
+        ],
+        "ranges": [],
+        "count": 4,
+        "rapidAccess": false,
+        "searchable": false,
+        "searchPlaceholder": null
+      }
+    ],
+    "navigationFacet": null,
+    "promoFacets": null,
+    "breadcrumb": null,
+    "sideMenu": {
+      "navigation": []
+    },
+    "hero": null,
+    "isHoplaOpen": false,
+    "tags": [],
+    "editorialBlocks": [],
+    "categoryPage": [],
+    "paginationBehaviour": {
+      "isInfiniteScrollEnabled": false,
+      "isPrefetchEnabled": true,
+      "infiniteScrollThreshold": 1000
+    },
+    "marketplaceGuide": false,
+    "partialSearchResult": false,
+    "businessType": "food",
+    "indexedPage": [],
+    "universe": "food",
+    "errorCode": null,
+    "additionalFields": {
+      "viewType": null
+    },
+    "sortingStrategyName": "defaultStrategy",
+    "manualSorts": [
+      {
+        "fieldPath": "",
+        "selected": true,
+        "label": "Pertinence",
+        "order": "",
+        "foodOnly": false
+      },
+      {
+        "fieldPath": "offers.prices.effective_price",
+        "selected": false,
+        "label": "Prix (croissant)",
+        "order": "asc",
+        "foodOnly": false
+      },
+      {
+        "fieldPath": "offers.prices.effective_price",
+        "selected": false,
+        "label": "Prix (décroissant)",
+        "order": "desc",
+        "foodOnly": false
+      },
+      {
+        "fieldPath": "offers.prices.standard_price_per_unit.price_per_unit_value",
+        "selected": false,
+        "label": "Prix au Kg/l (croissant)",
+        "order": "asc",
+        "foodOnly": true
+      },
+      {
+        "fieldPath": "offers.prices.standard_price_per_unit.price_per_unit_value",
+        "selected": false,
+        "label": "Prix au Kg/l (décroissant)",
+        "order": "desc",
+        "foodOnly": true
+      },
+      {
+        "fieldPath": "product.customer_review.average",
+        "selected": false,
+        "label": "Note (décroissante)",
+        "order": "desc",
+        "foodOnly": false
+      }
+    ],
+    "refinedKeywords": [
+      {
+        "query": "lait sans lactose",
+        "label": "sans lactose"
+      },
+      {
+        "query": "lait demi ecreme",
+        "label": "demi ecreme"
+      },
+      {
+        "query": "lait entier",
+        "label": "entier"
+      },
+      {
+        "query": "lait ecreme",
+        "label": "ecreme"
+      },
+      {
+        "query": "lait bio",
+        "label": "bio"
+      }
+    ],
+    "extendedKeywords": [
+      {
+        "label": "oeuf",
+        "link": "/s?q=oeuf"
+      },
+      {
+        "label": "eau",
+        "link": "/s?q=eau"
+      },
+      {
+        "label": "beurre",
+        "link": "/s?q=beurre"
+      },
+      {
+        "label": "yaourt",
+        "link": "/s?q=yaourt"
+      },
+      {
+        "label": "farine",
+        "link": "/s?q=farine"
+      }
+    ],
+    "recommendationVars": null
+  }
+}

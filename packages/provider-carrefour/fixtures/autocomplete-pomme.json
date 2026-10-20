@@ -1,0 +1,1487 @@
+{
+  "data": {
+    "filteredSuggestions": [
+      {
+        "category": "Epicerie sucrée",
+        "filterKey": "product.categories.name",
+        "text": "pomme",
+        "highlighted": "<em>pomme</em>",
+        "matches": "pomme",
+        "link": "/s?q=pomme&filters%5Bproduct.categories.name%5D=Epicerie%20sucr%C3%A9e"
+      },
+      {
+        "category": "Bio et Ecologie",
+        "filterKey": "product.categories.name",
+        "text": "pomme",
+        "highlighted": "<em>pomme</em>",
+        "matches": "pomme",
+        "link": "/s?q=pomme&filters%5Bproduct.categories.name%5D=Bio%20et%20Ecologie"
+      },
+      {
+        "category": "Bébé",
+        "filterKey": "product.categories.name",
+        "text": "pomme",
+        "highlighted": "<em>pomme</em>",
+        "matches": "pomme",
+        "link": "/s?q=pomme&filters%5Bproduct.categories.name%5D=B%C3%A9b%C3%A9"
+      },
+      {
+        "category": "Crèmerie et Produits laitiers",
+        "filterKey": "product.categories.name",
+        "text": "pomme",
+        "highlighted": "<em>pomme</em>",
+        "matches": "pomme",
+        "link": "/s?q=pomme&filters%5Bproduct.categories.name%5D=Cr%C3%A8merie%20et%20Produits%20laitiers"
+      },
+      {
+        "category": "Boissons",
+        "filterKey": "product.categories.name",
+        "text": "pomme",
+        "highlighted": "<em>pomme</em>",
+        "matches": "pomme",
+        "link": "/s?q=pomme&filters%5Bproduct.categories.name%5D=Boissons"
+      }
+    ],
+    "suggestions": [
+      {
+        "highlighted": "<em>pomme</em>s de terre",
+        "text": "pommes de terre",
+        "link": "/s?q=pommes%20de%20terre"
+      },
+      {
+        "highlighted": "<em>pomme</em>s noisettes",
+        "text": "pommes noisettes",
+        "link": "/s?q=pommes%20noisettes"
+      },
+      {
+        "highlighted": "<em>pomme</em>s de terre grenaille",
+        "text": "pommes de terre grenaille",
+        "link": "/s?q=pommes%20de%20terre%20grenaille"
+      },
+      {
+        "highlighted": "<em>pomme</em>s dauphine",
+        "text": "pommes dauphine",
+        "link": "/s?q=pommes%20dauphine"
+      },
+      {
+        "highlighted": "<em>pomme</em>s de terre rissolées",
+        "text": "pommes de terre rissolées",
+        "link": "/s?q=pommes%20de%20terre%20rissol%C3%A9es"
+      },
+      {
+        "highlighted": "<em>pomme</em>s de terre frites",
+        "text": "pommes de terre frites",
+        "link": "/s?q=pommes%20de%20terre%20frites"
+      },
+      {
+        "highlighted": "<em>pomme</em> golden",
+        "text": "pomme golden",
+        "link": "/s?q=pomme%20golden"
+      },
+      {
+        "highlighted": "<em>pomme</em> de terre bio",
+        "text": "pomme de terre bio",
+        "link": "/s?q=pomme%20de%20terre%20bio"
+      },
+      {
+        "highlighted": "<em>pomme</em> bio",
+        "text": "pomme bio",
+        "link": "/s?q=pomme%20bio"
+      }
+    ],
+    "meta": {
+      "autocorrect": null,
+      "keyword": "pomme",
+      "searchType": "",
+      "allStoreLink": "/s?q=pomme"
+    },
+    "products": [
+      {
+        "type": "product",
+        "id": "product-3560070967261",
+        "attributes": {
+          "ean": "3560070967261",
+          "cdbase": "5619709",
+          "title": "Compote pommes mangues sans sucres ajoutés CARREFOUR BIO",
+          "shortTitle": "Compote pommes mangues sans sucres ajoutés CARREFOUR BIO",
+          "brand": "CARREFOUR BIO",
+          "slug": "compote-pommes-mangues-sans-sucres-ajoutes-carrefour-bio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "bio-et-ecologie/epicerie-sucree/compotes-desserts",
+          "categories": [
+            {
+              "id": "2183",
+              "label": "Epicerie sucrée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-sucree",
+              "uri": "epicerie-sucree",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "2250",
+              "label": "Compotes, Fruits au sirop et Crèmes desserts",
+              "code": "R00F00SF00",
+              "slug": "compotes-fruits-au-sirop-et-cremes-desserts",
+              "uri": "epicerie-sucree/compotes-fruits-au-sirop-et-cremes-desserts",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2251",
+              "label": "Compotes",
+              "code": "R00F00SF00",
+              "slug": "compotes",
+              "uri": "epicerie-sucree/compotes-fruits-au-sirop-et-cremes-desserts/compotes",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie sucrée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/0d3a56b85f793bb4bbfa6bc30853e183/p_FORMAT/3560070967261-0.jpg",
+              "https://media.carrefour.fr/medias/459e580454e036749090b75f2ebcd17d/p_FORMAT/3560070967261-1.jpg",
+              "https://media.carrefour.fr/medias/c7ab4fc1af3a364b8d2682beb70cb941/p_FORMAT/3560070967261-7.jpg",
+              "https://media.carrefour.fr/medias/48886b5b660536528367d2f07a85b7f1/p_FORMAT/3560070967261-8.jpg",
+              "https://media.carrefour.fr/medias/0cad360990de31a393d93d77ed87b3d5/p_FORMAT/3560070967261-9.jpg",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/0d3a56b85f793bb4bbfa6bc30853e183/p_FORMAT/3560070967261-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/459e580454e036749090b75f2ebcd17d/p_FORMAT/3560070967261-1.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/c7ab4fc1af3a364b8d2682beb70cb941/p_FORMAT/3560070967261-7.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/48886b5b660536528367d2f07a85b7f1/p_FORMAT/3560070967261-8.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/0cad360990de31a393d93d77ed87b3d5/p_FORMAT/3560070967261-9.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560070967261": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.45,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 6.81,
+                    "perUnitLabel": "6.81 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "club",
+                    "key": "flag.club.bio"
+                  },
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3560070967261",
+                  "promotion": {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.25,
+                      "discountedPrice": 2.45,
+                      "initialPrice": 2.45,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": "CLUB",
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004445"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "rd_fid_market",
+                      "label": "-10% Club",
+                      "message": "promotion.rd_fid_market",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": true,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.25,
+                        "discountedPrice": 2.45,
+                        "initialPrice": 2.45,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": "CLUB",
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004445"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "les 4 gourdes de 90g",
+          "format": "4x90g",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic",
+            "flag.common.addedsugarfree"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [
+            "flag.club.bio"
+          ],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 5,
+            "count": 2,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/compote-pommes-mangues-sans-sucres-ajoutes-carrefour-bio-3560070967261",
+          "reviews": "/product/3560070967261/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3276559762066",
+        "attributes": {
+          "ean": "3276559762066",
+          "cdbase": "3639470",
+          "title": "Pommes de Terre de Consommation Vapeur Bio",
+          "shortTitle": "Pommes de Terre de Consommation Vapeur Bio",
+          "brand": null,
+          "slug": "pommes-de-terre-de-consommation-vapeur-bio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "fruits-et-legumes/legumes/carottes-et-pommes-de-terre/pommes-de-terre-blanche",
+          "categories": [
+            {
+              "id": "1838",
+              "label": "Bio et Ecologie",
+              "code": "R00F00SF00",
+              "slug": "bio-et-ecologie",
+              "uri": "bio-et-ecologie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "1839",
+              "label": "Le Marché",
+              "code": "R00F00SF00",
+              "slug": "le-marche",
+              "uri": "bio-et-ecologie/le-marche",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "1840",
+              "label": "Légumes et Fruits",
+              "code": "R00F00SF00",
+              "slug": "legumes-et-fruits",
+              "uri": "bio-et-ecologie/le-marche/legumes-et-fruits",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Bio et Ecologie",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/050df4363248441092419a94f581c172/p_FORMAT/3276559762066_0.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/050df4363248441092419a94f581c172/p_FORMAT/3276559762066_0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3276559762066": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.99,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 1.99,
+                    "perUnitLabel": "1.99 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "club",
+                    "key": "flag.club.market"
+                  },
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3276559762066",
+                  "promotion": {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.3,
+                      "discountedPrice": 2.99,
+                      "initialPrice": 2.99,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": "CLUB",
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000005190"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "rd_fid_market",
+                      "label": "-10% Club",
+                      "message": "promotion.rd_fid_market",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": true,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.3,
+                        "discountedPrice": 2.99,
+                        "initialPrice": 2.99,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": "CLUB",
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000005190"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le filet de 1,5Kg",
+          "format": "1,5Kg",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [
+            "flag.club.market"
+          ],
+          "origin": "FRANCE",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.7,
+            "count": 56,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/pommes-de-terre-de-consommation-vapeur-bio-3276559762066",
+          "reviews": "/product/3276559762066/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3523680497511",
+        "attributes": {
+          "ean": "3523680497511",
+          "cdbase": "7693404",
+          "title": "Pommes de terre  vapeur  raclette, gratin, rissolées  FILIERE QUALITE CARREFOUR",
+          "shortTitle": "Pommes de terre  vapeur  raclette, gratin, rissolées  FILIERE QUALITE CARREFOUR",
+          "brand": "FILIERE QUALITE CARREFOUR",
+          "slug": "pommes-de-terre-vapeur-raclette-gratin-rissolees-filiere-qualite-carrefour",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "fruits-et-legumes/legumes/carottes-et-pommes-de-terre/pommes-de-terre-blanche",
+          "categories": [
+            {
+              "id": "1882",
+              "label": "Fruits et Légumes",
+              "code": "R00F00SF00",
+              "slug": "fruits-et-legumes",
+              "uri": "fruits-et-legumes",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "1892",
+              "label": "Légumes",
+              "code": "R00F00SF00",
+              "slug": "legumes",
+              "uri": "fruits-et-legumes/legumes",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "28518",
+              "label": "Carottes et Pommes de terre",
+              "code": "R00F00SF00",
+              "slug": "carottes-et-pommes-de-terre",
+              "uri": "fruits-et-legumes/legumes/carottes-et-pommes-de-terre",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            },
+            {
+              "id": "28521",
+              "label": "Pommes de terre blanches",
+              "code": "R00F00SF00",
+              "slug": "pommes-de-terre-blanche",
+              "uri": "fruits-et-legumes/legumes/carottes-et-pommes-de-terre/pommes-de-terre-blanche",
+              "type": "RAYON",
+              "level": 4,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Fruits et Légumes",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/446ff0a735e649a58a1d986c36169a5f/p_FORMAT/3523680497511_0.jpg",
+              "https://media.carrefour.fr/medias/5c5b05b25c564474819a93a34cae730e/p_FORMAT/3523680497511_1.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/446ff0a735e649a58a1d986c36169a5f/p_FORMAT/3523680497511_0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5c5b05b25c564474819a93a34cae730e/p_FORMAT/3523680497511_1.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3523680497511": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 3.19,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 1.6,
+                    "perUnitLabel": "1.60 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "club",
+                    "key": "flag.club.market"
+                  },
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3523680497511",
+                  "promotion": {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.32,
+                      "discountedPrice": 3.19,
+                      "initialPrice": 3.19,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": "CLUB",
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000005190"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "rd_fid_market",
+                      "label": "-10% Club",
+                      "message": "promotion.rd_fid_market",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": true,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.32,
+                        "discountedPrice": 3.19,
+                        "initialPrice": 3.19,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": "CLUB",
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000005190"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le filet de 2Kg",
+          "format": "2Kg",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.qualityline"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [
+            "flag.club.market"
+          ],
+          "origin": "FRANCE",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.09,
+            "count": 11,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/pommes-de-terre-vapeur-raclette-gratin-rissolees-filiere-qualite-carrefour-3523680497511",
+          "reviews": "/product/3523680497511/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3288131120416",
+        "attributes": {
+          "ean": "3288131120416",
+          "cdbase": "7930245",
+          "title": "Compote Pomme, Mangue et Citron Vert Energie Bio VITABIO",
+          "shortTitle": "Compote Pomme, Mangue et Citron Vert Energie Bio VITABIO",
+          "brand": "VITABIO",
+          "slug": "compote-pomme-mangue-et-citron-vert-energie-bio-vitabio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "epicerie-sucree/compotes-fruits-au-sirop-et-cremes-desserts/compotes",
+          "categories": [
+            {
+              "id": "2183",
+              "label": "Epicerie sucrée",
+              "code": "R00F00SF00",
+              "slug": "epicerie-sucree",
+              "uri": "epicerie-sucree",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "2250",
+              "label": "Compotes, Fruits au sirop et Crèmes desserts",
+              "code": "R00F00SF00",
+              "slug": "compotes-fruits-au-sirop-et-cremes-desserts",
+              "uri": "epicerie-sucree/compotes-fruits-au-sirop-et-cremes-desserts",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "2251",
+              "label": "Compotes",
+              "code": "R00F00SF00",
+              "slug": "compotes",
+              "uri": "epicerie-sucree/compotes-fruits-au-sirop-et-cremes-desserts/compotes",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Epicerie sucrée",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/1422dd32d8044363bacbf47c570c3958/p_FORMAT/03288131120416_A1C1_s01.jpeg",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/1422dd32d8044363bacbf47c570c3958/p_FORMAT/03288131120416_A1C1_s01.jpeg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3288131120416": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.85,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 7.12,
+                    "perUnitLabel": "7.12 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3288131120416",
+                  "promotion": null,
+                  "promotions": [],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "les 4 gourdes de 100g",
+          "format": "4x100g",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic",
+            "flag.common.addedsugarfree"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": null,
+            "count": null,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/compote-pomme-mangue-et-citron-vert-energie-bio-vitabio-3288131120416",
+          "reviews": "/product/3288131120416/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3297760097051",
+        "attributes": {
+          "ean": "3297760097051",
+          "cdbase": "2115591",
+          "title": "Compote Pomme Framboise Sans Sucres Ajoutés CHARLES & ALICE",
+          "shortTitle": "Compote Pomme Framboise Sans Sucres Ajoutés CHARLES & ALICE",
+          "brand": "CHARLES & ALICE",
+          "slug": "compote-pomme-framboise-sans-sucres-ajoutes-charles-alice",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "cremerie/desserts-compotes/compotes-fraiches",
+          "categories": [
+            {
+              "id": "36993",
+              "label": "Crèmerie et Produits laitiers",
+              "code": "R00F00SF00",
+              "slug": "cremerie",
+              "uri": "cremerie",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "36996",
+              "label": "Desserts et Compotes",
+              "code": "R00F00SF00",
+              "slug": "desserts-compotes",
+              "uri": "cremerie/desserts-compotes",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "28178",
+              "label": "Compotes fraîches",
+              "code": "R00F00SF00",
+              "slug": "compotes-fraiches",
+              "uri": "cremerie/desserts-compotes/compotes-fraiches",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Crèmerie et Produits laitiers",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/fbfb4e004ae04200be3e954fe91b6b6e/p_FORMAT/03297760097051_H1N1_s16.png",
+              "https://media.carrefour.fr/media/referential/media/76e278536fad493f8c009844524df77e/p_FORMAT/03297760097051_A7N1_s15.png"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/fbfb4e004ae04200be3e954fe91b6b6e/p_FORMAT/03297760097051_H1N1_s16.png",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/76e278536fad493f8c009844524df77e/p_FORMAT/03297760097051_A7N1_s15.png",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3297760097051": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 1.79,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 4.48,
+                    "perUnitLabel": "4.48 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 5,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3297760097051",
+                  "promotion": null,
+                  "promotions": [],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "les 4 pots de 100g",
+          "format": "4x100g",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.addedsugarfree"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 5,
+            "count": 2,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/compote-pomme-framboise-sans-sucres-ajoutes-charles-alice-3297760097051",
+          "reviews": "/product/3297760097051/reviews"
+        }
+      }
+    ]
+  }
+}

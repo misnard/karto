@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "karto-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-22",
+  "observability": { "enabled": true },
+  // LLM_RUNTIME: only "cli" exists (llm jobs wait for the relay). RELAY_TOKEN is a secret (wrangler secret put).
+  "vars": { "LLM_RUNTIME": "cli", "LLM_MODEL": "claude-haiku-5-5" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "karto",
+      // Replace with the id printed by `wrangler d1 create karto` before the first remote deploy.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

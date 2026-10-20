@@ -1,0 +1,1387 @@
+{
+  "data": {
+    "filteredSuggestions": [
+      {
+        "category": "Pains et Pâtisseries",
+        "filterKey": "product.categories.name",
+        "text": "pain",
+        "highlighted": "<em>pain</em>",
+        "matches": "pain",
+        "link": "/s?q=pain&filters%5Bproduct.categories.name%5D=Pains%20et%20P%C3%A2tisseries"
+      },
+      {
+        "category": "Epicerie sucrée",
+        "filterKey": "product.categories.name",
+        "text": "pain",
+        "highlighted": "<em>pain</em>",
+        "matches": "pain",
+        "link": "/s?q=pain&filters%5Bproduct.categories.name%5D=Epicerie%20sucr%C3%A9e"
+      },
+      {
+        "category": "Cuisine",
+        "filterKey": "product.categories.name",
+        "text": "pain",
+        "highlighted": "<em>pain</em>",
+        "matches": "pain",
+        "link": "/s?q=pain&filters%5Bproduct.categories.name%5D=Cuisine"
+      },
+      {
+        "category": "Charcuterie et Traiteur",
+        "filterKey": "product.categories.name",
+        "text": "pain",
+        "highlighted": "<em>pain</em>",
+        "matches": "pain",
+        "link": "/s?q=pain&filters%5Bproduct.categories.name%5D=Charcuterie%20et%20Traiteur"
+      },
+      {
+        "category": "Bio et Ecologie",
+        "filterKey": "product.categories.name",
+        "text": "pain",
+        "highlighted": "<em>pain</em>",
+        "matches": "pain",
+        "link": "/s?q=pain&filters%5Bproduct.categories.name%5D=Bio%20et%20Ecologie"
+      }
+    ],
+    "suggestions": [
+      {
+        "highlighted": "<em>pain</em> de mie",
+        "text": "pain de mie",
+        "link": "/s?q=pain%20de%20mie"
+      },
+      {
+        "highlighted": "<em>pain</em>s au lait",
+        "text": "pains au lait",
+        "link": "/s?q=pains%20au%20lait"
+      },
+      {
+        "highlighted": "<em>pain</em> burger",
+        "text": "pain burger",
+        "link": "/s?q=pain%20burger"
+      },
+      {
+        "highlighted": "<em>pain</em>s au chocolat",
+        "text": "pains au chocolat",
+        "link": "/s?q=pains%20au%20chocolat"
+      },
+      {
+        "highlighted": "<em>pain</em> de mie complet",
+        "text": "pain de mie complet",
+        "link": "/s?q=pain%20de%20mie%20complet"
+      },
+      {
+        "highlighted": "<em>pain</em> complet",
+        "text": "pain complet",
+        "link": "/s?q=pain%20complet"
+      },
+      {
+        "highlighted": "<em>pain</em> hot dog",
+        "text": "pain hot dog",
+        "link": "/s?q=pain%20hot%20dog"
+      },
+      {
+        "highlighted": "<em>pain</em>s grillés",
+        "text": "pains grillés",
+        "link": "/s?q=pains%20grill%C3%A9s"
+      },
+      {
+        "highlighted": "<em>pain</em> de seigle",
+        "text": "pain de seigle",
+        "link": "/s?q=pain%20de%20seigle"
+      }
+    ],
+    "meta": {
+      "autocorrect": null,
+      "keyword": "pain",
+      "searchType": "",
+      "allStoreLink": "/s?q=pain"
+    },
+    "products": [
+      {
+        "type": "product",
+        "id": "product-3760049798869",
+        "attributes": {
+          "ean": "3760049798869",
+          "cdbase": "7178901",
+          "title": "Pain de mie Bio Complet Sans Sucres Ajoutés LA BOULANGERE",
+          "shortTitle": "Pain de mie Bio Complet Sans Sucres Ajoutés LA BOULANGERE",
+          "brand": "LA BOULANGERE",
+          "slug": "pain-de-mie-bio-complet-sans-sucres-ajoutes-la-boulangere",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "bio-et-ecologie/le-marche/boulangerie-et-viennoiserie",
+          "categories": [
+            {
+              "id": "1952",
+              "label": "Pains et Pâtisseries",
+              "code": "R00F00SF00",
+              "slug": "pains-et-patisseries",
+              "uri": "pains-et-patisseries",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29060",
+              "label": "Toasts et Pains de mie",
+              "code": "R00F00SF00",
+              "slug": "pains-de-mie",
+              "uri": "pains-et-patisseries/pains-de-mie",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29062",
+              "label": "Pains de mie complet et aux céréales",
+              "code": "R00F00SF00",
+              "slug": "pains-de-mie-complet-cereales",
+              "uri": "pains-et-patisseries/pains-de-mie/pains-de-mie-complet-cereales",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Pains et Pâtisseries",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/581d01b4fbde4eca88d1193513c254b5/p_FORMAT/03760049798869_H1N1_s17.png",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/581d01b4fbde4eca88d1193513c254b5/p_FORMAT/03760049798869_H1N1_s17.png",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3760049798869": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.45,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 4.9,
+                    "perUnitLabel": "4.90 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 2,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3760049798869",
+                  "promotion": null,
+                  "promotions": [],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le sachet de 500g",
+          "format": "500g",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic",
+            "flag.common.addedsugarfree"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 5,
+            "count": 1,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/pain-de-mie-bio-complet-sans-sucres-ajoutes-la-boulangere-3760049798869",
+          "reviews": "/product/3760049798869/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3228857002221",
+        "attributes": {
+          "ean": "3228857002221",
+          "cdbase": "7865799",
+          "title": "Pain de mie American sandwich 7 céréales sans sucres ajoutés sans additifs HARRYS",
+          "shortTitle": "Pain de mie American sandwich 7 céréales sans sucres ajoutés sans additifs HARRYS",
+          "brand": "HARRYS",
+          "slug": "pain-de-mie-american-sandwich-7-cereales-sans-sucres-ajoutes-sans-additifs-harrys",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "pains-et-patisseries/pains-de-mie/pains-de-mie-complet-cereales",
+          "categories": [
+            {
+              "id": "1952",
+              "label": "Pains et Pâtisseries",
+              "code": "R00F00SF00",
+              "slug": "pains-et-patisseries",
+              "uri": "pains-et-patisseries",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29060",
+              "label": "Toasts et Pains de mie",
+              "code": "R00F00SF00",
+              "slug": "pains-de-mie",
+              "uri": "pains-et-patisseries/pains-de-mie",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29062",
+              "label": "Pains de mie complet et aux céréales",
+              "code": "R00F00SF00",
+              "slug": "pains-de-mie-complet-cereales",
+              "uri": "pains-et-patisseries/pains-de-mie/pains-de-mie-complet-cereales",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Pains et Pâtisseries",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/02380039e6ce45b1b02575c19325c92e/p_FORMAT/03228857002221_H1N1_s04.png"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/02380039e6ce45b1b02575c19325c92e/p_FORMAT/03228857002221_H1N1_s04.png",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3228857002221": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 1.89,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 3.44,
+                    "perUnitLabel": "3.44 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": {
+                    "value": 2,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3228857002221",
+                  "promotion": null,
+                  "promotions": [],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le sachet de 14 tranches",
+          "format": "550g",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.addedsugarfree"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "A",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 5,
+            "count": 7,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/pain-de-mie-american-sandwich-7-cereales-sans-sucres-ajoutes-sans-additifs-harrys-3228857002221",
+          "reviews": "/product/3228857002221/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-2023040000005",
+        "attributes": {
+          "ean": "2023040000005",
+          "cdbase": "1333140",
+          "title": "Pain Boule Bio CARREFOUR BIO",
+          "shortTitle": "Pain Boule Bio CARREFOUR BIO",
+          "brand": "CARREFOUR BIO",
+          "slug": "pain-boule-bio-carrefour-bio",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "bio-et-ecologie/bio-petit-prix/boulangerie-viennoiserie",
+          "categories": [
+            {
+              "id": "1952",
+              "label": "Pains et Pâtisseries",
+              "code": "R00F00SF00",
+              "slug": "pains-et-patisseries",
+              "uri": "pains-et-patisseries",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29019",
+              "label": "Pains frais",
+              "code": "R00F00SF00",
+              "slug": "pains-frais",
+              "uri": "pains-et-patisseries/pains-frais",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29022",
+              "label": "Pains",
+              "code": "R00F00SF00",
+              "slug": "pains",
+              "uri": "pains-et-patisseries/pains-frais/pains",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Pains et Pâtisseries",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/media/referential/media/a6ec56970ef24ef1806bf16588a0f048/p_FORMAT/2023040000005_0.jpg",
+              "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/media/referential/media/a6ec56970ef24ef1806bf16588a0f048/p_FORMAT/2023040000005_0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/5fa557eacc274ca29da12a931152174e/p_FORMAT/visuel_e-commerce_benefices_bio_vdef.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "2023040000005": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 1.99,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 3.98,
+                    "perUnitLabel": "3.98 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 10
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "forced",
+                    "value": "Marché frais"
+                  },
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "2023040000005",
+                  "promotion": {
+                    "type": "rd_fid_market",
+                    "label": "-10% Club",
+                    "message": "promotion.rd_fid_market",
+                    "isLoyalty": true,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": true,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 1,
+                    "messageArgs": {
+                      "quantity": 1,
+                      "discountAmount": 0.2,
+                      "discountedPrice": 1.99,
+                      "initialPrice": 1.99,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2025-01-01T00:00:00+0100",
+                      "endDate": "2026-12-31T23:59:00+0100"
+                    },
+                    "promoStartDate": "2025-01-01T00:00:00+0100",
+                    "promoEndDate": "2026-12-31T23:59:00+0100",
+                    "mixableGtins": [],
+                    "isPriceAlreadyDiscounted": false,
+                    "cardholder": "CLUB",
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120250000004445"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "rd_fid_market",
+                      "label": "-10% Club",
+                      "message": "promotion.rd_fid_market",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": true,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.2,
+                        "discountedPrice": 1.99,
+                        "initialPrice": 1.99,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": "CLUB",
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004445"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le pain de 500g",
+          "format": "la pièce",
+          "deliveryModalities": null,
+          "flags": [
+            "flag.common.organic"
+          ],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [
+            "flag.club.bio"
+          ],
+          "origin": "",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.24,
+            "count": 21,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/pain-boule-bio-carrefour-bio-2023040000005",
+          "reviews": "/product/2023040000005/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3276559526477",
+        "attributes": {
+          "ean": "3276559526477",
+          "cdbase": "4348930",
+          "title": "Pain Rustique",
+          "shortTitle": "Pain Rustique",
+          "brand": null,
+          "slug": "pain-rustique",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "pains-et-patisseries/pains-frais/pains",
+          "categories": [
+            {
+              "id": "1952",
+              "label": "Pains et Pâtisseries",
+              "code": "R00F00SF00",
+              "slug": "pains-et-patisseries",
+              "uri": "pains-et-patisseries",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29019",
+              "label": "Pains frais",
+              "code": "R00F00SF00",
+              "slug": "pains-frais",
+              "uri": "pains-et-patisseries/pains-frais",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29022",
+              "label": "Pains",
+              "code": "R00F00SF00",
+              "slug": "pains",
+              "uri": "pains-et-patisseries/pains-frais/pains",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Pains et Pâtisseries",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/7348d6d8e38932b2a1cb45229a4760bc/p_FORMAT/3276559526477-photosite-20171021-043629-0.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/7348d6d8e38932b2a1cb45229a4760bc/p_FORMAT/3276559526477-photosite-20171021-043629-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3276559526477": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.09,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 4.18,
+                    "perUnitLabel": "4.18 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 10
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": null,
+                  "freshness": null,
+                  "marketplace": null,
+                  "ean": "3276559526477",
+                  "promotion": null,
+                  "promotions": [
+                    {
+                      "type": "rd_offre_pass",
+                      "label": "-15% Mardi PASS",
+                      "message": "promotion.rd_offre_pass",
+                      "isLoyalty": true,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 1,
+                      "messageArgs": {
+                        "quantity": 1,
+                        "discountAmount": 0.31,
+                        "discountedPrice": 2.09,
+                        "initialPrice": 2.09,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2025-01-01T00:00:00+0100",
+                        "endDate": "2026-12-31T23:59:00+0100"
+                      },
+                      "promoStartDate": "2025-01-01T00:00:00+0100",
+                      "promoEndDate": "2026-12-31T23:59:00+0100",
+                      "mixableGtins": [],
+                      "isPriceAlreadyDiscounted": false,
+                      "cardholder": "PASS",
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120250000004776"
+                      ],
+                      "isDisplayed": false
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le pain de 500g",
+          "format": "la pièce",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": null,
+          "customerReviews": {
+            "average": 4.31,
+            "count": 13,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/pain-rustique-3276559526477",
+          "reviews": "/product/3276559526477/reviews"
+        }
+      },
+      {
+        "type": "product",
+        "id": "product-3560071010058",
+        "attributes": {
+          "ean": "3560071010058",
+          "cdbase": "5910189",
+          "title": "Pain multicéréales, aux graines et sans conservateurs CARREFOUR",
+          "shortTitle": "Pain multicéréales, aux graines et sans conservateurs CARREFOUR",
+          "brand": "CARREFOUR",
+          "slug": "pain-multicereales-aux-graines-et-sans-conservateurs-carrefour",
+          "businessType": "food",
+          "offerServiceId": "0046-150-112",
+          "uri": "pains-et-patisseries/pains-de-mie/pains-de-mie-complet-cereales",
+          "categories": [
+            {
+              "id": "1952",
+              "label": "Pains et Pâtisseries",
+              "code": "R00F00SF00",
+              "slug": "pains-et-patisseries",
+              "uri": "pains-et-patisseries",
+              "type": "RAYON",
+              "level": 1,
+              "sellerId": null
+            },
+            {
+              "id": "29060",
+              "label": "Toasts et Pains de mie",
+              "code": "R00F00SF00",
+              "slug": "pains-de-mie",
+              "uri": "pains-et-patisseries/pains-de-mie",
+              "type": "RAYON",
+              "level": 2,
+              "sellerId": null
+            },
+            {
+              "id": "29062",
+              "label": "Pains de mie complet et aux céréales",
+              "code": "R00F00SF00",
+              "slug": "pains-de-mie-complet-cereales",
+              "uri": "pains-et-patisseries/pains-de-mie/pains-de-mie-complet-cereales",
+              "type": "RAYON",
+              "level": 3,
+              "sellerId": null
+            }
+          ],
+          "topCategoryName": "Pains et Pâtisseries",
+          "images": {
+            "formats": {
+              "largest": "540x540",
+              "common": [
+                "43x43",
+                "200x200",
+                "540x540",
+                "1500x1500"
+              ]
+            },
+            "paths": [
+              "https://media.carrefour.fr/medias/feab4ee72fb03af69e20cb5c2e22f949/p_FORMAT/3560071010058-photosite-20200922-171535-0.jpg",
+              "https://media.carrefour.fr/medias/ca467ef0c59434d493a6bb05997dd1b8/p_FORMAT/3560071010058-photosite-20200922-171535-7.jpg"
+            ],
+            "withFormats": [
+              {
+                "pattern": "https://media.carrefour.fr/medias/feab4ee72fb03af69e20cb5c2e22f949/p_FORMAT/3560071010058-photosite-20200922-171535-0.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              },
+              {
+                "pattern": "https://media.carrefour.fr/medias/ca467ef0c59434d493a6bb05997dd1b8/p_FORMAT/3560071010058-photosite-20200922-171535-7.jpg",
+                "formats": {
+                  "43x43": "43x43",
+                  "200x200": "200x200",
+                  "540x540": "540x540",
+                  "1500x1500": "1500x1500",
+                  "largest": "1500x1500"
+                }
+              }
+            ]
+          },
+          "isDonation": false,
+          "isBestSeller": false,
+          "warnings": [],
+          "traceability": null,
+          "keyFeatures": [],
+          "moreOffers": {
+            "count": 0,
+            "bestOfferId": null,
+            "bestOfferPrice": null,
+            "hasNonFoodDeliveryOffer": false,
+            "isRexEligible": false,
+            "withdrawalDelivery": {
+              "exists": false,
+              "expressWithdrawalEligibility": {
+                "global": false,
+                "inCurrentStore": false
+              }
+            },
+            "hasCarrefourPlus": false
+          },
+          "offers": {
+            "3560071010058": {
+              "0046-150-112": {
+                "type": "offer",
+                "subType": "carrefour",
+                "id": "0046-150-112",
+                "attributes": {
+                  "availability": {
+                    "indispensable": false,
+                    "purchasable": true,
+                    "stopped": false,
+                    "suspended": false,
+                    "suspensionReason": null,
+                    "hasLowQuantity": false
+                  },
+                  "preorder": null,
+                  "price": {
+                    "price": 2.49,
+                    "taxMessage": "",
+                    "unitOfMeasure": "KG",
+                    "perUnit": 4.98,
+                    "perUnitLabel": "4.98 € / KG"
+                  },
+                  "ordering": {
+                    "min": 1,
+                    "step": 1,
+                    "max": 50
+                  },
+                  "offerServiceId": "0046-150-112",
+                  "highlightLabel": {
+                    "type": "promotion",
+                    "key": "product.label.promotion"
+                  },
+                  "freshness": {
+                    "value": 5,
+                    "period": "day"
+                  },
+                  "marketplace": null,
+                  "ean": "3560071010058",
+                  "promotion": {
+                    "type": "ri",
+                    "label": "Le 2ème à -20%",
+                    "message": "promotion.ri",
+                    "isLoyalty": false,
+                    "isPromo": false,
+                    "isPrixBarre": false,
+                    "isPrixForce": false,
+                    "isVuEnCatalogue": false,
+                    "isCrescendo": false,
+                    "isClubActive": false,
+                    "promotionParts": [],
+                    "progression": {
+                      "current": null,
+                      "total": null,
+                      "completed": null
+                    },
+                    "bestQuantity": 2,
+                    "messageArgs": {
+                      "quantity": 2,
+                      "discountAmount": 0,
+                      "discountedPrice": 4.98,
+                      "initialPrice": 4.98,
+                      "discountedPricePerUnit": null,
+                      "startDate": "2026-10-12T00:00:00+0200",
+                      "endDate": "2026-10-28T23:59:00+0100"
+                    },
+                    "promoStartDate": "2026-10-12T00:00:00+0200",
+                    "promoEndDate": "2026-10-28T23:59:00+0100",
+                    "mixableGtins": [
+                      "3560070879762",
+                      "3560071499402",
+                      "3560071010058"
+                    ],
+                    "isPriceAlreadyDiscounted": true,
+                    "cardholder": null,
+                    "isStamp": false,
+                    "mandateId": [
+                      "1120260000096554"
+                    ],
+                    "isDisplayed": true
+                  },
+                  "promotions": [
+                    {
+                      "type": "ri",
+                      "label": "Le 2ème à -20%",
+                      "message": "promotion.ri",
+                      "isLoyalty": false,
+                      "isPromo": false,
+                      "isPrixBarre": false,
+                      "isPrixForce": false,
+                      "isVuEnCatalogue": false,
+                      "isCrescendo": false,
+                      "isClubActive": false,
+                      "promotionParts": [],
+                      "progression": {
+                        "current": null,
+                        "total": null,
+                        "completed": null
+                      },
+                      "bestQuantity": 2,
+                      "messageArgs": {
+                        "quantity": 2,
+                        "discountAmount": 0,
+                        "discountedPrice": 4.98,
+                        "initialPrice": 4.98,
+                        "discountedPricePerUnit": null,
+                        "startDate": "2026-10-12T00:00:00+0200",
+                        "endDate": "2026-10-28T23:59:00+0100"
+                      },
+                      "promoStartDate": "2026-10-12T00:00:00+0200",
+                      "promoEndDate": "2026-10-28T23:59:00+0100",
+                      "mixableGtins": [
+                        "3560070879762",
+                        "3560071499402",
+                        "3560071010058"
+                      ],
+                      "isPriceAlreadyDiscounted": true,
+                      "cardholder": null,
+                      "isStamp": false,
+                      "mandateId": [
+                        "1120260000096554"
+                      ],
+                      "isDisplayed": true
+                    }
+                  ],
+                  "variableWeight": false,
+                  "isRexEligible": false,
+                  "expressWithdrawalEligibility": {
+                    "global": false,
+                    "inCurrentStore": false
+                  },
+                  "isNonFoodDelivery": false,
+                  "isRelayPointEligible": false,
+                  "description": null,
+                  "shopReturnPolicy": null,
+                  "bundle": {
+                    "label": null
+                  },
+                  "isNew": false,
+                  "isInnovation": false,
+                  "isDigitalCard": false,
+                  "isWholesale": false,
+                  "isClcv": false,
+                  "isZiqy": false,
+                  "isHealthy": false,
+                  "isVignetteEligible": false,
+                  "isPhysicalStoreOffer": false,
+                  "isExpressDelivery": false,
+                  "isRecoverable": false,
+                  "operatorContact": null,
+                  "consumerContact": null,
+                  "guarantees": []
+                },
+                "meta": {
+                  "cta": "buy"
+                },
+                "links": {
+                  "self": ""
+                }
+              }
+            }
+          },
+          "packaging": "le paquet de 500g",
+          "format": "500g",
+          "deliveryModalities": null,
+          "flags": [],
+          "sustainabilityIndex": null,
+          "addedSugar": null,
+          "isAlreadyPurchased": false,
+          "provenanceStatement": null,
+          "charger": null,
+          "clubs": [],
+          "origin": "",
+          "nutriscore": {
+            "value": "B",
+            "source": "",
+            "licence": "",
+            "isCalculated": false
+          },
+          "customerReviews": {
+            "average": 4.59,
+            "count": 81,
+            "rates": null
+          },
+          "variants": [],
+          "weightsAndMeasures": [],
+          "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+        },
+        "relationships": {
+          "substitution": null
+        },
+        "meta": {
+          "recommendation": null,
+          "cta": "buy",
+          "features": {
+            "deletable": false,
+            "swap": false,
+            "feedback": false,
+            "freshness": false
+          }
+        },
+        "links": {
+          "self": "/p/pain-multicereales-aux-graines-et-sans-conservateurs-carrefour-3560071010058",
+          "reviews": "/product/3560071010058/reviews"
+        }
+      }
+    ]
+  }
+}

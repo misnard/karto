@@ -1,0 +1,271 @@
+{
+  "data": [
+    {
+      "type": "product",
+      "id": "product-3560071267964",
+      "attributes": {
+        "ean": "3560071267964",
+        "cdbase": "7177563",
+        "title": "Lait Demi-Ecrémé demi-écrémé SIMPL",
+        "shortTitle": "Lait Demi-Ecrémé demi-écrémé SIMPL",
+        "brand": "SIMPL",
+        "slug": "lait-demi-ecreme-demi-ecreme-simpl",
+        "businessType": "food",
+        "offerServiceId": "0046-150-112",
+        "uri": "cremerie/laits/lait-demi-ecreme",
+        "categories": [
+          {
+            "id": "36993",
+            "label": "Crèmerie et Produits laitiers",
+            "code": "R00F00SF00",
+            "slug": "cremerie",
+            "uri": "cremerie",
+            "type": "RAYON",
+            "level": 1,
+            "sellerId": null
+          },
+          {
+            "id": "29297",
+            "label": "Laits et Boissons végétales",
+            "code": "R00F00SF00",
+            "slug": "laits",
+            "uri": "cremerie/laits",
+            "type": "RAYON",
+            "level": 2,
+            "sellerId": null
+          },
+          {
+            "id": "29298",
+            "label": "Lait demi-écrémé",
+            "code": "R00F00SF00",
+            "slug": "lait-demi-ecreme",
+            "uri": "cremerie/laits/lait-demi-ecreme",
+            "type": "RAYON",
+            "level": 3,
+            "sellerId": null
+          }
+        ],
+        "topCategoryName": "Crèmerie et Produits laitiers",
+        "images": {
+          "formats": {
+            "largest": "540x540",
+            "common": [
+              "43x43",
+              "200x200",
+              "540x540",
+              "1500x1500"
+            ]
+          },
+          "paths": [
+            "https://media.carrefour.fr/medias/9af83bb7b46d3d2ba6db1814c093cd3a/p_FORMAT/3560071267964-0.jpg",
+            "https://media.carrefour.fr/medias/8e0d26f5800b3a58bcecf177103e6b87/p_FORMAT/3560071267964-2.jpg",
+            "https://media.carrefour.fr/medias/9e4c47ef192d3f7fafc0775ca05aa5fd/p_FORMAT/3560071267964-7.jpg",
+            "https://media.carrefour.fr/medias/0f36649035e432059997eb829cef5a26/p_FORMAT/3560071267964-8.jpg",
+            "https://media.carrefour.fr/medias/e5afa79a3d6e32b3933bdc6c7b63964b/p_FORMAT/3560071267964-9.jpg"
+          ],
+          "withFormats": [
+            {
+              "pattern": "https://media.carrefour.fr/medias/9af83bb7b46d3d2ba6db1814c093cd3a/p_FORMAT/3560071267964-0.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/8e0d26f5800b3a58bcecf177103e6b87/p_FORMAT/3560071267964-2.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/9e4c47ef192d3f7fafc0775ca05aa5fd/p_FORMAT/3560071267964-7.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/0f36649035e432059997eb829cef5a26/p_FORMAT/3560071267964-8.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            },
+            {
+              "pattern": "https://media.carrefour.fr/medias/e5afa79a3d6e32b3933bdc6c7b63964b/p_FORMAT/3560071267964-9.jpg",
+              "formats": {
+                "43x43": "43x43",
+                "200x200": "200x200",
+                "540x540": "540x540",
+                "1500x1500": "1500x1500",
+                "largest": "1500x1500"
+              }
+            }
+          ]
+        },
+        "isDonation": false,
+        "isBestSeller": false,
+        "warnings": [],
+        "traceability": null,
+        "keyFeatures": [],
+        "moreOffers": {
+          "count": 0,
+          "bestOfferId": null,
+          "bestOfferPrice": null,
+          "hasNonFoodDeliveryOffer": false,
+          "isRexEligible": false,
+          "withdrawalDelivery": {
+            "exists": false,
+            "expressWithdrawalEligibility": {
+              "global": false,
+              "inCurrentStore": false
+            }
+          },
+          "hasCarrefourPlus": false
+        },
+        "offers": {
+          "3560071267964": {
+            "0046-150-112": {
+              "type": "offer",
+              "subType": "carrefour",
+              "id": "0046-150-112",
+              "attributes": {
+                "availability": {
+                  "indispensable": false,
+                  "purchasable": true,
+                  "stopped": false,
+                  "suspended": false,
+                  "suspensionReason": null,
+                  "hasLowQuantity": false
+                },
+                "preorder": null,
+                "price": {
+                  "price": 5.64,
+                  "taxMessage": "",
+                  "unitOfMeasure": "L",
+                  "perUnit": 0.94,
+                  "perUnitLabel": "0.94 € / L"
+                },
+                "ordering": {
+                  "min": 1,
+                  "step": 1,
+                  "max": 10
+                },
+                "offerServiceId": "0046-150-112",
+                "highlightLabel": null,
+                "freshness": {
+                  "value": 10,
+                  "period": "day"
+                },
+                "marketplace": null,
+                "ean": "3560071267964",
+                "promotion": null,
+                "promotions": [],
+                "variableWeight": false,
+                "isRexEligible": false,
+                "expressWithdrawalEligibility": {
+                  "global": false,
+                  "inCurrentStore": false
+                },
+                "isNonFoodDelivery": false,
+                "isRelayPointEligible": false,
+                "description": null,
+                "shopReturnPolicy": null,
+                "bundle": {
+                  "label": null
+                },
+                "isNew": false,
+                "isInnovation": false,
+                "isDigitalCard": false,
+                "isWholesale": false,
+                "isClcv": false,
+                "isZiqy": false,
+                "isHealthy": false,
+                "isVignetteEligible": false,
+                "isPhysicalStoreOffer": false,
+                "isExpressDelivery": false,
+                "isRecoverable": false,
+                "operatorContact": null,
+                "consumerContact": {
+                  "address": null,
+                  "companyName": "Interdis TSA 91431 - 91343 Massy cedex Carrefour à votre écoute au 09 69 39 7000 (appel non surtaxé)",
+                  "phoneNumber": null,
+                  "email": null,
+                  "webSite": null
+                },
+                "guarantees": []
+              },
+              "meta": {
+                "cta": "buy"
+              },
+              "links": {
+                "self": ""
+              }
+            }
+          }
+        },
+        "packaging": "le pack de 6 briques d'1L",
+        "format": "6x1l",
+        "deliveryModalities": null,
+        "flags": [],
+        "sustainabilityIndex": null,
+        "addedSugar": null,
+        "isAlreadyPurchased": false,
+        "provenanceStatement": null,
+        "charger": null,
+        "clubs": [],
+        "origin": "",
+        "nutriscore": {
+          "value": "A",
+          "source": "",
+          "licence": "",
+          "isCalculated": false
+        },
+        "customerReviews": {
+          "average": 4.88,
+          "count": 24,
+          "rates": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 13,
+            "5": 87
+          }
+        },
+        "variants": [],
+        "weightsAndMeasures": [],
+        "guarantee_general_document": "https://static-cms.carrefour.fr/sites/default/files/documents/garanties-carrefour-plus-document-information-cgv.pdf"
+      },
+      "relationships": {
+        "substitution": null
+      },
+      "meta": {
+        "recommendation": null,
+        "cta": "buy",
+        "features": {
+          "deletable": false,
+          "swap": false,
+          "feedback": false,
+          "freshness": false
+        }
+      },
+      "links": {
+        "self": "/p/lait-demi-ecreme-demi-ecreme-simpl-3560071267964",
+        "reviews": "/product/3560071267964/reviews"
+      }
+    }
+  ]
+}

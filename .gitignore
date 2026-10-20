@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.wrangler/
+coverage/
+*.log
+.DS_Store
+
+# secrets
+.dev.vars
+.env.local
+.env.*.local
+
+# raw Carrefour spike dumps (may contain personal data)
+Carrefour Spike*.json
+carrefour-spike*.json

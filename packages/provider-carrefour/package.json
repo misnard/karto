@@ -1,0 +1,17 @@
+{
+  "name": "@karto/provider-carrefour",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@karto/contracts": "workspace:*",
+    "zod": "4.6.7"
+  }
+}

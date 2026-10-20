@@ -1,0 +1,16 @@
+{
+  "name": "@karto/llm-relay",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=../../apps/api/.dev.vars src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p .",
+    "dev": "node --watch --env-file-if-exists=../../apps/api/.dev.vars src/index.ts"
+  },
+  "dependencies": {
+    "@karto/contracts": "workspace:*",
+    "zod": "4.6.7"
+  }
+}

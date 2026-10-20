@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "status": 400,
+      "title": "Invalid submitted values",
+      "code": "request.validation",
+      "detail": "One or many submitted values are invalid.",
+      "meta": [],
+      "errors": [
+        {
+          "message": "The string \"<EAN>\" is not a valid gtin.",
+          "code": "gtin_validation_exception",
+          "path": "items[0].ean"
+        }
+      ]
+    }
+  ]
+}

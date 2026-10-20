@@ -1,0 +1,150 @@
+[
+  {
+    "id": "ajoute-mayo",
+    "basket": [
+      {
+        "key": "pain à burger",
+        "quantity": 4,
+        "unit": "piece"
+      },
+      {
+        "key": "steak haché",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "key": "cheddar",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "text": "ajoute de la mayo",
+    "expect": {
+      "add": [["mayonnaise"]],
+      "maxAdd": 1,
+      "noDuplicate": true,
+      "untouched": ["pain à burger", "steak haché", "cheddar"]
+    }
+  },
+  {
+    "id": "deja-sel-huile",
+    "basket": [
+      {
+        "key": "pâtes",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "key": "sel",
+        "quantity": 1000,
+        "unit": "g"
+      },
+      {
+        "key": "huile d'olive",
+        "quantity": 750,
+        "unit": "ml"
+      },
+      {
+        "key": "tomate",
+        "quantity": 6,
+        "unit": "piece"
+      }
+    ],
+    "text": "j'ai déjà du sel et de l'huile",
+    "expect": {
+      "remove": [
+        {
+          "key": "sel",
+          "why": "have_it"
+        },
+        {
+          "key": "huile d'olive",
+          "why": "have_it"
+        }
+      ],
+      "maxAdd": 0,
+      "untouched": ["pâtes", "tomate"]
+    }
+  },
+  {
+    "id": "plus-enleve-double",
+    "basket": [
+      {
+        "key": "tomate",
+        "quantity": 4,
+        "unit": "piece"
+      },
+      {
+        "key": "oignon",
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "key": "fromage râpé",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "key": "pâtes",
+        "quantity": 500,
+        "unit": "g"
+      }
+    ],
+    "text": "plus de tomates, enlève l'oignon, double le fromage",
+    "expect": {
+      "update": [
+        {
+          "key": "tomate",
+          "unit": "piece",
+          "min": 5,
+          "max": 12
+        },
+        {
+          "key": "fromage râpé",
+          "unit": "g",
+          "min": 380,
+          "max": 420
+        }
+      ],
+      "remove": [
+        {
+          "key": "oignon",
+          "why": "not_wanted"
+        }
+      ],
+      "maxAdd": 0,
+      "untouched": ["pâtes"]
+    }
+  },
+  {
+    "id": "salade-grecque",
+    "basket": [
+      {
+        "key": "tomate",
+        "quantity": 4,
+        "unit": "piece"
+      },
+      {
+        "key": "oignon rouge",
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "key": "pâtes",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "key": "lait",
+        "quantity": 1000,
+        "unit": "ml"
+      }
+    ],
+    "text": "ajoute de quoi faire une salade grecque",
+    "expect": {
+      "add": [["concombre"], ["feta"], ["olive", "olive noire", "olive kalamata"]],
+      "noDuplicate": true,
+      "untouched": ["pâtes", "lait"]
+    }
+  }
+]

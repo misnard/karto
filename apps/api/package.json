@@ -1,0 +1,28 @@
+{
+  "name": "@karto/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p . && tsc --noEmit -p tsconfig.node.json",
+    "cf-typegen": "wrangler types",
+    "db:migrate:local": "wrangler d1 migrations apply karto --local",
+    "db:migrate:remote": "wrangler d1 migrations apply karto --remote",
+    "user:create": "node scripts/create-user.ts",
+    "eval:llm": "node eval/run-parse-eval.ts",
+    "eval:amend": "node eval/run-amend-eval.ts"
+  },
+  "dependencies": {
+    "@karto/contracts": "workspace:*",
+    "hono": "4.13.13",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.23.0",
+    "wrangler": "4.151.1"
+  }
+}

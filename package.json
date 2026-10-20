@@ -1,0 +1,31 @@
+{
+  "name": "karto",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.17.1",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev:api": "pnpm --filter @karto/api dev",
+    "dev:ext": "pnpm --filter @karto/extension dev",
+    "test": "pnpm -r --if-present test",
+    "test:watch": "pnpm -r --parallel --if-present test:watch",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "check:boundaries": "sh scripts/check-boundaries.sh",
+    "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm check:boundaries",
+    "build": "pnpm -r --if-present build",
+    "db:migrate:local": "pnpm --filter @karto/api db:migrate:local",
+    "db:migrate:remote": "pnpm --filter @karto/api db:migrate:remote",
+    "user:create": "pnpm --filter @karto/api user:create",
+    "relay": "pnpm --filter @karto/llm-relay dev"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "26.6.5",
+    "typescript": "7.0.2",
+    "vitest": "4.1.12"
+  }
+}
