@@ -45,11 +45,30 @@ describe('fetchRecipe', () => {
     expect(fetchImpl).toHaveBeenCalledOnce();
     const [input, init] = fetchImpl.mock.calls[0] ?? [];
     expect(input).toBe(URL_OK);
-    expect(init?.redirect).toBe('follow');
+    expect(init?.redirect).toBe('manual');
     expect(init?.signal).toBeInstanceOf(AbortSignal);
     const headers = new Headers(init?.headers);
     expect(headers.get('user-agent')).toMatch(/^Mozilla\/5\.0 .*Chrome\//);
     expect(headers.get('accept-language')).toBe('fr-FR,fr;q=0.9');
+  });
+
+  it('follows redirects itself, checking every hop', async () => {
+    const redirect = (location: string) => new Response(null, { status: 302, headers: { location } });
+    const hop = vi
+      .fn<typeof fetch>()
+      .mockResolvedValueOnce(redirect('/gratin-v2'))
+      .mockResolvedValueOnce(new Response(RECIPE_HTML, { headers: HTML }));
+    await expect(fetchRecipe(URL_OK, hop)).resolves.toMatchObject({ title: 'Gratin' });
+    expect(hop.mock.calls[1]?.[0]).toBe('https://recettes.example.com/gratin-v2');
+
+    // A public page must not bounce the server to an internal address.
+    for (const location of ['http://169.254.169.254/latest/meta-data/', 'http://127.0.0.1:8787/v1/me']) {
+      const internal = fakeFetch(() => redirect(location));
+      await expectCode(fetchRecipe(URL_OK, internal), 'invalid_url');
+      expect(internal).toHaveBeenCalledOnce();
+    }
+    const loop = fakeFetch(() => redirect(URL_OK));
+    await expectCode(fetchRecipe(URL_OK, loop), 'unreachable');
   });
 
   it('accepts a missing content type and decodes the declared charset', async () => {

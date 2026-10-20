@@ -15,6 +15,8 @@ import {
 } from '@karto/contracts';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod';
+import { startPush } from '../db/baskets.ts';
+import { saveChoiceStatements } from '../db/choices.ts';
 import { jsonSchema, system } from '../llm/prompts/parse.ts';
 import herveLasagnes from '../recipes/fixtures/hervecuisine-lasagnes.html?raw';
 import jdfCrepes from '../recipes/fixtures/journaldesfemmes-crepes.html?raw';
@@ -342,6 +344,23 @@ describe('basket flow with fake relay and executor', () => {
     await readJson(await call('POST', `/v1/baskets/${first.id}/push`, { token }), PushResponseSchema);
     await expectError(await call('POST', `/v1/baskets/${second.id}/push`, { token }), 409, 'conflict');
     expect((await getBasket(token, second.id)).status).toBe('ready');
+  });
+
+  it('starts no push once the basket left ready (e.g. an amend won the race after the route check)', async () => {
+    const { userId, token } = await seedUser();
+    const basket = await readyBasket(token);
+    await env.DB.prepare("UPDATE baskets SET status = 'parsing' WHERE id = ?").bind(basket.id).run();
+    const job = { id: crypto.randomUUID(), basketId: basket.id, kind: 'provider.cart_sync' as const, payload: {} };
+    const choice = { ingredientKey: 'lait', productRef: '111', productLabel: 'Lait', source: 'validated' as const };
+    const started = await startPush(userId, job, (guard) => saveChoiceStatements(userId, 'carrefour', [choice], guard));
+    expect(started).toBe(false);
+    expect((await getBasket(token, basket.id)).status).toBe('parsing');
+    const counts = await env.DB.prepare(
+      'SELECT (SELECT COUNT(*) FROM jobs WHERE id = ?1) AS jobs, (SELECT COUNT(*) FROM choices WHERE user_id = ?2) AS choices',
+    )
+      .bind(job.id, userId)
+      .first();
+    expect(counts).toEqual({ jobs: 0, choices: 0 });
   });
 });
 

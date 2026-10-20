@@ -348,20 +348,20 @@ export function itemUpdateStatement(
 }
 
 /**
- * Creates the cart sync job and moves the basket to pushing, with `statements` in the same transaction. Returns
- * false, and applies nothing, when a push is already active.
+ * Creates the cart sync job and moves the basket from ready or pushed to pushing, with the `statements` (carrying
+ * `guard`) in the same transaction. Returns false, and applies nothing, when a push is already active or the basket
+ * left ready/pushed meanwhile (amend, search...).
  */
-export async function startPush(userId: string, job: NewJob, statements: D1PreparedStatement[] = []): Promise<boolean> {
-  const now = Date.now();
+export async function startPush(
+  userId: string,
+  job: NewJob,
+  statements: (guard: SqlGuard) => D1PreparedStatement[] = () => [],
+): Promise<boolean> {
   try {
-    await env.DB.batch([
-      insertJobStatement(userId, job, now),
-      env.DB.prepare(
-        `UPDATE baskets SET status = 'pushing', error = NULL, updated_at = ? WHERE id = ? AND user_id = ?`,
-      ).bind(now, job.basketId, userId),
-      ...statements,
+    return await transitionBasket(userId, job.basketId, ['ready', 'pushed'], 'pushing', (guard) => [
+      insertJobStatement(userId, job, Date.now(), guard),
+      ...statements(guard),
     ]);
-    return true;
   } catch (err) {
     // jobs_one_active_cart_sync: at most one pending/running/paused cart sync per user.
     if (err instanceof Error && err.message.includes('UNIQUE constraint failed')) return false;

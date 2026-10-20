@@ -45,8 +45,9 @@ function sendJson(res: ServerResponse, status: number, body: unknown, headers: R
 
 function sendTooLarge(res: ServerResponse): void {
   const error = { code: 'invalid_request', message: 'Request body too large' };
-  // The rest of the body is never read: close the connection instead of draining it.
-  sendJson(res, 413, { error }, { connection: 'close' });
+  // No `connection: close`: closing while the client still uploads resets the socket before it reads the 413.
+  // node:http discards the unread rest of the body (never buffered), bounded by the server's requestTimeout.
+  sendJson(res, 413, { error });
 }
 
 async function readBody(req: IncomingMessage): Promise<Buffer> {

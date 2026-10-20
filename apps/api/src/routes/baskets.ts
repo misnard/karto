@@ -147,9 +147,9 @@ export const baskets = new Hono<AppEnv>()
     const started = await startPush(
       c.var.userId,
       { id: jobId, basketId: basket.id, kind: 'provider.cart_sync', payload },
-      saveChoiceStatements(c.var.userId, basket.provider, pushedChoices(basket.items)),
+      (guard) => saveChoiceStatements(c.var.userId, basket.provider, pushedChoices(basket.items), guard),
     );
-    if (!started) throw new AppError('conflict', 409, 'Push already running');
+    if (!started) throw new AppError('conflict', 409, 'Push already running, or basket changed in the meantime');
     return c.json({ jobId } satisfies PushResponse);
   })
   .post('/:id/retry', async (c) => {

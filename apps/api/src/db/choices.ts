@@ -1,5 +1,6 @@
 import { env } from 'cloudflare:workers';
 import type { ProviderId } from '@karto/contracts';
+import type { SqlGuard } from './jobs.ts';
 
 export interface Choice {
   ingredientKey: string;
@@ -26,15 +27,20 @@ export async function getChoices(
 }
 
 /**
- * Upserts the choices of this user. Pushing the same product again counts one more use and keeps 'replaced';
- * another product starts over at 1.
+ * Upserts the choices of this user, while `guard` holds. Pushing the same product again counts one more use and
+ * keeps 'replaced'; another product starts over at 1.
  */
-export function saveChoiceStatements(userId: string, provider: ProviderId, choices: Choice[]): D1PreparedStatement[] {
+export function saveChoiceStatements(
+  userId: string,
+  provider: ProviderId,
+  choices: Choice[],
+  guard: SqlGuard,
+): D1PreparedStatement[] {
   const now = Date.now();
   return choices.map((choice) =>
     env.DB.prepare(
       `INSERT INTO choices (user_id, provider, ingredient_key, product_ref, product_label, source, use_count, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, 1, ?)
+       SELECT ?, ?, ?, ?, ?, ?, 1, ? WHERE ${guard.sql}
        ON CONFLICT (user_id, provider, ingredient_key) DO UPDATE SET
          use_count = CASE WHEN product_ref = excluded.product_ref THEN use_count + 1 ELSE 1 END,
          source = CASE WHEN product_ref = excluded.product_ref AND source = 'replaced' THEN source
@@ -42,6 +48,15 @@ export function saveChoiceStatements(userId: string, provider: ProviderId, choic
          product_ref = excluded.product_ref,
          product_label = excluded.product_label,
          updated_at = excluded.updated_at`,
-    ).bind(userId, provider, choice.ingredientKey, choice.productRef, choice.productLabel, choice.source, now),
+    ).bind(
+      userId,
+      provider,
+      choice.ingredientKey,
+      choice.productRef,
+      choice.productLabel,
+      choice.source,
+      now,
+      ...guard.params,
+    ),
   );
 }
