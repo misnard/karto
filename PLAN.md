@@ -517,9 +517,10 @@ Les étapes marquées ⚑ demandent plus de réflexion. Une étape n'est finie q
   - Le 2026-10-20, le VPS héberge aussi l'API sous Node (décision en section 0). Fichiers de déploiement dans `deploy/` : `karto-api.service`, `karto-relay.service`, `Caddyfile` et `karto.env.example`.
   - Le serveur Node a été testé de bout en bout sur une base temporaire : migrations, appairage, admin, révocation, isolation, claim du relais, CORS, cron qui remet en file un bail expiré, et arrêt propre sur SIGTERM.
   - Le critère 1 est vérifié (étape 3). Le critère 2 est couvert par le cron (`expire-jobs.test.ts`) et par le test Node.
-  - **Reste :** le déploiement réel, en suivant le README (option VPS). Ensuite :
+  - **Déployé le 2026-10-20** sur le VPS de l'auteur, à l'adresse `https://karto.stackbrd.com`. nginx était déjà en place, donc un bloc nginx remplace le Caddyfile, avec un certificat obtenu par `certbot --nginx`. Node 24 est isolé dans `/opt/node`, et les units pointent sur `/opt/node/bin/node`. Le parse réel passe par le relais en 12 s (« de quoi faire un guacamole » est bien développé).
+  - **Reste :**
     - tuer le relais (`systemctl kill karto-relay`) pendant un parse. Attendu : le job est repris après expiration du bail ;
-    - `ss -tlnp` ne montre que Caddy sur 80 et 443, et l'API sur `127.0.0.1:8787` ;
+    - `ss -tlnp` ne montre que le proxy sur 80 et 443, et l'API sur `127.0.0.1:8787` ;
     - `systemctl restart karto-api` pendant un panier : le log affiche « SIGTERM: finishing requests », et les données sont toujours là.
 - **Objectif :** `services/llm-relay`, un script Node d'une centaine de lignes. Il réserve des jobs `llm`, lance `claude -p` et termine le job en `complete` ou en `fail`. Il tourne en unit systemd. Avec `LLM_RUNTIME=cli`, le runner interne de l'API ignore les jobs `llm`.
 - **Critères :**
