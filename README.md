@@ -67,7 +67,7 @@ Le code est sur [github.com/misnard/karto](https://github.com/misnard/karto).
 
 ### Option A : VPS
 
-Il faut un serveur Linux avec systemd, Node ≥ 22.18 (24 LTS conseillé), git, pnpm (`corepack enable`) et [Caddy](https://caddyserver.com/docs/install). Il faut aussi un nom de domaine qui pointe sur le VPS, avec les ports 80 et 443 ouverts. Caddy obtient le certificat TLS tout seul. L'API n'écoute que sur `127.0.0.1:8787`, et le relais n'ouvre aucun port.
+Il faut un serveur Linux avec systemd, Node ≥ 22.18 (24 LTS conseillé), git, pnpm (`corepack enable`) et [Caddy](https://caddyserver.com/docs/install), ou un nginx déjà en place avec certbot. Il faut aussi un nom de domaine qui pointe sur le VPS (chez Cloudflare : enregistrement `A` en « DNS only »), avec les ports 80 et 443 ouverts. L'API n'écoute que sur `127.0.0.1:8787`, et le relais n'ouvre aucun port.
 
 1. Créer l'utilisateur système et installer le code :
    ```sh
@@ -91,9 +91,9 @@ Il faut un serveur Linux avec systemd, Node ≥ 22.18 (24 LTS conseillé), git, 
    sudo systemctl daemon-reload && sudo systemctl enable --now karto-api
    journalctl -u karto-api -n 20   # « Karto API listening on http://127.0.0.1:8787 »
    ```
-4. Ajouter le TLS : copie `deploy/Caddyfile` dans `/etc/caddy/Caddyfile`, remplace `karto.example.fr` par ton domaine, puis lance `sudo systemctl reload caddy`. Ensuite, `curl https://<domaine>/v1/me` doit renvoyer une erreur 401 en JSON.
+4. Ajouter le TLS : copie `deploy/Caddyfile` dans `/etc/caddy/Caddyfile`, remplace `karto.example.fr` par ton domaine, puis lance `sudo systemctl reload caddy`. Caddy obtient le certificat tout seul. Si nginx sert déjà le VPS, utilise plutôt `deploy/nginx.conf` (les instructions sont en tête du fichier) puis `sudo certbot --nginx -d <domaine> --redirect`. Ensuite, `curl https://<domaine>/v1/me` doit renvoyer une erreur 401 en JSON.
 5. LLM :
-   - en mode `cli`, connecte Claude Code une fois pour l'utilisateur `karto`. Installe `claude` pour cet utilisateur (sinon renseigne `CLAUDE_BIN`), lance `sudo -u karto -H claude`, tape `/login`, puis :
+   - en mode `cli`, connecte Claude Code une fois pour l'utilisateur `karto`. Installe `claude` pour cet utilisateur avec `sudo -u karto -H bash -c 'curl -fsSL https://claude.ai/install.sh | bash'`, puis renseigne `CLAUDE_BIN=/var/lib/karto/.local/bin/claude`. Dans un vrai terminal (il faut un TTY), lance `ssh -t <vps> 'sudo -u karto -H /var/lib/karto/.local/bin/claude'`, tape `/login`, puis :
      ```sh
      sudo systemctl enable --now karto-relay
      journalctl -u karto-relay -n 5   # « polling http://127.0.0.1:8787 for llm jobs »
@@ -174,4 +174,8 @@ Sur VPS, utilise `sqlite3 /var/lib/karto/karto.sqlite`. Sur Cloudflare, utilise 
 
 ## Développer
 
-Les commandes, les règles et la structure sont dans [CLAUDE.md](CLAUDE.md), et le plan et l'avancement dans [PLAN.md](PLAN.md). En bref : `pnpm install`, puis `pnpm dev:api` (Worker local) ou `pnpm serve` (serveur Node), `pnpm dev:ext`, et `pnpm verify` avant chaque commit.
+Les commandes, les règles et la structure sont dans [CLAUDE.md](CLAUDE.md), et le plan et l'avancement dans [PLAN.md](PLAN.md). En bref : `pnpm install`, puis `pnpm dev:api` (Worker local) ou `pnpm serve` (serveur Node), `pnpm dev:ext`, et `pnpm verify` avant chaque commit. La CI (GitHub Actions) lance `pnpm verify` sur chaque PR : `main` ne se modifie que par PR, avec la CI au vert.
+
+## Licence
+
+[MIT](LICENSE). Le code du dossier `packages/provider-carrefour` reprend des éléments de deux projets sous licence MIT, cités dans sa [NOTICE](packages/provider-carrefour/NOTICE.md).

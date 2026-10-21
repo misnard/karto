@@ -26,7 +26,8 @@ packages/
 services/
   llm-relay/              (option) script Node du VPS, relais claude -p
 scripts/                  check-boundaries.sh
-deploy/                   VPS : units systemd (API, relais), Caddyfile, karto.env.example
+deploy/                   VPS : units systemd (API, relais), Caddyfile ou nginx.conf, karto.env.example
+.github/workflows/        CI : pnpm verify sur chaque PR et sur main
 docs/                     spike-carrefour.md, confidentialite.md, chrome-web-store.md
 ```
 
